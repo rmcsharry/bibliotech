@@ -1,15 +1,12 @@
 export default {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `JMF Services`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Richard McSharry`,
+      summary: `Coding Stormtrooper. Former Code Moneky.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `Construction company data`,
+    siteUrl: `https://github.com/rmcsharry/jmf-services-gatsby`,
   },
   plugins: [
     {
@@ -33,7 +30,7 @@ export default {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1280,
             },
           },
           {
@@ -83,6 +80,28 @@ export default {
     {
       resolve: 'gatsby-plugin-codegen',
       options: {},
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: `keyKyHWopjFifJzyo`,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `appP5vBdAitw6yyDH`,
+            tableName: `Manufacturers`,
+            tableView: `AppView_Details_DONOTCHANGE`,
+            mapping: { Manufacturer: `string`, Tech_Reps: 'Array' },
+            // tableLinks: [`Tech_Reps`],
+          },
+          // {
+          //   baseId: `appP5vBdAitw6yyDH`,
+          //   tableName: `Tech_Reps`,
+          //   // mapping: { 'COLUMN NAME': `VALUE_FORMAT` },
+          //   tableLinks: [`Manufacturers`],
+          // },
+        ],
+      },
     },
   ],
 }

@@ -16,10 +16,7 @@ class BlogIndex extends React.Component<IPageQuery & IPageProps> {
   render(): JSX.Element {
     const { data } = this.props
 
-    // const siteTitle = get(data, 'site', 'siteMetadata', 'title') || labels.notAvailable;
     const siteTitle: string = data?.site?.siteMetadata?.title || labels.notAvailable
-
-    // const posts = get(data, 'allMarkdownRemark', 'edges') || [];
     const posts: HomePageQuery_allMarkdownRemark_edges[] = data?.allMarkdownRemark?.edges || []
 
     return (

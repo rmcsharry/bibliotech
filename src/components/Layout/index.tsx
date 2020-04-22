@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { WindowLocation } from '@reach/router'
+import { rhythm, scale } from '../../utils/typography'
+import Header from '../Header'
+import Footer from '../Footer'
 
-import { rhythm, scale } from '../utils/typography'
-import Header from './header'
+import Container from 'react-bootstrap/Container'
 
 interface IProps {
   location?: WindowLocation
@@ -15,15 +17,15 @@ class Layout extends React.Component<IProps> {
     const { location, title, children } = this.props
     const pathPrefix: string | null = typeof window !== 'undefined' ? (window as any).__PATH_PREFIX__ : '' // eslint-disable-line
     const rootPath = `${pathPrefix}/`
-    let header
+    let pageTitle
 
     if (location && location.pathname === rootPath) {
-      header = (
+      pageTitle = (
         <h1
           style={{
             ...scale(1.5),
             marginBottom: rhythm(1.5),
-            marginTop: 0,
+            marginTop: '2rem',
           }}
         >
           <Link
@@ -34,16 +36,17 @@ class Layout extends React.Component<IProps> {
             }}
             to={`/`}
           >
-            {title}
+            I think you found a page that is not finished...
           </Link>
         </h1>
       )
     } else {
-      header = (
+      pageTitle = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
+            ...scale(1.2),
+            marginTop: rhythm(1),
+            marginBottom: rhythm(1.25),
           }}
         >
           <Link
@@ -54,28 +57,19 @@ class Layout extends React.Component<IProps> {
             }}
             to={`/`}
           >
-            {title}
+            Welcome
           </Link>
         </h3>
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <div>
         <Header />
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Container>
+          <header>{pageTitle}</header>
+          <main>{children}</main>
+        </Container>
+        <Footer />
       </div>
     )
   }

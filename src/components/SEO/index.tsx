@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 
-import { config } from '../../config'
+import { config } from '../../../config'
 
 interface IProps {
   description?: string
@@ -89,6 +89,13 @@ const SEO: React.FC<IProps> = ({
           content: googleSearchConsoleTag.content,
         },
       ].concat(meta)}
+      // moved to gatsby-browser.js as a local dependency instead of CDN (as it will then live wherever we deploy the site)
+      // link={[
+      //   {
+      //     rel: 'stylesheet',
+      //     href: 'https://bootswatch.com/4/lux/bootstrap.min.css'
+      //   }
+      // ]}
     />
   )
 }

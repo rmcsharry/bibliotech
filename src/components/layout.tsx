@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { WindowLocation } from '@reach/router'
 
 import { rhythm, scale } from '../utils/typography'
+import Header from './header'
 
 interface IProps {
   location?: WindowLocation
@@ -67,6 +68,7 @@ class Layout extends React.Component<IProps> {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
+        <Header />
         <header>{header}</header>
         <main>{children}</main>
         <footer>

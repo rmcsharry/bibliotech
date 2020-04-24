@@ -1,11 +1,11 @@
 export default {
   siteMetadata: {
-    title: `JMF Services`,
+    title: `Manufacturer Data Tool`,
     author: {
-      name: `Richard McSharry`,
-      summary: `Coding Stormtrooper. Former Code Moneky.`,
+      name: `JMF Services Manufacturer Company data`,
+      summary: `A micro website to provide customers with data on manufacturing companies`,
     },
-    description: `Construction company data`,
+    description: `Manufacturer company data`,
     siteUrl: `https://github.com/rmcsharry/jmf-services-gatsby`,
   },
   plugins: [
@@ -57,22 +57,16 @@ export default {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `JMF Services`,
+        short_name: `JMF`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/JMFLOGO-Site-v3-SQUARE.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
@@ -90,9 +84,11 @@ export default {
           {
             baseId: `appP5vBdAitw6yyDH`,
             tableName: `Manufacturers`,
+            queryName: `Manufacturer`,
             tableView: `AppView_Details_DONOTCHANGE`,
-            mapping: { Manufacturer: `string`, Tech_Reps: 'Array' },
+            // mapping: { Manufacturer: `string`, Tech_Reps: 'Array' },
             // tableLinks: [`Tech_Reps`],
+            separateNodeType: true,
           },
           // {
           //   baseId: `appP5vBdAitw6yyDH`,

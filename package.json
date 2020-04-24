@@ -1,7 +1,7 @@
 {
   "name": "jmf-services",
   "private": true,
-  "description": "JMF Services Construction Company data",
+  "description": "JMF Services Manufacturing Company data",
   "version": "0.1.0",
   "author": "Richard McSharry <rmcsharry@gmail.com>",
   "bugs": {
@@ -37,8 +37,7 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography": "^0.16.19"
+    "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
     "@types/node": "^13.13.1",

@@ -1703,117 +1703,7 @@
               "deprecationReason": null
             },
             {
-              "name": "airtableField",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "StringQueryOperatorInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "parent",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "NodeFilterInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "children",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "NodeFilterListInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "internal",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "InternalFilterInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "AirtableField",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "allAirtableField",
-              "description": null,
-              "args": [
-                {
-                  "name": "filter",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "AirtableFieldFilterInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "sort",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "AirtableFieldSortInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "skip",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "limit",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "AirtableFieldConnection",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "airtable",
+              "name": "airtableManufacturer",
               "description": null,
               "args": [
                 {
@@ -1877,11 +1767,21 @@
                   "defaultValue": null
                 },
                 {
+                  "name": "queryName",
+                  "description": "",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "StringQueryOperatorInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
                   "name": "data",
                   "description": "",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "AirtableDataFilterInput",
+                    "name": "AirtableManufacturerDataFilterInput",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -1889,14 +1789,14 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "Airtable",
+                "name": "AirtableManufacturer",
                 "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "allAirtable",
+              "name": "allAirtableManufacturer",
               "description": null,
               "args": [
                 {
@@ -1904,7 +1804,7 @@
                   "description": "",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "AirtableFilterInput",
+                    "name": "AirtableManufacturerFilterInput",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -1914,7 +1814,7 @@
                   "description": "",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "AirtableSortInput",
+                    "name": "AirtableManufacturerSortInput",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -1945,7 +1845,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "AirtableConnection",
+                  "name": "AirtableManufacturerConnection",
                   "ofType": null
                 }
               },
@@ -5083,17 +4983,17 @@
             },
             {
               "kind": "OBJECT",
-              "name": "AirtableField",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "Airtable",
+              "name": "AirtableManufacturer",
               "ofType": null
             },
             {
               "kind": "OBJECT",
               "name": "SiteBuildMetadata",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "airtableManufacturer",
               "ofType": null
             }
           ]
@@ -13056,7 +12956,7 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "slug",
+              "name": "id",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13097,38 +12997,7 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "fields",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "SitePageContextPreviousFieldsFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "frontmatter",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "SitePageContextPreviousFrontmatterFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "SitePageContextPreviousFieldsFilterInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "slug",
+              "name": "recordId",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13136,6 +13005,16 @@
                 "ofType": null
               },
               "defaultValue": null
+            },
+            {
+              "name": "data",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "SitePageContextPreviousDataFilterInput",
+                "ofType": null
+              },
+              "defaultValue": null
             }
           ],
           "interfaces": null,
@@ -13144,12 +13023,32 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "SitePageContextPreviousFrontmatterFilterInput",
+          "name": "SitePageContextPreviousDataFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
             {
-              "name": "title",
+              "name": "Last_update",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DateQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "Manufacturer",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "Rep_s_email",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13170,38 +13069,7 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "fields",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "SitePageContextNextFieldsFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "frontmatter",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "SitePageContextNextFrontmatterFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "SitePageContextNextFieldsFilterInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "slug",
+              "name": "recordId",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13209,6 +13077,16 @@
                 "ofType": null
               },
               "defaultValue": null
+            },
+            {
+              "name": "data",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "SitePageContextNextDataFilterInput",
+                "ofType": null
+              },
+              "defaultValue": null
             }
           ],
           "interfaces": null,
@@ -13217,12 +13095,32 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "SitePageContextNextFrontmatterFilterInput",
+          "name": "SitePageContextNextDataFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
             {
-              "name": "title",
+              "name": "Last_update",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DateQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "Manufacturer",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "Rep_s_email",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13424,117 +13322,7 @@
               "defaultValue": null
             },
             {
-              "name": "pathPrefix",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "wrapperStyle",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "backgroundColor",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "linkImagesToOriginal",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "showCaptions",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "markdownCaptions",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "withWebp",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tracedSVG",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "loading",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "disableBgImageOnAlpha",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "disableBgImage",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "ignoreFileExtensions",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13595,16 +13383,6 @@
             },
             {
               "name": "icon",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "pathToConfigModule",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13777,117 +13555,7 @@
               "defaultValue": null
             },
             {
-              "name": "pathPrefix",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "wrapperStyle",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "backgroundColor",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "linkImagesToOriginal",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "showCaptions",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "markdownCaptions",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "withWebp",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tracedSVG",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "loading",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "disableBgImageOnAlpha",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "disableBgImage",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "ignoreFileExtensions",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -13949,6 +13617,16 @@
               "defaultValue": null
             },
             {
+              "name": "queryName",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "tableView",
               "description": "",
               "type": {
@@ -13959,42 +13637,11 @@
               "defaultValue": null
             },
             {
-              "name": "mapping",
+              "name": "separateNodeType",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "SitePluginPluginOptionsTablesMappingFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "SitePluginPluginOptionsTablesMappingFilterInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "Manufacturer",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "Tech_Reps",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
+                "name": "BooleanQueryOperatorInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -14488,7 +14135,7 @@
           "description": null,
           "fields": [
             {
-              "name": "slug",
+              "name": "id",
               "description": null,
               "args": [],
               "type": {
@@ -14535,24 +14182,24 @@
           "description": null,
           "fields": [
             {
-              "name": "fields",
+              "name": "recordId",
               "description": null,
               "args": [],
               "type": {
-                "kind": "OBJECT",
-                "name": "SitePageContextPreviousFields",
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "frontmatter",
+              "name": "data",
               "description": null,
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "SitePageContextPreviousFrontmatter",
+                "name": "SitePageContextPreviousData",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -14566,11 +14213,23 @@
         },
         {
           "kind": "OBJECT",
-          "name": "SitePageContextPreviousFields",
+          "name": "SitePageContextPreviousData",
           "description": null,
           "fields": [
             {
-              "name": "slug",
+              "name": "Last_update",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Date",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Manufacturer",
               "description": null,
               "args": [],
               "type": {
@@ -14580,26 +14239,19 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "SitePageContextPreviousFrontmatter",
-          "description": null,
-          "fields": [
+            },
             {
-              "name": "title",
+              "name": "Rep_s_email",
               "description": null,
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -14616,24 +14268,24 @@
           "description": null,
           "fields": [
             {
-              "name": "fields",
+              "name": "recordId",
               "description": null,
               "args": [],
               "type": {
-                "kind": "OBJECT",
-                "name": "SitePageContextNextFields",
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "frontmatter",
+              "name": "data",
               "description": null,
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "SitePageContextNextFrontmatter",
+                "name": "SitePageContextNextData",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -14647,11 +14299,23 @@
         },
         {
           "kind": "OBJECT",
-          "name": "SitePageContextNextFields",
+          "name": "SitePageContextNextData",
           "description": null,
           "fields": [
             {
-              "name": "slug",
+              "name": "Last_update",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Date",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Manufacturer",
               "description": null,
               "args": [],
               "type": {
@@ -14661,26 +14325,19 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "SitePageContextNextFrontmatter",
-          "description": null,
-          "fields": [
+            },
             {
-              "name": "title",
+              "name": "Rep_s_email",
               "description": null,
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -14954,18 +14611,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pathPrefix",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "wrapperStyle",
               "description": null,
               "args": [],
@@ -14973,130 +14618,6 @@
                 "kind": "SCALAR",
                 "name": "String",
                 "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "backgroundColor",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "linkImagesToOriginal",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "showCaptions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "markdownCaptions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "withWebp",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "tracedSVG",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "loading",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "disableBgImageOnAlpha",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "disableBgImage",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ignoreFileExtensions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -15163,18 +14684,6 @@
             },
             {
               "name": "icon",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pathToConfigModule",
               "description": null,
               "args": [],
               "type": {
@@ -15360,18 +14869,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pathPrefix",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "wrapperStyle",
               "description": null,
               "args": [],
@@ -15379,130 +14876,6 @@
                 "kind": "SCALAR",
                 "name": "String",
                 "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "backgroundColor",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "linkImagesToOriginal",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "showCaptions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "markdownCaptions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "withWebp",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "tracedSVG",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "loading",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "disableBgImageOnAlpha",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "disableBgImage",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ignoreFileExtensions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -15543,6 +14916,18 @@
               "deprecationReason": null
             },
             {
+              "name": "queryName",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "tableView",
               "description": null,
               "args": [],
@@ -15555,47 +14940,12 @@
               "deprecationReason": null
             },
             {
-              "name": "mapping",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "SitePluginPluginOptionsTablesMapping",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "SitePluginPluginOptionsTablesMapping",
-          "description": null,
-          "fields": [
-            {
-              "name": "Manufacturer",
+              "name": "separateNodeType",
               "description": null,
               "args": [],
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "Tech_Reps",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "name": "Boolean",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -16598,31 +15948,55 @@
               "deprecationReason": null
             },
             {
-              "name": "context___slug",
+              "name": "context___id",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "context___previous___fields___slug",
+              "name": "context___previous___recordId",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "context___previous___frontmatter___title",
+              "name": "context___previous___data___Last_update",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "context___next___fields___slug",
+              "name": "context___previous___data___Manufacturer",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "context___next___frontmatter___title",
+              "name": "context___previous___data___Rep_s_email",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "context___next___recordId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "context___next___data___Last_update",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "context___next___data___Manufacturer",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "context___next___data___Rep_s_email",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -16934,73 +16308,7 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginCreator___pluginOptions___pathPrefix",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginCreator___pluginOptions___wrapperStyle",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___backgroundColor",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___linkImagesToOriginal",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___showCaptions",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___markdownCaptions",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___withWebp",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___tracedSVG",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___loading",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___disableBgImageOnAlpha",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___disableBgImage",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___ignoreFileExtensions",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -17042,12 +16350,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginCreator___pluginOptions___pathToConfigModule",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginCreator___pluginOptions___apiKey",
               "description": null,
               "isDeprecated": false,
@@ -17078,7 +16380,19 @@
               "deprecationReason": null
             },
             {
+              "name": "pluginCreator___pluginOptions___tables___queryName",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "pluginCreator___pluginOptions___tables___tableView",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginCreator___pluginOptions___tables___separateNodeType",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -21324,98 +20638,13 @@
           "possibleTypes": null
         },
         {
-          "kind": "OBJECT",
-          "name": "AirtableField",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "INTERFACE",
-                "name": "Node",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INTERFACE",
-                      "name": "Node",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Internal",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-            {
-              "kind": "INTERFACE",
-              "name": "Node",
-              "ofType": null
-            }
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableFieldFilterInput",
+          "name": "AirtableManufacturerDataFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
             {
-              "name": "id",
+              "name": "Manufacturer",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -21424,972 +20653,6 @@
               },
               "defaultValue": null
             },
-            {
-              "name": "parent",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "NodeFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "children",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "NodeFilterListInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "internal",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "InternalFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "AirtableFieldSortInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "fields",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "AirtableFieldFieldsEnum",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "order",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "SortOrderEnum",
-                  "ofType": null
-                }
-              },
-              "defaultValue": "[ASC]"
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "ENUM",
-          "name": "AirtableFieldFieldsEnum",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": [
-            {
-              "name": "id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___parent___internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___children___internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent___internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___parent___internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___children___internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "children___internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "AirtableFieldConnection",
-          "description": null,
-          "fields": [
-            {
-              "name": "totalCount",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "edges",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "AirtableFieldEdge",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "nodes",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "AirtableField",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pageInfo",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "PageInfo",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "distinct",
-              "description": null,
-              "args": [
-                {
-                  "name": "field",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "AirtableFieldFieldsEnum",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "group",
-              "description": null,
-              "args": [
-                {
-                  "name": "skip",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "limit",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "field",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "AirtableFieldFieldsEnum",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "AirtableFieldGroupConnection",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "AirtableFieldEdge",
-          "description": null,
-          "fields": [
-            {
-              "name": "next",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "AirtableField",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "node",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "AirtableField",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "previous",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "AirtableField",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "AirtableFieldGroupConnection",
-          "description": null,
-          "fields": [
-            {
-              "name": "totalCount",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "edges",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "AirtableFieldEdge",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "nodes",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "AirtableField",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pageInfo",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "PageInfo",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "field",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "fieldValue",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "AirtableDataFilterInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
             {
               "name": "Notes",
               "description": "",
@@ -22405,7 +20668,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataLogoFilterListInput",
+                "name": "AirtableManufacturerDataLogoFilterListInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22422,6 +20685,16 @@
             },
             {
               "name": "Manufacturer_s_address",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "Tech_Reps",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -22471,7 +20744,7 @@
               "defaultValue": null
             },
             {
-              "name": "REP_info",
+              "name": "Rep_s_Tel",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -22482,16 +20755,6 @@
             },
             {
               "name": "Rep_s_email",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "Rep_s_Tel",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -22531,6 +20794,16 @@
               "defaultValue": null
             },
             {
+              "name": "REP_info",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "Products_Lookup",
               "description": "",
               "type": {
@@ -22551,26 +20824,6 @@
               "defaultValue": null
             },
             {
-              "name": "Manufacturer",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "AirtableFieldFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "Tech_Reps",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "AirtableFieldFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "Comments",
               "description": "",
               "type": {
@@ -22585,7 +20838,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataAttachmentsFilterListInput",
+                "name": "AirtableManufacturerDataAttachmentsFilterListInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22597,7 +20850,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataLogoFilterListInput",
+          "name": "AirtableManufacturerDataLogoFilterListInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22606,7 +20859,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataLogoFilterInput",
+                "name": "AirtableManufacturerDataLogoFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22618,7 +20871,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataLogoFilterInput",
+          "name": "AirtableManufacturerDataLogoFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22677,7 +20930,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataLogoThumbnailsFilterInput",
+                "name": "AirtableManufacturerDataLogoThumbnailsFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22689,7 +20942,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataLogoThumbnailsFilterInput",
+          "name": "AirtableManufacturerDataLogoThumbnailsFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22698,7 +20951,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataLogoThumbnailsSmallFilterInput",
+                "name": "AirtableManufacturerDataLogoThumbnailsSmallFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22708,7 +20961,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataLogoThumbnailsLargeFilterInput",
+                "name": "AirtableManufacturerDataLogoThumbnailsLargeFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22718,7 +20971,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataLogoThumbnailsFullFilterInput",
+                "name": "AirtableManufacturerDataLogoThumbnailsFullFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22730,7 +20983,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataLogoThumbnailsSmallFilterInput",
+          "name": "AirtableManufacturerDataLogoThumbnailsSmallFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22771,7 +21024,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataLogoThumbnailsLargeFilterInput",
+          "name": "AirtableManufacturerDataLogoThumbnailsLargeFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22812,7 +21065,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataLogoThumbnailsFullFilterInput",
+          "name": "AirtableManufacturerDataLogoThumbnailsFullFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22853,7 +21106,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataAttachmentsFilterListInput",
+          "name": "AirtableManufacturerDataAttachmentsFilterListInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22862,7 +21115,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataAttachmentsFilterInput",
+                "name": "AirtableManufacturerDataAttachmentsFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22874,7 +21127,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataAttachmentsFilterInput",
+          "name": "AirtableManufacturerDataAttachmentsFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22933,7 +21186,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataAttachmentsThumbnailsFilterInput",
+                "name": "AirtableManufacturerDataAttachmentsThumbnailsFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22945,7 +21198,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataAttachmentsThumbnailsFilterInput",
+          "name": "AirtableManufacturerDataAttachmentsThumbnailsFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22954,7 +21207,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataAttachmentsThumbnailsSmallFilterInput",
+                "name": "AirtableManufacturerDataAttachmentsThumbnailsSmallFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22964,7 +21217,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataAttachmentsThumbnailsLargeFilterInput",
+                "name": "AirtableManufacturerDataAttachmentsThumbnailsLargeFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22974,7 +21227,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataAttachmentsThumbnailsFullFilterInput",
+                "name": "AirtableManufacturerDataAttachmentsThumbnailsFullFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -22986,7 +21239,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataAttachmentsThumbnailsSmallFilterInput",
+          "name": "AirtableManufacturerDataAttachmentsThumbnailsSmallFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -23027,7 +21280,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataAttachmentsThumbnailsLargeFilterInput",
+          "name": "AirtableManufacturerDataAttachmentsThumbnailsLargeFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -23068,7 +21321,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableDataAttachmentsThumbnailsFullFilterInput",
+          "name": "AirtableManufacturerDataAttachmentsThumbnailsFullFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -23109,7 +21362,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "Airtable",
+          "name": "AirtableManufacturer",
           "description": null,
           "fields": [
             {
@@ -23205,12 +21458,24 @@
               "deprecationReason": null
             },
             {
+              "name": "queryName",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "data",
               "description": null,
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableData",
+                "name": "AirtableManufacturerData",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23230,9 +21495,21 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableData",
+          "name": "AirtableManufacturerData",
           "description": null,
           "fields": [
+            {
+              "name": "Manufacturer",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "Notes",
               "description": null,
@@ -23254,7 +21531,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "AirtableDataLogo",
+                  "name": "AirtableManufacturerDataLogo",
                   "ofType": null
                 }
               },
@@ -23281,6 +21558,22 @@
                 "kind": "SCALAR",
                 "name": "String",
                 "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Tech_Reps",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -23346,7 +21639,7 @@
               "deprecationReason": null
             },
             {
-              "name": "REP_info",
+              "name": "Rep_s_Tel",
               "description": null,
               "args": [],
               "type": {
@@ -23363,22 +21656,6 @@
             },
             {
               "name": "Rep_s_email",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "Rep_s_Tel",
               "description": null,
               "args": [],
               "type": {
@@ -23516,6 +21793,22 @@
               "deprecationReason": null
             },
             {
+              "name": "REP_info",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "Products_Lookup",
               "description": null,
               "args": [],
@@ -23548,30 +21841,6 @@
               "deprecationReason": null
             },
             {
-              "name": "Manufacturer",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "AirtableField",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "Tech_Reps",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "AirtableField",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "Comments",
               "description": null,
               "args": [],
@@ -23592,7 +21861,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "AirtableDataAttachments",
+                  "name": "AirtableManufacturerDataAttachments",
                   "ofType": null
                 }
               },
@@ -23607,7 +21876,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataLogo",
+          "name": "AirtableManufacturerDataLogo",
           "description": null,
           "fields": [
             {
@@ -23676,7 +21945,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataLogoThumbnails",
+                "name": "AirtableManufacturerDataLogoThumbnails",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23690,7 +21959,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataLogoThumbnails",
+          "name": "AirtableManufacturerDataLogoThumbnails",
           "description": null,
           "fields": [
             {
@@ -23699,7 +21968,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataLogoThumbnailsSmall",
+                "name": "AirtableManufacturerDataLogoThumbnailsSmall",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23711,7 +21980,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataLogoThumbnailsLarge",
+                "name": "AirtableManufacturerDataLogoThumbnailsLarge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23723,7 +21992,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataLogoThumbnailsFull",
+                "name": "AirtableManufacturerDataLogoThumbnailsFull",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23737,7 +22006,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataLogoThumbnailsSmall",
+          "name": "AirtableManufacturerDataLogoThumbnailsSmall",
           "description": null,
           "fields": [
             {
@@ -23784,7 +22053,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataLogoThumbnailsLarge",
+          "name": "AirtableManufacturerDataLogoThumbnailsLarge",
           "description": null,
           "fields": [
             {
@@ -23831,7 +22100,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataLogoThumbnailsFull",
+          "name": "AirtableManufacturerDataLogoThumbnailsFull",
           "description": null,
           "fields": [
             {
@@ -23878,7 +22147,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataAttachments",
+          "name": "AirtableManufacturerDataAttachments",
           "description": null,
           "fields": [
             {
@@ -23947,7 +22216,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataAttachmentsThumbnails",
+                "name": "AirtableManufacturerDataAttachmentsThumbnails",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23961,7 +22230,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataAttachmentsThumbnails",
+          "name": "AirtableManufacturerDataAttachmentsThumbnails",
           "description": null,
           "fields": [
             {
@@ -23970,7 +22239,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataAttachmentsThumbnailsSmall",
+                "name": "AirtableManufacturerDataAttachmentsThumbnailsSmall",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23982,7 +22251,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataAttachmentsThumbnailsLarge",
+                "name": "AirtableManufacturerDataAttachmentsThumbnailsLarge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -23994,7 +22263,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtableDataAttachmentsThumbnailsFull",
+                "name": "AirtableManufacturerDataAttachmentsThumbnailsFull",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -24008,7 +22277,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataAttachmentsThumbnailsSmall",
+          "name": "AirtableManufacturerDataAttachmentsThumbnailsSmall",
           "description": null,
           "fields": [
             {
@@ -24055,7 +22324,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataAttachmentsThumbnailsLarge",
+          "name": "AirtableManufacturerDataAttachmentsThumbnailsLarge",
           "description": null,
           "fields": [
             {
@@ -24102,7 +22371,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableDataAttachmentsThumbnailsFull",
+          "name": "AirtableManufacturerDataAttachmentsThumbnailsFull",
           "description": null,
           "fields": [
             {
@@ -24149,7 +22418,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableFilterInput",
+          "name": "AirtableManufacturerFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -24214,11 +22483,21 @@
               "defaultValue": null
             },
             {
+              "name": "queryName",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "data",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtableDataFilterInput",
+                "name": "AirtableManufacturerDataFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -24230,7 +22509,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtableSortInput",
+          "name": "AirtableManufacturerSortInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -24242,7 +22521,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "ENUM",
-                  "name": "AirtableFieldsEnum",
+                  "name": "AirtableManufacturerFieldsEnum",
                   "ofType": null
                 }
               },
@@ -24269,7 +22548,7 @@
         },
         {
           "kind": "ENUM",
-          "name": "AirtableFieldsEnum",
+          "name": "AirtableManufacturerFieldsEnum",
           "description": null,
           "fields": null,
           "inputFields": null,
@@ -24799,6 +23078,18 @@
             },
             {
               "name": "recordId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "queryName",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___Manufacturer",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -24858,6 +23149,12 @@
               "deprecationReason": null
             },
             {
+              "name": "data___Tech_Reps",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "data___Products",
               "description": null,
               "isDeprecated": false,
@@ -24882,19 +23179,13 @@
               "deprecationReason": null
             },
             {
-              "name": "data___REP_info",
+              "name": "data___Rep_s_Tel",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "data___Rep_s_email",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Rep_s_Tel",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -24918,6 +23209,12 @@
               "deprecationReason": null
             },
             {
+              "name": "data___REP_info",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "data___Products_Lookup",
               "description": null,
               "isDeprecated": false,
@@ -24925,174 +23222,6 @@
             },
             {
               "name": "data___DIVISION",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturer___internal___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___parent___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___parent___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___children___id",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___children___children",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___content",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___contentDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___description",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___fieldOwners",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___ignoreType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___mediaType",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___owner",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Tech_Reps___internal___type",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -25144,7 +23273,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableConnection",
+          "name": "AirtableManufacturerConnection",
           "description": null,
           "fields": [
             {
@@ -25178,7 +23307,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "AirtableEdge",
+                      "name": "AirtableManufacturerEdge",
                       "ofType": null
                     }
                   }
@@ -25202,7 +23331,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "Airtable",
+                      "name": "AirtableManufacturer",
                       "ofType": null
                     }
                   }
@@ -25239,7 +23368,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "ENUM",
-                      "name": "AirtableFieldsEnum",
+                      "name": "AirtableManufacturerFieldsEnum",
                       "ofType": null
                     }
                   },
@@ -25298,7 +23427,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "ENUM",
-                      "name": "AirtableFieldsEnum",
+                      "name": "AirtableManufacturerFieldsEnum",
                       "ofType": null
                     }
                   },
@@ -25316,7 +23445,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "AirtableGroupConnection",
+                      "name": "AirtableManufacturerGroupConnection",
                       "ofType": null
                     }
                   }
@@ -25333,7 +23462,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableEdge",
+          "name": "AirtableManufacturerEdge",
           "description": null,
           "fields": [
             {
@@ -25342,7 +23471,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "Airtable",
+                "name": "AirtableManufacturer",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -25357,7 +23486,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "Airtable",
+                  "name": "AirtableManufacturer",
                   "ofType": null
                 }
               },
@@ -25370,7 +23499,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "Airtable",
+                "name": "AirtableManufacturer",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -25384,7 +23513,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtableGroupConnection",
+          "name": "AirtableManufacturerGroupConnection",
           "description": null,
           "fields": [
             {
@@ -25418,7 +23547,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "AirtableEdge",
+                      "name": "AirtableManufacturerEdge",
                       "ofType": null
                     }
                   }
@@ -25442,7 +23571,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "Airtable",
+                      "name": "AirtableManufacturer",
                       "ofType": null
                     }
                   }
@@ -27249,73 +25378,7 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginOptions___plugins___pluginOptions___pathPrefix",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginOptions___plugins___pluginOptions___wrapperStyle",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___backgroundColor",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___linkImagesToOriginal",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___showCaptions",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___markdownCaptions",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___withWebp",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___tracedSVG",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___loading",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___disableBgImage",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___plugins___pluginOptions___ignoreFileExtensions",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -27351,73 +25414,7 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginOptions___pathPrefix",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginOptions___wrapperStyle",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___backgroundColor",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___linkImagesToOriginal",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___showCaptions",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___markdownCaptions",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___withWebp",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___tracedSVG",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___loading",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___disableBgImageOnAlpha",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___disableBgImage",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___ignoreFileExtensions",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -27459,12 +25456,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginOptions___pathToConfigModule",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginOptions___apiKey",
               "description": null,
               "isDeprecated": false,
@@ -27495,19 +25486,19 @@
               "deprecationReason": null
             },
             {
+              "name": "pluginOptions___tables___queryName",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "pluginOptions___tables___tableView",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "pluginOptions___tables___mapping___Manufacturer",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___tables___mapping___Tech_Reps",
+              "name": "pluginOptions___tables___separateNodeType",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -28788,6 +26779,167 @@
               "deprecationReason": null
             }
           ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "airtableManufacturer",
+          "description": null,
+          "fields": [
+            {
+              "name": "Manufacturer",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Date_created",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Date",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Last_update",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Date",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Products",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MASTER_FORMAT_CLASSIFICATION",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "parent",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "INTERFACE",
+                "name": "Node",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "children",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INTERFACE",
+                      "name": "Node",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "internal",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Internal",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "Node",
+              "ofType": null
+            }
+          ],
+          "enumValues": null,
           "possibleTypes": null
         }
       ],

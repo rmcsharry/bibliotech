@@ -89,6 +89,13 @@ const SEO: React.FC<IProps> = ({
           content: googleSearchConsoleTag.content,
         },
       ].concat(meta)}
+      // We add the 800 weight because the bootstrap theme we chose does not include it
+      link={[
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap',
+        },
+      ]}
       // moved to gatsby-browser.js as a local dependency instead of CDN (as it will then live wherever we deploy the site)
       // link={[
       //   {

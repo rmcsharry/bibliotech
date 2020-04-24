@@ -1,11 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { WindowLocation } from '@reach/router'
-import { rhythm, scale } from '../../utils/typography'
 import Header from '../Header'
 import Footer from '../Footer'
 
 import Container from 'react-bootstrap/Container'
+import styled from '@emotion/styled'
+import SEO from '../SEO'
+
+const StyledApp = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
 
 interface IProps {
   location?: WindowLocation
@@ -23,8 +30,6 @@ class Layout extends React.Component<IProps> {
       pageTitle = (
         <h1
           style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
             marginTop: '2rem',
           }}
         >
@@ -44,33 +49,23 @@ class Layout extends React.Component<IProps> {
       pageTitle = (
         <h3
           style={{
-            ...scale(1.2),
-            marginTop: rhythm(1),
-            marginBottom: rhythm(1.25),
+            textAlign: 'center',
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            Welcome
-          </Link>
+          {title}
         </h3>
       )
     }
     return (
-      <div>
+      <StyledApp>
+        <SEO title={title} />
         <Header />
-        <Container>
+        <Container fluid>
           <header>{pageTitle}</header>
           <main>{children}</main>
         </Container>
         <Footer />
-      </div>
+      </StyledApp>
     )
   }
 }

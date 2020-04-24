@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { IPageProps } from '../types/page-props'
+import IPageProps from '../types/page-props'
 
 class NotFoundPage extends React.Component<IQueryProps & IPageProps> {
   render(): JSX.Element {

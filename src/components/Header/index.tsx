@@ -5,29 +5,43 @@ import Image, { FixedObject } from 'gatsby-image'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
-import styled from '@emotion/styled'
-
-const StyledImage = styled.img`
-  width: 120px;
-  height: 60px;
-  margin: 0;
-`
+interface IQuery {
+  logo: {
+    childImageSharp: {
+      fixed: FixedObject | FixedObject[]
+    }
+  }
+}
 
 const Header: React.FC = () => {
+  const data = useStaticQuery<IQuery>(graphql`
+    query LogoQuery {
+      logo: file(absolutePath: { regex: "/JMFLOGO-Site-v3.png/" }) {
+        childImageSharp {
+          fixed(width: 120, height: 60) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Navbar className="navbar-light bg-light" expand="lg">
-      <Navbar.Brand href="#home">
-        {/* could not use Gatsby <Image /> import for some reason it hates PNG's! */}
-        <StyledImage src="logo.png" height="60" width="120" alt="company logo"></StyledImage>
+      <Navbar.Brand href="/">
+        <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav activeKey="/home">
-          <Nav.Link href="#">
-            <span className="nav-bg">SIGN UP</span>
+          <Nav.Link href="/">
+            <span className="nav-bg">Home</span>
           </Nav.Link>
           <Nav.Link href="#">
-            <span className="nav-bg">LOGIN</span>
+            <span className="nav-bg">Sign Up</span>
+          </Nav.Link>
+          <Nav.Link href="#">
+            <span className="nav-bg">Login</span>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

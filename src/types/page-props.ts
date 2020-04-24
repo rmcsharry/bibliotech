@@ -1,5 +1,5 @@
 import { WindowLocation } from '@reach/router'
 
-export interface IPageProps {
+export default interface IPageProps {
   location: WindowLocation
 }

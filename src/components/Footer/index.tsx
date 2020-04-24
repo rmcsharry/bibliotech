@@ -3,12 +3,13 @@ import styled from '@emotion/styled'
 
 const StyledFooter = styled.footer`
   background: black;
-  height: 4rem;
+  min-height: 4rem;
   color: white;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: auto;
 `
 
 const Footer: React.FC = () => {

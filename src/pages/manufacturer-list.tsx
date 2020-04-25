@@ -15,7 +15,7 @@ class ManufacturerList extends React.Component<IPageQuery & IPageProps> {
 
     return (
       <Layout location={this.props.location} title="Manufacturers">
-        <Row className="mx-auto justify-content-center">
+        <Row className="justify-content-center">
           {manufacturers.map(({ node }) => {
             return <ManufacturerCard node={node} key={node.recordId} />
           })}

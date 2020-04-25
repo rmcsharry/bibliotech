@@ -3,15 +3,32 @@ export default interface IEdge {
     recordId: string
     data: {
       Manufacturer: string
-      MASTER_FORMAT_CLASSIFICATION: [string]
+      MASTER_FORMAT_CLASSIFICATION: [IClassification]
       Last_update: Date
-      Rep_s_email: Array<string>
-      Logo: [IThumbnails]
+      Logo: [IThumbnail]
+      Company_Description: string
+      Website: string
+      Tech_Reps: {
+        recordId: string
+        data: {
+          Email: string
+          Technical_Rep_Name: string
+          Phone_no___Cell_: string
+        }
+      }
     }
   }
 }
 
-export interface IThumbnails {
+export interface IClassification {
+  recordId: string
+  data: {
+    Section_Name: string
+    Section_No: string
+  }
+}
+
+export interface IThumbnail {
   thumbnails: {
     full: {
       height: number

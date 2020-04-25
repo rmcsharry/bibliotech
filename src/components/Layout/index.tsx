@@ -50,6 +50,8 @@ class Layout extends React.Component<IProps> {
         <h3
           style={{
             textAlign: 'center',
+            marginTop: '2rem',
+            marginBottom: '3rem',
           }}
         >
           {title}

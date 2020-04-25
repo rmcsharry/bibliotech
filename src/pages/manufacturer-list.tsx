@@ -44,8 +44,6 @@ export const pageQuery = graphql`
           recordId
           data {
             Manufacturer
-            MASTER_FORMAT_CLASSIFICATION
-            Last_update
             Logo {
               thumbnails {
                 full {
@@ -55,7 +53,12 @@ export const pageQuery = graphql`
                 }
               }
             }
-            Rep_s_email
+            MASTER_FORMAT_CLASSIFICATION {
+              data {
+                Section_Name
+                Section_No
+              }
+            }
           }
         }
       }

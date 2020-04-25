@@ -14,7 +14,7 @@ interface IQueryResult {
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const manufacturerList = path.resolve(`./src/templates/manufacturer.tsx`)
+  const manufacturerTemplate = path.resolve(`./src/templates/manufacturer.tsx`)
 
   /**
    * Pass the query structure generic for complete type-check coverage
@@ -52,8 +52,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     const next = index === 0 ? null : manufacturers[index - 1].node
 
     createPage({
-      path: manufacturer.node.recordId,
-      component: manufacturerList,
+      path: `manufacturer/${manufacturer.node.recordId}`,
+      component: manufacturerTemplate,
       context: {
         id: manufacturer.node.recordId,
         previous,

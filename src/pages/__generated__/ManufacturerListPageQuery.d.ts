@@ -29,12 +29,21 @@ export interface ManufacturerListPageQuery_allAirtableManufacturer_edges_node_da
   thumbnails: ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data_Logo_thumbnails | null
 }
 
+export interface ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data_MASTER_FORMAT_CLASSIFICATION_data {
+  Section_Name: string | null
+  Section_No: string | null
+}
+
+export interface ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data_MASTER_FORMAT_CLASSIFICATION {
+  data: ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data_MASTER_FORMAT_CLASSIFICATION_data | null
+}
+
 export interface ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data {
   Manufacturer: string | null
-  MASTER_FORMAT_CLASSIFICATION: (string | null)[] | null
-  Last_update: any | null
   Logo: (ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data_Logo | null)[] | null
-  Rep_s_email: (string | null)[] | null
+  MASTER_FORMAT_CLASSIFICATION:
+    | (ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data_MASTER_FORMAT_CLASSIFICATION | null)[]
+    | null
 }
 
 export interface ManufacturerListPageQuery_allAirtableManufacturer_edges_node {

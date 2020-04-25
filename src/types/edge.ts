@@ -3,6 +3,7 @@ export default interface IEdge {
     recordId: string
     data: {
       Manufacturer: string
+      MASTER_FORMAT_CLASSIFICATION: [string]
       Last_update: Date
       Rep_s_email: Array<string>
       Logo: [IThumbnails]

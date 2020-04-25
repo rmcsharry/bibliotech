@@ -1,0 +1,8 @@
+.title {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0.5rem 0.25rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

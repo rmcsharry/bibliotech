@@ -2,10 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout/'
-import SEO from '../components/SEO/'
 import IPageProps from '../types/page-props'
 import Row from 'react-bootstrap/Row'
-import labels from '../../content/site/labels'
 import { ManufacturerListPageQuery } from './__generated__/ManufacturerListPageQuery'
 import ManufacturerCard from '../components/ManufacturerCard'
 import IEdge from '../types/edge'
@@ -13,7 +11,7 @@ import IEdge from '../types/edge'
 class ManufacturerList extends React.Component<IPageQuery & IPageProps> {
   render(): JSX.Element {
     const { data } = this.props
-    const manufacturers: IEdge[] = data?.allAirtableManufacturer?.edges || []
+    const manufacturers: IEdge[] = (data?.allAirtableManufacturer?.edges as IEdge[]) || []
 
     return (
       <Layout location={this.props.location} title="Manufacturers">
@@ -45,6 +43,8 @@ export const pageQuery = graphql`
         node {
           recordId
           data {
+            Manufacturer
+            MASTER_FORMAT_CLASSIFICATION
             Last_update
             Logo {
               thumbnails {
@@ -55,7 +55,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            Manufacturer
             Rep_s_email
           }
         }

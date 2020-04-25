@@ -27,9 +27,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
             node {
               recordId
               data {
-                Last_update
                 Manufacturer
-                Rep_s_email
               }
             }
           }

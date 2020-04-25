@@ -30,9 +30,10 @@ export interface ManufacturerListPageQuery_allAirtableManufacturer_edges_node_da
 }
 
 export interface ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data {
+  Manufacturer: string | null
+  MASTER_FORMAT_CLASSIFICATION: (string | null)[] | null
   Last_update: any | null
   Logo: (ManufacturerListPageQuery_allAirtableManufacturer_edges_node_data_Logo | null)[] | null
-  Manufacturer: string | null
   Rep_s_email: (string | null)[] | null
 }
 

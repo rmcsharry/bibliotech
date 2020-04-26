@@ -12,37 +12,8 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1280,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
       },
     },
     `gatsby-transformer-sharp`,
@@ -89,11 +60,14 @@ export default {
             // mapping: { Manufacturer: `string`, Tech_Reps: 'Array' },
             tableLinks: [`Tech_Reps`, `MASTER_FORMAT_CLASSIFICATION`],
             separateNodeType: true,
+            defaultValues: {
+              Company_Description: '',
+            },
           },
           {
             baseId: `appP5vBdAitw6yyDH`,
             tableName: `Tech Reps`,
-            // mapping: { 'COLUMN NAME': `VALUE_FORMAT` },
+            mapping: { Phone_no___Cell_: `string` },
             tableLinks: [`Manufacturers`],
           },
           {

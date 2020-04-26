@@ -8,15 +8,17 @@ export default interface IEdge {
       Logo: [IThumbnail]
       Company_Description: string
       Website: string
-      Tech_Reps: {
-        recordId: string
-        data: {
-          Email: string
-          Technical_Rep_Name: string
-          Phone_no___Cell_: string
-        }
-      }
+      Tech_Reps: [ITechRep]
     }
+  }
+}
+
+export interface ITechRep {
+  recordId: string
+  data: {
+    Email: string
+    Technical_Rep_Name: string
+    Cell_Number: string
   }
 }
 

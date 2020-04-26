@@ -13,12 +13,7 @@ const StyledFooter = styled.footer`
 `
 
 const Footer: React.FC = () => {
-  return (
-    <StyledFooter>
-      © {new Date().getFullYear()}, Jm|F Technical Documentation Solutions Inc. 2018; 347 Jane St. Toronto, ON; M6S 3z3
-      Tel: (647) 243-2759.
-    </StyledFooter>
-  )
+  return <StyledFooter>© {new Date().getFullYear()} The MF Data Tool</StyledFooter>
 }
 
 export default Footer

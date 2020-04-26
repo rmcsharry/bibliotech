@@ -44,7 +44,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     throw new Error('ERROR: Could not fetch Airtable Manufacturer data on build')
   }
 
-  // Create blog posts pages.
   const manufacturers = result.data.allAirtableManufacturer.edges
 
   manufacturers.forEach((manufacturer, index) => {

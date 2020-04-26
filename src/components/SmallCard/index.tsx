@@ -1,10 +1,10 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Tooltip from 'react-bootstrap/Tooltip'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import labels from '../../../content/site/labels'
 import IEdge from '../../types/edge'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import Classification from '../Classification'
 import { style } from 'typestyle'
 
@@ -20,6 +20,7 @@ const TitleStyle = style({
 const CardStyle = style({
   width: '18rem',
   placeContent: 'flex-end',
+  cursor: 'pointer',
   $nest: {
     '&:hover': {
       boxShadow: '0 0.5rem 1rem rgba(40, 0, 0, 0.3) !important',
@@ -37,17 +38,23 @@ function renderTooltip(props) {
   )
 }
 
-const ManufacturerCard: React.FC<IEdge> = ({ node }) => {
+const SmallCard: React.FC<IEdge> = ({ node }) => {
   const name = node.data.Manufacturer || labels.notAvailable
   const thumbnail = node.data.Logo ? node.data.Logo[0].thumbnails?.full : null
   const classifications = node.data.MASTER_FORMAT_CLASSIFICATION
-  const recordId = node.recordId
-  const target = useRef(null)
+  const detailPage = `/manufacturer/${node.recordId}`
+
+  const handleCardClick = e => {
+    navigate(detailPage)
+  }
 
   return (
     <>
       <OverlayTrigger placement="top" delay={{ show: 100, hide: 100 }} overlay={renderTooltip({ name })}>
-        <Card className={`${CardStyle} card-small shadow bg-white m-2 m-md-3 m-xl-4`}>
+        <Card
+          onClick={(event: React.MouseEvent<HTMLElement>) => handleCardClick(event)}
+          className={`${CardStyle} card-small shadow bg-white m-2 m-md-3 m-xl-4`}
+        >
           <div style={{ height: '14rem' }} className="mx-auto d-flex align-items-center">
             <Card.Img variant="top" src={thumbnail?.url} className="p-4 mw-100 mh-100" />
           </div>
@@ -56,7 +63,7 @@ const ManufacturerCard: React.FC<IEdge> = ({ node }) => {
             <div className="d-flex flex-grow-1 flex-column mb-4 mt-2 px-1">
               <Classification classifications={classifications} />
             </div>
-            <Link className="btn btn-primary" to={`/manufacturer/${recordId}`}>
+            <Link className="btn btn-primary" to={detailPage}>
               View Details
             </Link>
           </Card.Body>
@@ -66,4 +73,4 @@ const ManufacturerCard: React.FC<IEdge> = ({ node }) => {
   )
 }
 
-export default ManufacturerCard
+export default SmallCard

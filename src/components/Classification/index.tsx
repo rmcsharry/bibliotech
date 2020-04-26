@@ -1,5 +1,6 @@
 import React from 'react'
 import { IClassification } from '../../types/edge'
+import BodySection from '../BodySection'
 
 interface IProps {
   classifications: [IClassification]
@@ -16,10 +17,9 @@ const Classification: React.FC<IProps> = ({ classifications }) => {
   })
 
   return (
-    <>
-      {classifications.length > 1 ? <h6>Classifications:</h6> : <h6>Classification:</h6>}
-      <ul>{list}</ul>
-    </>
+    <BodySection title={classifications.length > 1 ? 'Classifications' : 'Classification'}>
+      <ul style={{ listStyle: 'square' }}>{list}</ul>
+    </BodySection>
   )
 }
 

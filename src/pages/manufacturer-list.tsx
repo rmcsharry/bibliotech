@@ -5,7 +5,7 @@ import Layout from '../components/Layout/'
 import IPageProps from '../types/page-props'
 import Row from 'react-bootstrap/Row'
 import { ManufacturerListPageQuery } from './__generated__/ManufacturerListPageQuery'
-import ManufacturerCard from '../components/ManufacturerCard'
+import ManufacturerCard from '../components/SmallCard'
 import IEdge from '../types/edge'
 
 class ManufacturerList extends React.Component<IPageQuery & IPageProps> {

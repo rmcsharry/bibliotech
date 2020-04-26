@@ -57,7 +57,6 @@ export default {
             tableName: `Manufacturers`,
             queryName: `Manufacturer`,
             tableView: `AppView_Details_DONOTCHANGE`,
-            // mapping: { Manufacturer: `string`, Tech_Reps: 'Array' },
             tableLinks: [`Tech_Reps`, `MASTER_FORMAT_CLASSIFICATION`],
             separateNodeType: true,
             defaultValues: {
@@ -67,13 +66,11 @@ export default {
           {
             baseId: `appP5vBdAitw6yyDH`,
             tableName: `Tech Reps`,
-            mapping: { Phone_no___Cell_: `string` },
             tableLinks: [`Manufacturers`],
           },
           {
             baseId: `appP5vBdAitw6yyDH`,
             tableName: `MANUFACTURER MASTERFORMAT`,
-            // mapping: { 'COLUMN NAME': `VALUE_FORMAT` },
             tableLinks: [`Manufacturers`],
           },
         ],

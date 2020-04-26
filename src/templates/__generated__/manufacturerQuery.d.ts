@@ -33,7 +33,7 @@ export interface manufacturerQuery_node_data_Logo {
 export interface manufacturerQuery_node_data_Tech_Reps_data {
   Email: string | null
   Technical_Rep_Name: string | null
-  Phone_no___Cell_: string | null
+  Cell_Number: string | null
 }
 
 export interface manufacturerQuery_node_data_Tech_Reps {

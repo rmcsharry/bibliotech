@@ -2,7 +2,7 @@ export default {
   siteMetadata: {
     title: `Manufacturer Data Tool`,
     author: {
-      name: `JMF Services Manufacturer Company data`,
+      name: `Bibliotech - data about Manufacturing Companies`,
       summary: `A micro website to provide customers with data on manufacturing companies`,
     },
     description: `Manufacturer company data`,
@@ -24,7 +24,6 @@ export default {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -49,7 +48,7 @@ export default {
     {
       resolve: `gatsby-source-airtable`,
       options: {
-        apiKey: `keyKyHWopjFifJzyo`,
+        apiKey: process.env.AIRTABLE_API_KEY,
         concurrency: 5,
         tables: [
           {

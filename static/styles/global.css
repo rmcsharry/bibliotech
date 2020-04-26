@@ -10,6 +10,18 @@ h5,
 h6 {
   letter-spacing: 1px;
 }
+.tooltip {
+  font-size: 1.2rem;
+}
+.tooltip-inner {
+  /* border-top: 2px solid white; */
+  background: hsla(0, 100%, 50%, 1);
+  box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, 0.55);
+}
+.bs-tooltip-auto[x-placement^='top'] .arrow::before,
+.bs-tooltip-top .arrow::before {
+  border-top-color: hsla(0, 100%, 50%, 1);
+}
 .bg-light {
   border: 0;
   padding: 1rem;

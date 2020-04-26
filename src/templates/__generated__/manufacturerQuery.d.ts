@@ -45,7 +45,8 @@ export interface manufacturerQuery_node_data {
   Manufacturer: string | null
   MASTER_FORMAT_CLASSIFICATION: (manufacturerQuery_node_data_MASTER_FORMAT_CLASSIFICATION | null)[] | null
   Company_Description: string | null
-  Date_created: any | null
+  Website: string | null
+  Last_update: any | null
   Logo: (manufacturerQuery_node_data_Logo | null)[] | null
   Tech_Reps: (manufacturerQuery_node_data_Tech_Reps | null)[] | null
 }

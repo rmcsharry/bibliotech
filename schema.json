@@ -20801,6 +20801,16 @@
               "defaultValue": null
             },
             {
+              "name": "Company_Description",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "Rep_s_Tel",
               "description": "",
               "type": {
@@ -20872,16 +20882,6 @@
             },
             {
               "name": "DIVISION",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "Company_Description",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -22307,6 +22307,18 @@
               "deprecationReason": null
             },
             {
+              "name": "Company_Description",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "Rep_s_Tel",
               "description": null,
               "args": [],
@@ -22504,18 +22516,6 @@
                   "name": "String",
                   "ofType": null
                 }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "Company_Description",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -24667,6 +24667,12 @@
               "deprecationReason": null
             },
             {
+              "name": "data___Company_Description",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "data___Rep_s_Tel",
               "description": null,
               "isDeprecated": false,
@@ -24710,12 +24716,6 @@
             },
             {
               "name": "data___DIVISION",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Company_Description",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -25886,6 +25886,12 @@
               "deprecationReason": null
             },
             {
+              "name": "data___Manufacturers___data___Company_Description",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "data___Manufacturers___data___Rep_s_Tel",
               "description": null,
               "isDeprecated": false,
@@ -25929,12 +25935,6 @@
             },
             {
               "name": "data___Manufacturers___data___DIVISION",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturers___data___Company_Description",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

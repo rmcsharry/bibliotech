@@ -1,14 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout/'
+import Layout from '../components/Layout'
 import IPageProps from '../types/page-props'
 import Row from 'react-bootstrap/Row'
-import { ManufacturerListPageQuery } from './__generated__/ManufacturerListPageQuery'
+import { ManufacturersPageQuery } from './__generated__/ManufacturersPageQuery'
 import ManufacturerCard from '../components/SmallCard'
 import IEdge from '../types/edge'
 
-class ManufacturerList extends React.Component<IPageQuery & IPageProps> {
+class Manufacturers extends React.Component<IPageQuery & IPageProps> {
   render(): JSX.Element {
     const { data } = this.props
     const manufacturers: IEdge[] = (data?.allAirtableManufacturer?.edges as IEdge[]) || []
@@ -25,14 +25,14 @@ class ManufacturerList extends React.Component<IPageQuery & IPageProps> {
   }
 }
 
-export default ManufacturerList
+export default Manufacturers
 
 interface IPageQuery {
-  data: ManufacturerListPageQuery
+  data: ManufacturersPageQuery
 }
 
 export const pageQuery = graphql`
-  query ManufacturerListPageQuery {
+  query ManufacturersPageQuery {
     site {
       siteMetadata {
         title

@@ -16,7 +16,7 @@ class BlogIndex extends React.Component<IPageQuery & IPageProps> {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Home" />
-        <Link to="manufacturer-list">View Manufacturer List</Link>
+        <Link to="manufacturers">View Manufacturer List</Link>
       </Layout>
     )
   }

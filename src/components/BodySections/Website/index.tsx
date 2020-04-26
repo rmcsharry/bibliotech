@@ -6,12 +6,12 @@ interface IProps {
 }
 
 const Website: React.FC<IProps> = ({ address }) => {
-  const url = address.includes('http') ? address : `https://${address}`
+  const url = address ? (address.includes('http') ? address : `https://${address}`) : null
 
   return (
     <BodySection title={'Website'}>
       <a className="pl-4" href={url}>
-        {url}
+        {url ? url : 'TBD'}
       </a>
     </BodySection>
   )

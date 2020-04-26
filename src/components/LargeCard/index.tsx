@@ -39,6 +39,8 @@ const LargeCard: React.FC<IEdge> = ({ node }) => {
             ) : null}
             <Website address={website} />
             <TechReps reps={techReps} />
+            <h6 className="small mb-0 text-right">Last updated</h6>
+            <p className="small mb-0 text-right"> {data.Last_update}</p>
           </Card.Body>
         </Fade>
       </Card>

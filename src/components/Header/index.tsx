@@ -37,10 +37,10 @@ const Header: React.FC = () => {
           <Nav.Link href="/">
             <span className="nav-bg">Home</span>
           </Nav.Link>
-          <Nav.Link href="#">
+          <Nav.Link href="/sign_up">
             <span className="nav-bg">Sign Up</span>
           </Nav.Link>
-          <Nav.Link href="#">
+          <Nav.Link href="/sign_in">
             <span className="nav-bg">Login</span>
           </Nav.Link>
         </Nav>

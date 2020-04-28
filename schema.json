@@ -18079,7 +18079,7 @@
               "defaultValue": null
             },
             {
-              "name": "Rep_s_Tel",
+              "name": "REP_info",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -18090,6 +18090,16 @@
             },
             {
               "name": "Rep_s_email",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "Rep_s_Tel",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -18120,16 +18130,6 @@
             },
             {
               "name": "Tech_Rep_Text",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "REP_info",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -19587,7 +19587,7 @@
               "deprecationReason": null
             },
             {
-              "name": "Rep_s_Tel",
+              "name": "REP_info",
               "description": null,
               "args": [],
               "type": {
@@ -19604,6 +19604,22 @@
             },
             {
               "name": "Rep_s_email",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Rep_s_Tel",
               "description": null,
               "args": [],
               "type": {
@@ -19726,22 +19742,6 @@
             },
             {
               "name": "Tech_Rep_Text",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "REP_info",
               "description": null,
               "args": [],
               "type": {
@@ -21941,13 +21941,19 @@
               "deprecationReason": null
             },
             {
-              "name": "data___Rep_s_Tel",
+              "name": "data___REP_info",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "data___Rep_s_email",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___Rep_s_Tel",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -21966,12 +21972,6 @@
             },
             {
               "name": "data___Tech_Rep_Text",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___REP_info",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -25342,13 +25342,19 @@
               "deprecationReason": null
             },
             {
-              "name": "data___Manufacturers___data___Rep_s_Tel",
+              "name": "data___Manufacturers___data___REP_info",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "data___Manufacturers___data___Rep_s_email",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___Manufacturers___data___Rep_s_Tel",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -25367,12 +25373,6 @@
             },
             {
               "name": "data___Manufacturers___data___Tech_Rep_Text",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Manufacturers___data___REP_info",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

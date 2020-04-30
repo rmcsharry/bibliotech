@@ -79,7 +79,7 @@ export default {
       resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
-          apiKey: process.env.FIREBASE_API_KEY,
+          apiKey: 'AIzaSyBhDh_lShlyF9wA7tgvaWaoskMCvfhTzqs',
           authDomain: process.env.FIREBASE_AUTH_DOMAIN,
           // databaseURL: '<YOUR_FIREBASE_DATABASE_URL>',
           projectId: process.env.FIREBASE_PROJECT_ID,

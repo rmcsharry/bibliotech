@@ -13,6 +13,9 @@ h5,
 h6 {
   letter-spacing: 1px;
 }
+label {
+  font-weight: 600;
+}
 .container-fluid {
   margin-bottom: 1rem;
 }
@@ -22,6 +25,9 @@ h6 {
 .tooltip-inner {
   background: hsla(0, 100%, 50%, 1);
   box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, 0.55);
+}
+.btn {
+  padding: 0.5rem 1.5rem;
 }
 .bs-tooltip-auto[x-placement^='top'] .arrow::before,
 .bs-tooltip-top .arrow::before {

@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SignUpForm from '../components/SignUpForm'
+import Layout from '../components/Layout'
+import SignInWithGoogle from '../components/SignInWithGoogle'
+import { withFirebase } from '../components/FirebaseProvider'
+import WaitSpinner from '../components/WaitSpinner'
 
-const SignUp: React.FC<{}> = ({ children }) => {
-  return <>Sign Up</>
+interface IProps {
+  firebase: any
 }
 
-export default SignUp
+const SignUp: React.FC<IProps> = ({ firebase }) => {
+  const [isShowOverlay, setShowOverlay] = useState(false)
+
+  const handleCallback = value => {
+    setShowOverlay(value)
+  }
+
+  return (
+    <Layout title={'Sign Up Below'}>
+      {isShowOverlay ? <WaitSpinner /> : null}
+      <SignUpForm firebase={firebase} parentCallback={value => handleCallback(value)} />
+      <h5 className="mt-4 mb-4 text-center">OR</h5>
+      <SignInWithGoogle />
+    </Layout>
+  )
+}
+
+export default withFirebase(SignUp)

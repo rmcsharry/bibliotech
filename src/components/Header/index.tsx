@@ -4,6 +4,7 @@ import Image, { FixedObject } from 'gatsby-image'
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import LogOutButton from '../LogOutButton'
 
 interface IQuery {
   logo: {
@@ -13,7 +14,11 @@ interface IQuery {
   }
 }
 
-const Header: React.FC = () => {
+interface IProps {
+  firebase: any
+}
+
+const Header: React.FC<IProps> = ({ firebase }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query LogoQuery {
       logo: file(absolutePath: { regex: "/JMFLOGO-Site-v3.png/" }) {
@@ -43,6 +48,7 @@ const Header: React.FC = () => {
           <Nav.Link href="/sign_in">
             <span className="nav-bg">Login</span>
           </Nav.Link>
+          <LogOutButton />
         </Nav>
       </Navbar.Collapse>
     </Navbar>

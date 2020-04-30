@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import { WindowLocation } from '@reach/router'
 import Header from '../Header'
 import Footer from '../Footer'
@@ -51,8 +51,8 @@ class Layout extends React.Component<IProps> {
         <h3
           style={{
             textAlign: 'center',
-            marginTop: '2rem',
-            marginBottom: '3rem',
+            marginTop: '3rem',
+            marginBottom: '2rem',
           }}
         >
           {title}
@@ -69,7 +69,7 @@ class Layout extends React.Component<IProps> {
             // ...
           }
           // The signed-in user info.
-          if (result.user) navigate
+          // if (result.user) navigate('/manufacturers')
         })
         .catch(function (error) {
           // Handle Errors here.

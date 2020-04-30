@@ -33,7 +33,7 @@ export default {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/JMFLOGO-Site-v3-SQUARE.png`,
+        icon: `content/assets/LegoLogo.jpeg`,
       },
     },
     `gatsby-plugin-react-helmet`,

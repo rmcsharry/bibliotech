@@ -33,39 +33,21 @@ label {
 .bs-tooltip-top .arrow::before {
   border-top-color: hsla(0, 100%, 50%, 1);
 }
-.bg-light {
-  border: 0;
-  padding: 1rem;
+.navbar {
+  padding: 0.75rem 1rem;
 }
-.navbar-light .navbar-nav .nav-link {
+.navbar .navbar-nav .nav-link {
   font-weight: bold;
   border-radius: 3px;
-  color: black;
-  padding: 0.35rem 2rem;
+  padding: 0.35rem 1rem;
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0.25rem;
+  border: 1px solid #1a1a1a;
 }
-.navbar-light .navbar-nav .nav-link:active {
-  color: white;
-  background: black;
-}
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus {
-  background-image: linear-gradient(hsl(0, 0%, 0%) 100%, black 100%);
-  background-size: 0% 20px;
-  background-position: 50% 0;
-  background-repeat: repeat-y;
-  animation: anim 0.4s forwards;
-  color: white;
-}
-@keyframes anim {
-  from {
-    background-size: 0% 20px;
-  }
-  to {
-    background-size: 100% 20px;
-  }
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+  border: 1px solid white;
 }
 
 /*

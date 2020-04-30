@@ -21,7 +21,7 @@ interface IProps {
 const Header: React.FC<IProps> = ({ firebase }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query LogoQuery {
-      logo: file(absolutePath: { regex: "/JMFLOGO-Site-v3.png/" }) {
+      logo: file(absolutePath: { regex: "/LegoLogo.jpeg/" }) {
         childImageSharp {
           fixed(width: 120, height: 60) {
             ...GatsbyImageSharpFixed
@@ -32,7 +32,7 @@ const Header: React.FC<IProps> = ({ firebase }) => {
   `)
 
   return (
-    <Navbar className="navbar-light bg-light" expand="lg">
+    <Navbar className="navbar-dark bg-primary" expand="lg">
       <Navbar.Brand href="/">
         <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
       </Navbar.Brand>

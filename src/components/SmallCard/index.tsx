@@ -58,7 +58,7 @@ const SmallCard: React.FC<IEdge> = ({ node }) => {
           <div style={{ height: '14rem' }} className="mx-auto d-flex align-items-center">
             <Card.Img variant="top" src={thumbnail?.url} className="p-4 mw-100 mh-100" />
           </div>
-          <Card.Body className="d-flex flex-column mt-2 justify-content-end bg-light">
+          <Card.Body className="d-flex flex-column mt-2 justify-content-end">
             <Card.Title className={`${TitleStyle} font-weight-bold`}>{name}</Card.Title>
             <div className="d-flex flex-grow-1 flex-column mb-4 mt-2 px-1">
               <Classification classifications={classifications} />

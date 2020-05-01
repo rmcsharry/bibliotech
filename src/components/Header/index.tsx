@@ -5,6 +5,8 @@ import Image, { FixedObject } from 'gatsby-image'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import LogOutButton from '../LogOutButton'
+import { withAuthentication, withFirebase } from '../FirebaseProvider'
+import IPageProps from '../../types/page-props'
 
 interface IQuery {
   logo: {
@@ -14,11 +16,7 @@ interface IQuery {
   }
 }
 
-interface IProps {
-  firebase: any
-}
-
-const Header: React.FC<IProps> = ({ firebase }) => {
+const Header: React.FC<IPageProps> = ({ authUser }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query LogoQuery {
       logo: file(absolutePath: { regex: "/LegoLogo.jpeg/" }) {
@@ -39,20 +37,27 @@ const Header: React.FC<IProps> = ({ firebase }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav activeKey="/home">
-          <Link to="/">
-            <span className="nav-bg nav-link">Home</span>
-          </Link>
-          <Link to="/sign_up">
-            <span className="nav-bg nav-link">Sign Up</span>
-          </Link>
-          <Link to="/sign_in">
-            <span className="nav-bg nav-link">Login</span>
-          </Link>
-          <LogOutButton />
+          {authUser ? (
+            <React.Fragment>
+              <Link to="/profile">
+                <span className="nav-bg nav-link">Profile</span>
+              </Link>
+              <LogOutButton />
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <Link to="/sign_up">
+                <span className="nav-bg nav-link">Sign Up</span>
+              </Link>
+              <Link to="/sign_in">
+                <span className="nav-bg nav-link">Login</span>
+              </Link>
+            </React.Fragment>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   )
 }
 
-export default Header
+export default withFirebase(withAuthentication(Header))

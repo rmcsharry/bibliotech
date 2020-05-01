@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, navigate } from 'gatsby'
 import { WindowLocation } from '@reach/router'
 import Header from '../Header'
 import Footer from '../Footer'

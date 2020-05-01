@@ -16,7 +16,7 @@ const BreakStyle = style({
 const TechReps: React.FC<IProps> = ({ reps }) => {
   const techReps = reps.map(rep => {
     return (
-      <ul style={{ listStyle: 'square' }}>
+      <ul style={{ listStyle: 'square' }} key={rep.data.Email}>
         <li className="font-weight-bold">{rep.data.Technical_Rep_Name}</li>
         <p className="mb-0 p-0">
           <span className="text-info mr-2">

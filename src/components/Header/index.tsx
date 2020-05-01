@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import Image, { FixedObject } from 'gatsby-image'
 
 import Navbar from 'react-bootstrap/Navbar'
@@ -39,15 +39,15 @@ const Header: React.FC<IProps> = ({ firebase }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav activeKey="/home">
-          <Nav.Link href="/">
-            <span className="nav-bg">Home</span>
-          </Nav.Link>
-          <Nav.Link href="/sign_up">
-            <span className="nav-bg">Sign Up</span>
-          </Nav.Link>
-          <Nav.Link href="/sign_in">
-            <span className="nav-bg">Login</span>
-          </Nav.Link>
+          <Link to="/">
+            <span className="nav-bg nav-link">Home</span>
+          </Link>
+          <Link to="/sign_up">
+            <span className="nav-bg nav-link">Sign Up</span>
+          </Link>
+          <Link to="/sign_in">
+            <span className="nav-bg nav-link">Login</span>
+          </Link>
           <LogOutButton />
         </Nav>
       </Navbar.Collapse>

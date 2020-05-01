@@ -6,6 +6,8 @@ import IPageProps from '../types/page-props'
 import labels from '../../content/site/labels'
 import { LandingPageQuery } from './__generated__/LandingPageQuery'
 import { withAuthentication, withFirebase } from '../components/FirebaseProvider'
+import heroImage from './bookshelf.jpg'
+import ManufacturerList from '../components/ManufacturerList'
 
 class LandingPage extends React.Component<IPageQuery & IPageProps> {
   render(): JSX.Element {
@@ -20,7 +22,8 @@ class LandingPage extends React.Component<IPageQuery & IPageProps> {
         authUser={this.props.authUser}
         firebase={this.props.firebase}
       >
-        <Link to="manufacturers">View Manufacturer List</Link>
+        <img src={heroImage} className="w-100 mb-4 heroImage" />
+        <ManufacturerList isRestrictred={true} />
       </Layout>
     )
   }

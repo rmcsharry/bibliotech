@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row'
 import ManufacturerCard from '../components/SmallCard'
 import IEdge from '../types/edge'
 import { withFirebase, withAuthentication } from '../components/FirebaseProvider'
+import ManufacturerList from '../components/ManufacturerList'
 
 interface IQuery {
   firms: {
@@ -20,45 +21,9 @@ const Manufacturers: React.FC<IPageProps> = ({ authUser }) => {
     return null
   }
 
-  const data = useStaticQuery<IQuery>(graphql`
-    query ManufacturersPageQuery {
-      firms: allAirtableManufacturer {
-        edges {
-          node {
-            recordId
-            data {
-              Manufacturer
-              Logo {
-                thumbnails {
-                  full {
-                    height
-                    url
-                    width
-                  }
-                }
-              }
-              MASTER_FORMAT_CLASSIFICATION {
-                data {
-                  Section_Name
-                  Section_No
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const manufacturers: IEdge[] = (data?.firms.edges as IEdge[]) || []
-
   return (
     <Layout title="Manufacturers">
-      <Row className="justify-content-center">
-        {manufacturers.map(({ node }) => {
-          return <ManufacturerCard node={node} key={node.recordId} />
-        })}
-      </Row>
+      <ManufacturerList isRestrictred={false} />
     </Layout>
   )
 }

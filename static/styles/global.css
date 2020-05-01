@@ -59,12 +59,18 @@ Bootstrap 4 breakpoints
   html {
     font-size: 1rem;
   }
+  .heroImage {
+    max-height: 200px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   html {
     font-size: 1.1rem;
+  }
+  .heroImage {
+    max-height: 300px;
   }
 }
 
@@ -73,11 +79,17 @@ Bootstrap 4 breakpoints
   html {
     font-size: 1.1rem;
   }
+  .heroImage {
+    max-height: 500px;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   html {
     font-size: 1.2rem;
+  }
+  .heroImage {
+    max-height: 700px;
   }
 }

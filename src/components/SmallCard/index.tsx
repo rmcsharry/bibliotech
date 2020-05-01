@@ -1,10 +1,11 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Tooltip from 'react-bootstrap/Tooltip'
+import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import labels from '../../../content/site/labels'
 import IEdge from '../../types/edge'
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import Classification from '../Classification'
 import { style } from 'typestyle'
 
@@ -38,14 +39,20 @@ function renderTooltip(props) {
   )
 }
 
-const SmallCard: React.FC<IEdge> = ({ node }) => {
+interface IProps {
+  isRestrictred: boolean
+}
+
+const SmallCard: React.FC<IEdge & IProps> = ({ node, isRestrictred }) => {
   const name = node.data.Manufacturer || labels.notAvailable
   const thumbnail = node.data.Logo ? node.data.Logo[0].thumbnails?.full : null
   const classifications = node.data.MASTER_FORMAT_CLASSIFICATION
   const detailPage = `/manufacturer/${node.recordId}`
 
   const handleCardClick = e => {
-    navigate(detailPage)
+    e.stopPropagation()
+    if (isRestrictred) alert('Please sign up to view detailed data')
+    else navigate(detailPage)
   }
 
   return (
@@ -63,9 +70,12 @@ const SmallCard: React.FC<IEdge> = ({ node }) => {
             <div className="d-flex flex-grow-1 flex-column mb-4 mt-2 px-1">
               <Classification classifications={classifications} />
             </div>
-            <Link className="btn btn-primary" to={detailPage}>
+            <Button
+              className="btn btn-primary"
+              onClick={(event: React.MouseEvent<HTMLElement>) => handleCardClick(event)}
+            >
               View Details
-            </Link>
+            </Button>
           </Card.Body>
         </Card>
       </OverlayTrigger>

@@ -4,5 +4,5 @@ import 'firebase/auth'
 import 'firebase/firestore'
 
 import React from 'react'
-import GlobalContextProvider from './src/components/FirebaseProvider'
+import GlobalContextProvider from './src/Contexts/GlobalContextProvider'
 export const wrapRootElement = ({ element }) => <GlobalContextProvider>{element}</GlobalContextProvider>

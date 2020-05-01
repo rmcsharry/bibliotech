@@ -1,10 +1,6 @@
 import React from 'react'
-import { withFirebase } from '../components/FirebaseProvider'
+import { withFirebase } from '../Contexts/Firebase'
 import { navigate } from 'gatsby'
-import Spinner from 'react-bootstrap/Spinner'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
 import WaitSpinner from '../components/WaitSpinner'
 
 interface IProps {

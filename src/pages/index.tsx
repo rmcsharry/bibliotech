@@ -5,9 +5,10 @@ import Layout from '../components/Layout/'
 import IPageProps from '../types/page-props'
 import labels from '../../content/site/labels'
 import { LandingPageQuery } from './__generated__/LandingPageQuery'
-import { withAuthentication, withFirebase } from '../components/FirebaseProvider'
+import { withAuthentication, withFirebase } from '../Contexts/Firebase'
 import heroImage from './bookshelf.jpg'
 import ManufacturerList from '../components/ManufacturerList'
+import RestrictedModal from '../components/RestrictedModal'
 
 class LandingPage extends React.Component<IPageQuery & IPageProps> {
   render(): JSX.Element {
@@ -22,8 +23,9 @@ class LandingPage extends React.Component<IPageQuery & IPageProps> {
         authUser={this.props.authUser}
         firebase={this.props.firebase}
       >
+        <RestrictedModal />
         <img src={heroImage} className="w-100 mb-4 heroImage" />
-        <ManufacturerList isRestrictred={true} />
+        <ManufacturerList isRestricted={true} />
       </Layout>
     )
   }

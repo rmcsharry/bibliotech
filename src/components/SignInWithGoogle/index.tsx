@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import GoogleLogo from './google-logo.png'
-import { withFirebase } from '../FirebaseProvider'
+import { withFirebase } from '../../Contexts/Firebase'
 import { style } from 'typestyle'
 import { navigate } from 'gatsby'
 

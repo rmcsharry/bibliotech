@@ -1,7 +1,6 @@
 import React from 'react'
-import { graphql, useStaticQuery, navigate } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
-import IPageProps from '../../types/page-props'
 import Row from 'react-bootstrap/Row'
 import ManufacturerCard from '../SmallCard'
 import IEdge from '../../types/edge'
@@ -13,10 +12,10 @@ interface IQuery {
 }
 
 interface IProps {
-  isRestrictred: boolean
+  isRestricted: boolean
 }
 
-const ManufacturerList: React.FC<IProps> = ({ isRestrictred }) => {
+const ManufacturerList: React.FC<IProps> = ({ isRestricted }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query ManufacturersPageQuery {
       firms: allAirtableManufacturer {
@@ -52,7 +51,7 @@ const ManufacturerList: React.FC<IProps> = ({ isRestrictred }) => {
   return (
     <Row className="justify-content-center">
       {manufacturers.map(({ node }) => {
-        return <ManufacturerCard node={node} key={node.recordId} isRestrictred={isRestrictred} />
+        return <ManufacturerCard node={node} key={node.recordId} isRestricted={isRestricted} />
       })}
     </Row>
   )

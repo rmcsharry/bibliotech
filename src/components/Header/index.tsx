@@ -5,7 +5,7 @@ import Image, { FixedObject } from 'gatsby-image'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import LogOutButton from '../LogOutButton'
-import { withAuthentication, withFirebase } from '../FirebaseProvider'
+import { withAuthentication, withFirebase } from '../../Contexts/Firebase'
 import IPageProps from '../../types/page-props'
 
 interface IQuery {

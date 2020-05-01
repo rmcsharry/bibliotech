@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SignUpForm from '../components/SignUpForm'
 import Layout from '../components/Layout'
 import SignInWithGoogle from '../components/SignInWithGoogle'
-import { withFirebase } from '../components/FirebaseProvider'
+import { withFirebase } from '../Contexts/Firebase'
 import WaitSpinner from '../components/WaitSpinner'
 
 interface IProps {

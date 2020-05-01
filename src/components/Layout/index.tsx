@@ -6,7 +6,7 @@ import Footer from '../Footer'
 import Container from 'react-bootstrap/Container'
 import styled from '@emotion/styled'
 import SEO from '../SEO'
-import { withFirebase, withAuthentication } from '../FirebaseProvider'
+import { withFirebase, withAuthentication } from '../../Contexts/Firebase'
 
 const StyledApp = styled.div`
   height: 100vh;

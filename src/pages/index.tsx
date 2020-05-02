@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql, navigate } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout/'
 import IPageProps from '../types/page-props'
@@ -9,24 +9,36 @@ import { withAuthentication, withFirebase } from '../Contexts/Firebase'
 import heroImage from './bookshelf.jpg'
 import ManufacturerList from '../components/ManufacturerList'
 import RestrictedModal from '../components/RestrictedModal'
+import { ModalContext } from '../Contexts/ModalContext'
 
-class LandingPage extends React.Component<IPageQuery & IPageProps> {
+interface IProps extends IPageProps {
+  listRef: any
+}
+
+class LandingPage extends React.Component<IPageQuery & IProps> {
+  constructor(props) {
+    super(props)
+  }
+
   render(): JSX.Element {
     const { data } = this.props
-
     const siteTitle: string = data?.site?.siteMetadata?.title || labels.notAvailable
 
     return (
-      <Layout
-        location={this.props.location}
-        title={siteTitle}
-        authUser={this.props.authUser}
-        firebase={this.props.firebase}
-      >
-        <RestrictedModal />
-        <img src={heroImage} className="w-100 mb-4 heroImage" />
-        <ManufacturerList isRestricted={true} />
-      </Layout>
+      <div>
+        <Layout
+          location={this.props.location}
+          title={siteTitle}
+          authUser={this.props.authUser}
+          firebase={this.props.firebase}
+        >
+          <ModalContext.Consumer>
+            {({ isModalOpen, toggleModal }) => <RestrictedModal isShowModal={isModalOpen} toggle={toggleModal} />}
+          </ModalContext.Consumer>
+          <img src={heroImage} className="w-100 mb-4 heroImage" />
+          <ManufacturerList isRestricted={true} />
+        </Layout>
+      </div>
     )
   }
 }

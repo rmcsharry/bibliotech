@@ -1,41 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { ModalContext } from '../../Contexts/ModalContext'
 
 interface IProps {
   isShowModal: boolean
+  toggle: (e?: any) => {}
 }
 
-const RestrictedModal: React.FC = () => {
-  const [isShow, setShow] = useState(false)
-
-  const handleClose = toggle => {
-    toggle()
-  }
-
+const RestrictedModal: React.FC<IProps> = ({ isShowModal, toggle }) => {
   return (
-    <ModalContext.Consumer>
-      {({ isModalOpen, toggleModal }) => (
-        <>
-          {setShow(isModalOpen)}
-          <Modal show={isShow} onHide={() => handleClose(toggleModal)}>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={() => handleClose(toggleModal)}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={() => handleClose(toggleModal)}>
-                Save Changes
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        </>
-      )}
-    </ModalContext.Consumer>
+    <Modal show={isShowModal} onHide={toggle} centered>
+      <Modal.Header closeButton>
+        <Modal.Title>Modal heading</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={e => toggle(e)}>
+          Close
+        </Button>
+        <Button variant="primary" onClick={e => toggle(e)}>
+          Save Changes
+        </Button>
+      </Modal.Footer>
+    </Modal>
   )
 }
 

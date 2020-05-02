@@ -4,6 +4,7 @@ html {
 }
 body {
   letter-spacing: 0;
+  overflow: unset !important;
 }
 h1,
 h2,

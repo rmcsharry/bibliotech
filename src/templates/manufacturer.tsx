@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { CaretLeftFill } from 'react-bootstrap-icons/'
+import Container from 'react-bootstrap/Container'
 
 interface IPageQuery {
   data: IEdge
@@ -29,20 +30,22 @@ class ManufacturerTemplate extends React.Component<IPageQuery & IPageProps> {
 
     return (
       <Layout location={this.props.location} title={this.props.data.node.data.Manufacturer}>
-        <Row style={{ marginTop: '50px' }}>
-          <Col>
-            <Button className="ml-4" onClick={() => this.go('/manufacturers')}>
-              <CaretLeftFill style={{ marginTop: '-2px', marginRight: '2px' }} />
-              BACK
-            </Button>
-          </Col>
-        </Row>
-        <Row className="justify-content-center">
-          <PageTitle title="Manufacturer Details" />
-        </Row>
-        <div className="d-flex mt-4 justify-content-center">
-          <LargeCard node={this.props.data.node} />
-        </div>
+        <Container fluid>
+          <Row style={{ marginTop: '50px' }}>
+            <Col>
+              <Button className="ml-4" onClick={() => this.go('/manufacturers')}>
+                <CaretLeftFill style={{ marginTop: '-2px', marginRight: '2px' }} />
+                BACK
+              </Button>
+            </Col>
+          </Row>
+          <Row className="justify-content-center">
+            <PageTitle title="Manufacturer Details" />
+          </Row>
+          <div className="d-flex mt-4 justify-content-center">
+            <LargeCard node={this.props.data.node} />
+          </div>
+        </Container>
       </Layout>
     )
   }

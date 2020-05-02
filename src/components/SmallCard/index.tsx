@@ -8,7 +8,7 @@ import IEdge from '../../types/edge'
 import { navigate } from 'gatsby'
 import Classification from '../Classification'
 import { style } from 'typestyle'
-import ModalContextProvider, { ModalContext } from '../../Contexts/ModalContext'
+import SmallCardRestricted from './Restricted'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
@@ -45,46 +45,48 @@ interface IProps {
 }
 
 const SmallCard: React.FC<IEdge & IProps> = ({ node, isRestricted }) => {
+  const [isShowReverse, setShowReverse] = useState(false)
   const name = node.data.Manufacturer || labels.notAvailable
   const thumbnail = node.data.Logo ? node.data.Logo[0].thumbnails?.full : null
   const classifications = node.data.MASTER_FORMAT_CLASSIFICATION
   const detailPage = `/manufacturer/${node.recordId}`
 
-  const handleCardClick = (e, toggle) => {
+  const handleCardClick = e => {
     e.stopPropagation()
     if (isRestricted) {
-      toggle()
+      setShowReverse(true)
     } else navigate(detailPage)
+  }
+
+  const handleDismissClick = () => {
+    setShowReverse(false)
   }
 
   return (
     <>
-      <ModalContext.Consumer>
-        {({ toggleModal }) => (
-          <OverlayTrigger placement="top" delay={{ show: 100, hide: 100 }} overlay={renderTooltip({ name })}>
-            <Card
-              onClick={(event: React.MouseEvent<HTMLElement>) => handleCardClick(event, toggleModal)}
-              className={`${CardStyle} card-small shadow bg-white m-2 m-md-3 m-xl-4`}
+      <OverlayTrigger placement="top" delay={{ show: 100, hide: 100 }} overlay={renderTooltip({ name })}>
+        <Card
+          onClick={(event: React.MouseEvent<HTMLElement>) => handleCardClick(event)}
+          className={`${CardStyle} card-small shadow bg-white m-2 m-md-3 m-xl-4`}
+        >
+          <div style={{ height: '14rem' }} className="mx-auto d-flex align-items-center">
+            <Card.Img variant="top" src={thumbnail?.url} className="p-4 mw-100 mh-100" />
+          </div>
+          <Card.Body className="d-flex flex-column mt-2 justify-content-end">
+            <Card.Title className={`${TitleStyle} font-weight-bold`}>{name}</Card.Title>
+            <div className="d-flex flex-grow-1 flex-column mb-4 mt-2 px-1">
+              <Classification classifications={classifications} />
+            </div>
+            <Button
+              className="btn btn-primary"
+              onClick={(event: React.MouseEvent<HTMLElement>) => handleCardClick(event)}
             >
-              <div style={{ height: '14rem' }} className="mx-auto d-flex align-items-center">
-                <Card.Img variant="top" src={thumbnail?.url} className="p-4 mw-100 mh-100" />
-              </div>
-              <Card.Body className="d-flex flex-column mt-2 justify-content-end">
-                <Card.Title className={`${TitleStyle} font-weight-bold`}>{name}</Card.Title>
-                <div className="d-flex flex-grow-1 flex-column mb-4 mt-2 px-1">
-                  <Classification classifications={classifications} />
-                </div>
-                <Button
-                  className="btn btn-primary"
-                  onClick={(event: React.MouseEvent<HTMLElement>) => handleCardClick(event, toggleModal)}
-                >
-                  View Details
-                </Button>
-              </Card.Body>
-            </Card>
-          </OverlayTrigger>
-        )}
-      </ModalContext.Consumer>
+              View Details
+            </Button>
+          </Card.Body>
+          {isShowReverse ? <SmallCardRestricted dismissCallback={() => handleDismissClick()} /> : null}
+        </Card>
+      </OverlayTrigger>
     </>
   )
 }

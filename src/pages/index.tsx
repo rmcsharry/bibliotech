@@ -32,9 +32,6 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
           authUser={this.props.authUser}
           firebase={this.props.firebase}
         >
-          <ModalContext.Consumer>
-            {({ isModalOpen, toggleModal }) => <RestrictedModal isShowModal={isModalOpen} toggle={toggleModal} />}
-          </ModalContext.Consumer>
           <img src={heroImage} className="w-100 mb-4 heroImage" />
           <ManufacturerList isRestricted={true} />
         </Layout>

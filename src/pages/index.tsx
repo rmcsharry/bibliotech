@@ -9,6 +9,29 @@ import { withAuthentication, withFirebase } from '../Contexts/Firebase'
 import Img from 'gatsby-image'
 import ManufacturerList from '../components/ManufacturerList'
 import PageTitle from '../components/PageTitle'
+import styled from '@emotion/styled'
+import BgImage from '../components/BgImage'
+
+const StyledTitle = styled.h2`
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  color: white;
+  text-transform: capitalize;
+`
+const StyledSubTitle = styled.h5`
+  position: absolute;
+  top: 54%;
+  left: 10%;
+  color: white;
+  text-transform: capitalize;
+`
+
+const StyledOverlay = styled.div`
+  position: absolute;
+  background: black;
+  opacity: 0.5;
+`
 
 interface IProps extends IPageProps {
   listRef: any
@@ -40,7 +63,20 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
           authUser={this.props.authUser}
           firebase={this.props.firebase}
         >
-          {heroImage ? <Img alt={`Hero image`} fluid={heroImage.fluid} /> : ''}
+          {/* {heroImage ? <Img alt={`Hero image`} fluid={heroImage.fluid} style={{ opacity: '0.5' }} /> : ''}
+
+          <StyledOverlay /> */}
+
+          <BgImage
+            fluid={heroImage.fluid}
+            title={'Welcome to Bibliotech'}
+            height={'800px'}
+            mobileHeight={'400px'}
+            overlayColor={'hsla(0, 0%, 0%, 0.5)'}
+          >
+            <StyledTitle>Welcome to Bibliotech</StyledTitle>
+            <StyledSubTitle>Your digital architectural library</StyledSubTitle>
+          </BgImage>
           <PageTitle title="Manufacturers" />
           <ManufacturerList isRestricted={authUser ? false : true} />
         </Layout>

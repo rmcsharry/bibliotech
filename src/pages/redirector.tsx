@@ -9,7 +9,7 @@ interface IProps {
 
 const Redirector: React.FC<IProps> = ({ firebase }) => {
   firebase
-    .auth()
+    ?.auth()
     .getRedirectResult()
     .then(function (result) {
       if (result.credential) {

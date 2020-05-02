@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Row from 'react-bootstrap/Row'
 import ManufacturerCard from '../SmallCard'
 import IEdge from '../../types/edge'
+import Container from 'react-bootstrap/Container'
 
 interface IQuery {
   firms: {
@@ -49,11 +50,13 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted }) => {
   const manufacturers: IEdge[] = (data?.firms.edges as IEdge[]) || []
 
   return (
-    <Row className="justify-content-center mt-4">
-      {manufacturers.map(({ node }) => {
-        return <ManufacturerCard node={node} key={node.recordId} isRestricted={isRestricted} />
-      })}
-    </Row>
+    <Container fluid>
+      <Row className="justify-content-center mt-4">
+        {manufacturers.map(({ node }) => {
+          return <ManufacturerCard node={node} key={node.recordId} isRestricted={isRestricted} />
+        })}
+      </Row>
+    </Container>
   )
 }
 

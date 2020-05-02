@@ -17,9 +17,13 @@ interface IPageQuery {
 }
 
 class ManufacturerTemplate extends React.Component<IPageQuery & IPageProps> {
+  go = destination => {
+    if (typeof window !== 'undefined') navigate(destination)
+  }
+
   render(): JSX.Element {
     if (!this.props.authUser) {
-      navigate('/')
+      if (typeof window !== 'undefined') navigate('/')
       return null
     }
 
@@ -27,7 +31,7 @@ class ManufacturerTemplate extends React.Component<IPageQuery & IPageProps> {
       <Layout location={this.props.location} title={this.props.data.node.data.Manufacturer}>
         <Row style={{ marginTop: '50px' }}>
           <Col>
-            <Button className="ml-4" onClick={() => navigate('/manufacturers')}>
+            <Button className="ml-4" onClick={() => this.go('/manufacturers')}>
               <CaretLeftFill style={{ marginTop: '-2px', marginRight: '2px' }} />
               BACK
             </Button>

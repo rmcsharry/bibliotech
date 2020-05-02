@@ -2,8 +2,6 @@ import React from 'react'
 import { WindowLocation } from '@reach/router'
 import Header from '../Header'
 import Footer from '../Footer'
-
-import Container from 'react-bootstrap/Container'
 import styled from '@emotion/styled'
 import SEO from '../SEO'
 import { withFirebase, withAuthentication } from '../../Contexts/Firebase'
@@ -27,9 +25,7 @@ const Layout: React.FC<IProps> = ({ authUser, firebase, title, location, childre
     <StyledApp>
       <SEO title={title} />
       <Header firebase={firebase} />
-      <Container fluid className="pl-0 pr-0">
-        <main>{children}</main>
-      </Container>
+      <main style={{ marginTop: '80px' }}>{children}</main>
       <Footer />
     </StyledApp>
   )

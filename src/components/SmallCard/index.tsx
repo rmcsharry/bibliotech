@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import labels from '../../../content/site/labels'
+import labels from '../../content/site/labels'
 import IEdge from '../../types/edge'
 import { navigate } from 'gatsby'
 import Classification from '../Classification'
@@ -34,7 +34,7 @@ const CardStyle = style({
 
 function renderTooltip(props) {
   return (
-    <Tooltip id={`tooltip-${props.name}`} {...props}>
+    <Tooltip id={`tooltip-${props.name}`} {...props} style={{ zIndex: '1' }}>
       {props.name}
     </Tooltip>
   )

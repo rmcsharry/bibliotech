@@ -49,7 +49,7 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted }) => {
   const manufacturers: IEdge[] = (data?.firms.edges as IEdge[]) || []
 
   return (
-    <Row className="justify-content-center">
+    <Row className="justify-content-center mt-4">
       {manufacturers.map(({ node }) => {
         return <ManufacturerCard node={node} key={node.recordId} isRestricted={isRestricted} />
       })}

@@ -54,7 +54,7 @@ const SmallCardRestricted: React.FC<IProps> = ({ dismissCallback }) => {
           <Card.Title className={`${RestrictedTitleStyle} font-weight-bold text-center text-danger`}>
             RESTRICTED
           </Card.Title>
-          <div className="d-flex flex-grow-1 flex-column mb-4 mt-2 px-1 text-center">
+          <div className="d-flex flex-grow-1 flex-column mb-4 mt-4 px-1 text-center">
             <h6 className="text-white">
               Please sign up
               <br />

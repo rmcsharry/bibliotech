@@ -1,18 +1,21 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery, navigate } from 'gatsby'
 
 import Layout from '../components/Layout/'
 import IPageProps from '../types/page-props'
-import labels from '../../content/site/labels'
+import labels from '../content/site/labels'
 import { LandingPageQuery } from './__generated__/LandingPageQuery'
 import { withAuthentication, withFirebase } from '../Contexts/Firebase'
-import heroImage from './bookshelf.jpg'
+import Img from 'gatsby-image'
 import ManufacturerList from '../components/ManufacturerList'
-import RestrictedModal from '../components/RestrictedModal'
-import { ModalContext } from '../Contexts/ModalContext'
+import PageTitle from '../components/PageTitle'
 
 interface IProps extends IPageProps {
   listRef: any
+}
+
+interface IPageQuery {
+  data: LandingPageQuery
 }
 
 class LandingPage extends React.Component<IPageQuery & IProps> {
@@ -21,8 +24,13 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
   }
 
   render(): JSX.Element {
-    const { data } = this.props
+    const { data, authUser } = this.props
+    if (authUser) {
+      navigate('/manufacturers')
+      return null
+    }
     const siteTitle: string = data?.site?.siteMetadata?.title || labels.notAvailable
+    const heroImage = data?.hero?.childImageSharp
 
     return (
       <div>
@@ -32,8 +40,9 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
           authUser={this.props.authUser}
           firebase={this.props.firebase}
         >
-          <img src={heroImage} className="w-100 mb-4 heroImage" />
-          <ManufacturerList isRestricted={true} />
+          {heroImage ? <Img alt={`Hero image`} fluid={heroImage.fluid} /> : ''}
+          <PageTitle title="Manufacturers" />
+          <ManufacturerList isRestricted={authUser ? false : true} />
         </Layout>
       </div>
     )
@@ -42,15 +51,18 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
 
 export default withFirebase(withAuthentication(LandingPage))
 
-interface IPageQuery {
-  data: LandingPageQuery
-}
-
 export const pageQuery = graphql`
   query LandingPageQuery {
     site {
       siteMetadata {
         title
+      }
+    }
+    hero: file(relativePath: { eq: "bookshelf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1180) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
       }
     }
   }

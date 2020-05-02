@@ -17,6 +17,7 @@ interface IQuery {
 }
 
 const Header: React.FC<IPageProps> = ({ authUser }) => {
+  console.log('HEADER USER', authUser)
   const data = useStaticQuery<IQuery>(graphql`
     query LogoQuery {
       logo: file(absolutePath: { regex: "/LegoLogo.jpeg/" }) {
@@ -30,7 +31,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
   `)
 
   return (
-    <Navbar className="navbar-dark bg-primary" expand="lg">
+    <Navbar className="navbar-dark bg-primary" expand="lg" fixed="top">
       <Navbar.Brand href="/">
         <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
       </Navbar.Brand>

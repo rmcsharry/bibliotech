@@ -23,24 +23,11 @@ interface IProps {
 }
 
 const Layout: React.FC<IProps> = ({ authUser, firebase, title, location, children }) => {
-  let pageTitle = (
-    <h3
-      style={{
-        textAlign: 'center',
-        marginTop: '3rem',
-        marginBottom: '2rem',
-      }}
-    >
-      {title}
-    </h3>
-  )
-
   return (
     <StyledApp>
       <SEO title={title} />
       <Header firebase={firebase} />
-      <Container fluid>
-        <header>{pageTitle}</header>
+      <Container fluid className="pl-0 pr-0">
         <main>{children}</main>
       </Container>
       <Footer />

@@ -12,7 +12,7 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/src/content/assets`,
         name: `assets`,
       },
     },
@@ -33,7 +33,7 @@ export default {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/LegoLogo.jpeg`,
+        icon: `src/content/assets/LegoLogo.jpeg`,
       },
     },
     `gatsby-plugin-react-helmet`,

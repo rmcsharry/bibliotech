@@ -1,8 +1,8 @@
 export const config = {
-  siteTitle: `Jm|F Technical Documentation Solutions Inc. – Machine Accuracy. Human Touch.`,
+  siteTitle: `Bibliotech - Digital architectural libray`,
   siteDescription: `Manufacturers contact list`,
-  author: `JMF Services`,
-  authorDescription: `Specialists in technical construction documentation. Machine Accuracy. Human Touch.`,
+  author: `Bibliotech`,
+  authorDescription: `Specliasts in architecture and construction`,
   email: ``,
   siteUrl: `https://www.jmfservices.net`, // no trailing slash
   siteLanguage: 'en',

@@ -1,7 +1,8 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 const SignIn: React.FC<{}> = ({ children }) => {
-  return <>Sign In</>
+  return <Layout>Sign In</Layout>
 }
 
 export default SignIn

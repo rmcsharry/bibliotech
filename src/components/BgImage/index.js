@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 
+//REF: https://markoskon.com/gatsby-background-image-example/
 const Parent = styled.div`
   position: relative;
   background-color: ${props => props.bc};

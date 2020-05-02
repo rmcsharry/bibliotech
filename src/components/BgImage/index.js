@@ -40,15 +40,15 @@ const BgImage = ({ fluid, title, height, mobileHeight, overlayColor, children, c
     <Content className={className}>{children}</Content>
   </Parent>
 )
-// BgImage.propTypes = {
-//   fluid: PropTypes.object.isRequired,
-//   title: PropTypes.string.isRequired,
-//   height: PropTypes.string,
-//   mobileHeight: PropTypes.string,
-//   overlayColor: PropTypes.string,
-//   children: PropTypes.node,
-//   className: PropTypes.string,
-// }
+BgImage.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  height: PropTypes.string,
+  mobileHeight: PropTypes.string,
+  overlayColor: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
+}
 BgImage.defaultProps = {
   height: null,
   mobileHeight: null,

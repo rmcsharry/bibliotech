@@ -25,12 +25,7 @@ const StyledSubTitle = styled.h5`
   left: 10%;
   color: white;
   text-transform: capitalize;
-`
-
-const StyledOverlay = styled.div`
-  position: absolute;
-  background: black;
-  opacity: 0.5;
+  font-weight: 400;
 `
 
 interface IProps extends IPageProps {
@@ -63,10 +58,6 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
           authUser={this.props.authUser}
           firebase={this.props.firebase}
         >
-          {/* {heroImage ? <Img alt={`Hero image`} fluid={heroImage.fluid} style={{ opacity: '0.5' }} /> : ''}
-
-          <StyledOverlay /> */}
-
           <BgImage
             fluid={heroImage.fluid}
             title={'Welcome to Bibliotech'}

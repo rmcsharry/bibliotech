@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SignInForm from '../components/SignInForm'
+import SignInForm from '../components/Forms/SignIn'
 import Layout from '../components/Layout'
 import SignInWithGoogle from '../components/SignInWithGoogle'
 import { withFirebase } from '../Contexts/Firebase'

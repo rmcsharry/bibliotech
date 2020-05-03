@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SignUpForm from '../components/SignUpForm'
+import SignUpForm from '../components/Forms/SignUp'
 import Layout from '../components/Layout'
 import SignInWithGoogle from '../components/SignInWithGoogle'
 import { withFirebase } from '../Contexts/Firebase'

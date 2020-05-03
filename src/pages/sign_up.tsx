@@ -18,7 +18,7 @@ const SignUp: React.FC<IProps> = ({ firebase }) => {
   }
 
   return (
-    <Layout title={'Sign Up Below'}>
+    <Layout title={'SignUp'}>
       {isShowOverlay ? <WaitSpinner /> : null}
       <PageTitle title={'Sign Up Below'} />
       <SignUpForm firebase={firebase} parentCallback={value => handleCallback(value)} />

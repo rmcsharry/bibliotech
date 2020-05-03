@@ -20,9 +20,9 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
   console.log('HEADER USER', authUser)
   const data = useStaticQuery<IQuery>(graphql`
     query LogoQuery {
-      logo: file(absolutePath: { regex: "/LegoLogo.jpeg/" }) {
+      logo: file(absolutePath: { regex: "/BibliotechLogo.png/" }) {
         childImageSharp {
-          fixed(width: 120, height: 60) {
+          fixed(width: 200, height: 60) {
             ...GatsbyImageSharpFixed
           }
         }

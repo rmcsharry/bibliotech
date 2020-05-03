@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FirebaseContext, AuthUserContext } from '../Firebase'
 import Firebase from 'gatsby-plugin-firebase'
-import ModalContextProvider from '../ModalContext'
 
 const FirebaseProvider: React.FC<{}> = ({ children }) => {
   return <FirebaseContext.Provider value={Firebase}>{children}</FirebaseContext.Provider>
@@ -21,9 +20,7 @@ const GlobalContextProvider = ({ children }) => {
 
   return (
     <FirebaseProvider>
-      <AuthUserContext.Provider value={authUser}>
-        <ModalContextProvider>{children}</ModalContextProvider>
-      </AuthUserContext.Provider>
+      <AuthUserContext.Provider value={authUser}>{children}</AuthUserContext.Provider>
     </FirebaseProvider>
   )
 }

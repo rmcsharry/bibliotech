@@ -1,12 +1,11 @@
 import React from 'react'
-import { graphql, useStaticQuery, navigate } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 
 import Layout from '../components/Layout/'
 import IPageProps from '../types/page-props'
 import labels from '../content/site/labels'
 import { LandingPageQuery } from './__generated__/LandingPageQuery'
 import { withAuthentication, withFirebase } from '../Contexts/Firebase'
-import Img from 'gatsby-image'
 import ManufacturerList from '../components/ManufacturerList'
 import PageTitle from '../components/PageTitle'
 import styled from '@emotion/styled'

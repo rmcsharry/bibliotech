@@ -1,11 +1,11 @@
 export default {
   siteMetadata: {
-    title: `Manufacturer Data Tool`,
+    title: `Bibliotech`,
     author: {
-      name: `Bibliotech - data about Manufacturing Companies`,
+      name: `Bibliotech`,
       summary: `A micro website to provide customers with data on manufacturing companies`,
     },
-    description: `Manufacturer company data`,
+    description: `Digital architectural library on manufacturing company data`,
     siteUrl: `https://github.com/rmcsharry/jmf-services-gatsby`,
   },
   plugins: [
@@ -33,7 +33,7 @@ export default {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/content/assets/LegoLogo.jpeg`,
+        icon: `src/content/assets/BibliotechLogoIcon.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,

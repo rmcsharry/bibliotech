@@ -1,5 +1,5 @@
 import React from 'react'
-import { withFirebase } from '../Contexts/Firebase'
+import { withFirebase } from '../contexts/Firebase'
 import { navigate } from 'gatsby'
 import WaitSpinner from '../components/WaitSpinner'
 

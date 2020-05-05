@@ -10,8 +10,7 @@ const Classification: React.FC<IProps> = ({ classifications }) => {
   const list = classifications.map((item, index) => {
     return (
       <li key={`${item.recordId}-${index}`}>
-        <p className="mb-0 font-weight-bold">{item.data.Section_Name}</p>
-        <p className="mb-0">{item.data.Section_No}</p>
+        <p className="mb-0 font-weight-bold">{item.data.Name}</p>
       </li>
     )
   })

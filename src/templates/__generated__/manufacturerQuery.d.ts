@@ -8,8 +8,7 @@
 // ====================================================
 
 export interface manufacturerQuery_node_data_MASTER_FORMAT_CLASSIFICATION_data {
-  Section_Name: string | null
-  Section_No: string | null
+  Name: string | null
 }
 
 export interface manufacturerQuery_node_data_MASTER_FORMAT_CLASSIFICATION {

@@ -1,11 +1,22 @@
 {
-  "name": "jmf-services",
+  "name": "Bibliotech",
   "private": true,
-  "description": "JMF Services Manufacturing Company data",
+  "description": "Bibliotech Company data",
   "version": "0.1.0",
   "author": "Richard McSharry <rmcsharry@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,html,css}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -70,17 +81,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,html,css}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch"
   },
   "husky": {
     "hooks": {

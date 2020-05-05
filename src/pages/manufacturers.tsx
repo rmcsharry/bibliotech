@@ -1,12 +1,10 @@
 import React from 'react'
 import { navigate } from 'gatsby'
-
 import Layout from '../components/Layout'
 import IPageProps from '../types/page-props'
 import { withFirebase, withAuthentication } from '../Contexts/Firebase'
 import ManufacturerList from '../components/ManufacturerList'
 import PageTitle from '../components/PageTitle'
-import Container from 'react-bootstrap/Container'
 
 const Manufacturers: React.FC<IPageProps> = ({ authUser }) => {
   if (!authUser) {

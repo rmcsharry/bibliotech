@@ -18704,6 +18704,26 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "Section_Name",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "Section_No",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "Name",
               "description": "",
               "type": {
@@ -20356,6 +20376,30 @@
           "description": null,
           "fields": [
             {
+              "name": "Section_Name",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "Section_No",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "Name",
               "description": null,
               "args": [],
@@ -21783,6 +21827,18 @@
               "deprecationReason": null
             },
             {
+              "name": "data___Tech_Reps___data___Section_Name",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___Tech_Reps___data___Section_No",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "data___Tech_Reps___data___Name",
               "description": null,
               "isDeprecated": false,
@@ -21958,6 +22014,18 @@
             },
             {
               "name": "data___MASTER_FORMAT_CLASSIFICATION___recordId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___MASTER_FORMAT_CLASSIFICATION___data___Section_Name",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___MASTER_FORMAT_CLASSIFICATION___data___Section_No",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -25233,6 +25301,18 @@
             },
             {
               "name": "recordId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___Section_Name",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___Section_No",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

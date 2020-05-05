@@ -7,7 +7,6 @@ import { withFirebase } from '../../../Contexts/Firebase'
 
 interface IProps {
   firebase: any
-  parentCallback: (value: boolean) => void
 }
 interface IState {
   email: string
@@ -25,7 +24,6 @@ const INITIAL_STATE = {
   lastName: '',
   message: '',
   error: null,
-  parentCallback: null,
 }
 
 class ContactUsForm extends React.Component<IProps, IState> {
@@ -35,20 +33,20 @@ class ContactUsForm extends React.Component<IProps, IState> {
   }
 
   onSubmit = event => {
-    this.props.parentCallback(true)
     event.preventDefault()
-    const { email, firstName, lastName, message } = this.state
-    // this.props.firebase
-    //   .auth()
-    //   .createUserWithEmailAndPassword(email, passwordOne)
-    //   .then(authUser => {
-    //     this.setState({ ...INITIAL_STATE })
-    //     navigate('/manufacturers')
-    //   })
-    //   .catch(error => {
-    //     this.props.parentCallback(false)
-    //     this.setState({ error })
-    //   })
+    const messagesRef = this.props.firebase.database().ref('messages')
+    messagesRef.push().set(
+      {
+        message: this.state,
+      },
+      error => this.firebaseCallback(error),
+    )
+  }
+
+  firebaseCallback = error => {
+    if (error) this.setState({ error })
+    // TODO firebase api does not specify what error object shape is
+    else navigate('/thank_you')
   }
 
   handleChange = <T extends keyof IState>(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,7 +110,7 @@ class ContactUsForm extends React.Component<IProps, IState> {
           </Form.Group>
 
           <Button variant="primary" type="submit" disabled={isInvalid} className="mt-2">
-            Submit
+            Send
           </Button>
           {error && <p className="mt-4 p-2 text-white bg-danger">{error.message}</p>}
         </Form>

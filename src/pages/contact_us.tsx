@@ -3,7 +3,7 @@ import ContactUsForm from '../components/Forms/ContactUs'
 import Layout from '../components/Layout'
 import PageTitle from '../components/PageTitle'
 
-export default function contact_us() {
+const ContactUs: React.FC<{}> = () => {
   return (
     <>
       <Layout title={'Contact Us'}>
@@ -13,3 +13,5 @@ export default function contact_us() {
     </>
   )
 }
+
+export default ContactUs

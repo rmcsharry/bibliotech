@@ -1,20 +1,20 @@
-import * as functions from 'firebase-functions'
-import * as admin from 'firebase-admin'
+// import * as functions from 'firebase-functions'
+// import * as admin from 'firebase-admin'
 // import * as sgMail from '@sendgrid/mail'
 
-admin.initializeApp()
+// admin.initializeApp()
 
 // REF: https://medium.com/firelayer/deploying-environment-variables-with-firebase-cloud-functions-680779413484
 //
 // firebase functions:config:unset env && firebase functions:config:set env="$(cat env.json)"
-const config = functions.config()
+// const config = functions.config()
 
-interface Message {
-  email: string
-  firstName: string
-  lastName: string
-  message: string
-}
+// interface Message {
+//   email: string
+//   firstName: string
+//   lastName: string
+//   message: string
+// }
 
 // sgMail.setApiKey(config.env.sendgrid.apiKey)
 

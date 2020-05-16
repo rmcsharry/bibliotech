@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { navigate } from 'gatsby'
-import { withFirebase } from '../../../Contexts/Firebase'
+import { withFirebase } from '../../../contexts/Firebase'
 
 interface IProps {
   firebase: any

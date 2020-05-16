@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import PageTitle from '../components/PageTitle'
-import { withAuthentication, withFirebase } from '../Contexts/Firebase'
+import { withAuthentication, withFirebase } from '../contexts/Firebase'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 

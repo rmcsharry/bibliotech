@@ -7,6 +7,14 @@ interface IProps {
 }
 
 const Classification: React.FC<IProps> = ({ classifications }) => {
+  if (!classifications == null || classifications == undefined)
+    return (
+      <BodySection title="Classifications">
+        <em>
+          <p>- Not available -</p>
+        </em>
+      </BodySection>
+    )
   const list = classifications.map((item, index) => {
     return (
       <li key={`${item.recordId}-${index}`}>

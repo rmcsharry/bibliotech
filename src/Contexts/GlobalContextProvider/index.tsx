@@ -12,6 +12,7 @@ const GlobalContextProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([])
 
   const getFavorites = user => {
+    if (!user) return
     const favouriteRef = Firebase.database().ref(`users/${user.uid}/favorites`)
     favouriteRef.on(
       'value',
@@ -20,7 +21,6 @@ const GlobalContextProvider = ({ children }) => {
       },
       function (errorObject) {
         console.log('The read failed: ' + errorObject.code)
-        alert('Could not read your favorites from server. Error: ' + errorObject.code)
       },
     )
   }

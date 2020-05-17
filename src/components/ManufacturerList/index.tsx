@@ -85,7 +85,6 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
 
   return (
     <Container fluid>
-      {console.log(list)}
       {list.length > 0 ? (
         <Row className="justify-content-center mt-4">{list}</Row>
       ) : (

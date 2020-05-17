@@ -6,7 +6,7 @@ import { withFirebase, withAuthentication } from '../contexts/Firebase'
 import ManufacturerList from '../components/ManufacturerList'
 import PageTitle from '../components/PageTitle'
 
-const Manufacturers: React.FC<IPageProps> = ({ authUser }) => {
+const Manufacturers: React.FC<IPageProps> = ({ authUser, firebase }) => {
   if (!authUser) {
     if (typeof window !== 'undefined') navigate('/')
     return null

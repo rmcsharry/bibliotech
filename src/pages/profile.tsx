@@ -6,7 +6,6 @@ import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 
 const Profile = ({ authUser }) => {
-  console.log(authUser, 'auth')
   return (
     <Layout>
       <PageTitle title={'Profile'} />

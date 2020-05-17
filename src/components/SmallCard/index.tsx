@@ -9,6 +9,7 @@ import { navigate } from 'gatsby'
 import Classification from '../Classification'
 import { style } from 'typestyle'
 import SmallCardRestricted from './Restricted'
+import FavouriteButton from '../FavourtieButton'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
@@ -42,11 +43,14 @@ function renderTooltip(props) {
 
 interface IProps {
   isRestricted: boolean
+  favourites: Array<string>
+  isAlreadyFavourite: boolean
 }
 
-const SmallCard: React.FC<IEdge & IProps> = ({ node, isRestricted }) => {
+const SmallCard: React.FC<IEdge & IProps> = ({ node, isRestricted, favourites, isAlreadyFavourite }) => {
   const [isShowReverse, setShowReverse] = useState(false)
   const name = node.data.Manufacturer || labels.notAvailable
+  const manufacturerId = node.recordId
   const thumbnail = node.data.Logo ? node.data.Logo[0].thumbnails?.full : null
   const classifications = node.data.MASTER_FORMAT_CLASSIFICATION
   const detailPage = `/manufacturer/${node.recordId}`
@@ -69,6 +73,12 @@ const SmallCard: React.FC<IEdge & IProps> = ({ node, isRestricted }) => {
           onClick={(event: React.MouseEvent<HTMLElement>) => handleCardClick(event)}
           className={`${CardStyle} card-small shadow bg-white m-2 m-md-3 m-xl-4`}
         >
+          <FavouriteButton
+            manufacturerId={manufacturerId}
+            favourites={favourites}
+            isAlreadyFavourite={isAlreadyFavourite}
+            alt="favourite button"
+          />
           <div style={{ height: '14rem' }} className="mx-auto d-flex align-items-center">
             <Card.Img variant="top" src={thumbnail?.url} className="p-4 mw-100 mh-100" />
           </div>

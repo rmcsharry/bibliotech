@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row'
 import SmallCard from '../SmallCard'
 import IEdge from '../../types/edge'
 import Container from 'react-bootstrap/Container'
-import { withFavourites } from '../../contexts/Favourites'
+import { withFavorites } from '../../contexts/Favorites'
 
 interface IQuery {
   firms: {
@@ -15,10 +15,10 @@ interface IQuery {
 
 interface IProps {
   isRestricted: boolean
-  favourites: Array<string>
+  favorites: Array<string>
 }
 
-const ManufacturerList: React.FC<IProps> = ({ isRestricted, favourites }) => {
+const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query ManufacturersPageQuery {
       firms: allAirtableManufacturer {
@@ -52,17 +52,17 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favourites }) => {
   const manufacturers: IEdge[] = (data?.firms.edges as IEdge[]) || []
 
   const list = manufacturers.map(({ node }) => {
-    let isFavourite = false
-    if (favourites.findIndex(element => element === node.recordId) >= 0) {
-      isFavourite = true
+    let isFavorite = false
+    if (favorites?.findIndex(element => element === node.recordId) >= 0) {
+      isFavorite = true
     }
     return (
       <SmallCard
         node={node}
         key={node.recordId}
         isRestricted={isRestricted}
-        favourites={favourites}
-        isAlreadyFavourite={isFavourite}
+        favorites={favorites}
+        isAlreadyFavorite={isFavorite}
       />
     )
   })
@@ -74,4 +74,4 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favourites }) => {
   )
 }
 
-export default withFavourites(ManufacturerList)
+export default withFavorites(ManufacturerList)

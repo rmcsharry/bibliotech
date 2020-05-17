@@ -12,7 +12,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { CaretLeftFill } from 'react-bootstrap-icons/'
 import Container from 'react-bootstrap/Container'
-import { withFavourites } from '../contexts/Favourites'
+import { withFavorites } from '../contexts/Favorites'
 
 interface IPageQuery {
   data: IEdge
@@ -44,7 +44,7 @@ class ManufacturerTemplate extends React.Component<IPageQuery & IPageProps> {
             <PageTitle title="Manufacturer Details" />
           </Row>
           <div className="d-flex mt-4 justify-content-center">
-            <LargeCard node={this.props.data.node} favourites={this.props.favourites} />
+            <LargeCard node={this.props.data.node} favorites={this.props.favorites} />
           </div>
         </Container>
       </Layout>
@@ -52,7 +52,7 @@ class ManufacturerTemplate extends React.Component<IPageQuery & IPageProps> {
   }
 }
 
-export default withFirebase(withAuthentication(withFavourites(ManufacturerTemplate)))
+export default withFirebase(withAuthentication(withFavorites(ManufacturerTemplate)))
 
 export const pageQuery = graphql`
   query manufacturerQuery($id: String!) {

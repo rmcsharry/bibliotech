@@ -37,11 +37,14 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav activeKey="/home">
-          <Link to="/contact_us">
-            <span className="nav-bg nav-link">Contact Us</span>
-          </Link>
           {authUser ? (
             <React.Fragment>
+              <Link to="/manufacturers">
+                <span className="nav-bg nav-link">All</span>
+              </Link>
+              <Link to="/favorites">
+                <span className="nav-bg nav-link">Favorites</span>
+              </Link>
               <Link to="/profile">
                 <span className="nav-bg nav-link">Profile</span>
               </Link>
@@ -57,6 +60,9 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
               </Link>
             </React.Fragment>
           )}
+          <Link to="/contact_us">
+            <span className="nav-bg nav-link">Contact Us</span>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

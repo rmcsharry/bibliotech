@@ -7,6 +7,9 @@ import Nav from 'react-bootstrap/Nav'
 import LogOutButton from '../LogOutButton'
 import { withAuthentication, withFirebase } from '../../contexts/Firebase'
 import IPageProps from '../../types/page-props'
+import Search from '../Search'
+
+const searchIndices = [{ name: `Manufacturers`, title: `Manufacturers`, hitComp: `ManufacturerHit` }]
 
 interface IQuery {
   logo: {
@@ -34,6 +37,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
       <Navbar.Brand href="/">
         <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
       </Navbar.Brand>
+      <Search collapse indices={searchIndices} />
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav activeKey="/home">

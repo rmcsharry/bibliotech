@@ -21,10 +21,12 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "algoliasearch": "^4.2.0",
     "bootstrap": "^4.4.1",
     "firebase": "^7.14.2",
     "gatsby": "^2.20.25",
     "gatsby-image": "^2.3.4",
+    "gatsby-plugin-algolia": "^0.11.0",
     "gatsby-plugin-emotion": "^4.2.2",
     "gatsby-plugin-feed": "^2.4.3",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
@@ -49,6 +51,7 @@
     "react-bootstrap-icons": "^1.0.1-alpha3",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.5.0",
     "react-typography": "^0.16.19",
     "typestyle": "^2.1.0"
   },

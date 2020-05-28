@@ -1,3 +1,5 @@
+const queries = require('./src/utils/algolia')
+
 export default {
   siteMetadata: {
     title: `Bibliotech`,
@@ -85,6 +87,17 @@ export default {
           projectId: process.env.FIREBASE_PROJECT_ID,
           appId: process.env.FIREBASE_APP_ID,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries,
+        chunkSize: 10000, // default: 1000
+        enablePartialUpdates: true, // default: false
+        matchFields: ['recordId', 'Last_update'],
       },
     },
   ],

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, createRef } from 'react'
-import { InstantSearch, Index, Hits, connectStateResults } from 'react-instantsearch-dom'
+import React, { useState, createRef } from 'react'
+import { InstantSearch, Index, Hits, InfiniteHits, connectStateResults } from 'react-instantsearch-dom'
 import algoliasearch from 'algoliasearch/lite'
 
 import { Root, HitsWrapper } from './styles'
@@ -14,7 +14,7 @@ const Stats = connectStateResults(
   ({ searchResults: res }) => res && res.nbHits > 0 && `${res.nbHits} result${res.nbHits > 1 ? `s` : ``}`,
 )
 
-export default function Search({ indices, collapse, hitsAsGrid }) {
+export default function Search({ indices }) {
   const ref = createRef()
   const [query, setQuery] = useState(``)
   const [focus, setFocus] = useState(false)
@@ -28,19 +28,19 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
       root={{ Root, props: { ref } }}
     >
       <Input />
-      {/* <HitsWrapper show={query.length > 0 && focus} asGrid={hitsAsGrid}>
+      <HitsWrapper show={query?.length > 0}>
         {indices.map(({ name, title, hitComp }) => (
           <Index key={name} indexName={name}>
             <header>
-              <h3>{title}</h3>
+              <h5>{title}</h5>
               <Stats />
             </header>
             <Results>
-              <Hits hitComponent={hitComps[hitComp](() => setFocus(false))} />
+              <InfiniteHits hitComponent={hitComps[hitComp](() => setFocus(false))} />
             </Results>
           </Index>
         ))}
-      </HitsWrapper> */}
+      </HitsWrapper>
     </InstantSearch>
   )
 }

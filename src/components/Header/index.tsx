@@ -8,8 +8,9 @@ import LogOutButton from '../LogOutButton'
 import { withAuthentication, withFirebase } from '../../contexts/Firebase'
 import IPageProps from '../../types/page-props'
 import Search from '../Search'
+import styled from '@emotion/styled'
 
-const searchIndices = [{ name: `Manufacturers`, title: `Manufacturers`, hitComp: `ManufacturerHit` }]
+const searchIndices = [{ name: `Manufacturers`, title: `Search Results`, hitComp: `ManufacturerHit` }]
 
 interface IQuery {
   logo: {
@@ -18,6 +19,13 @@ interface IQuery {
     }
   }
 }
+const StyledInput = styled.input`
+  background: white;
+  color: black;
+  width: 300px;
+  height: 36px;
+  margin-bottom: 10px;
+`
 
 const Header: React.FC<IPageProps> = ({ authUser }) => {
   const data = useStaticQuery<IQuery>(graphql`
@@ -37,9 +45,8 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
       <Navbar.Brand href="/">
         <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
       </Navbar.Brand>
-      <Search collapse indices={searchIndices} />
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav activeKey="/home">
           {authUser ? (
             <React.Fragment>
@@ -69,6 +76,11 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
           </Link>
         </Nav>
       </Navbar.Collapse>
+      {authUser ? (
+        <Search indices={searchIndices} />
+      ) : (
+        <StyledInput disabled type="search" placeholder="Please login to search" aria-label="Login to search" />
+      )}
     </Navbar>
   )
 }

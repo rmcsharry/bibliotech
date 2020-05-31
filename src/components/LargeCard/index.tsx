@@ -29,7 +29,7 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
   const website = data.Website
   const techReps = data.Tech_Reps
 
-  const isFavorite = favorites.findIndex(element => element === manufacturerId) >= 0
+  const isFavorite = favorites?.findIndex(element => element === manufacturerId) >= 0
 
   return (
     <>

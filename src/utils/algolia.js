@@ -13,11 +13,15 @@ const manufacturerQuery = `{
 }`
 
 const flatten = arr =>
-  arr.map(({ node: { frontmatter, ...rest } }) => ({
-    ...frontmatter,
+  arr.map(({ node: { data, ...rest } }) => ({
+    ...data,
     ...rest,
   }))
-const settings = { attributesToSnippet: [`KEYWORDS:20`] }
+const settings = {
+  attributesToSnippet: ['data.KEYWORDS:20'],
+  attributesToHighlight: ['data.Manufacturer'],
+  customRanking: ['asc(data.Manufacturer)'],
+}
 
 const queries = [
   {

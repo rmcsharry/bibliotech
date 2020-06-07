@@ -53,10 +53,6 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
 
   const manufacturers: IEdge[] = (data?.firms.edges as IEdge[]) || []
 
-  if (onlyFavorites && manufacturers.length > 0) {
-    navigate('/no_favorites')
-  }
-
   const list = manufacturers
     .map(({ node }) => {
       let isFavorite = false
@@ -88,14 +84,14 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
     })
     .filter(element => element !== null)
 
+  if (onlyFavorites && list.length === 0) {
+    navigate('/no_favorites')
+  }
+
   return (
-    <>
-      {list.length > 0 ? (
-        <Container fluid>
-          <Row className="justify-content-center mt-4">{list}</Row>
-        </Container>
-      ) : null}
-    </>
+    <Container fluid>
+      <Row className="justify-content-center mt-4">{list}</Row>
+    </Container>
   )
 }
 

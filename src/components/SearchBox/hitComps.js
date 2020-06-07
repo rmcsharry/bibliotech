@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { Highlight, Snippet } from 'react-instantsearch-dom'
+import React from 'react'
+import { Highlight } from 'react-instantsearch-dom'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
@@ -17,7 +17,6 @@ export const ManufacturerHit = clickHandler => ({ hit }) => {
           <Highlight attribute="manufacturer" hit={hit} tagName="mark" />
         </StyledHeader>
       </Link>
-      {/* <Snippet attribute="keywords" hit={hit} tagName="mark" /> */}
     </div>
   )
 }

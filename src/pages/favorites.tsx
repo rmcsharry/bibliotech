@@ -1,15 +1,23 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import PageTitle from '../components/PageTitle'
 import Container from 'react-bootstrap/Container'
 import ManufacturerList from '../components/ManufacturerList'
+import { withAuthentication } from '../contexts/Firebase'
+import IPageProps from '../types/page-props'
+import styled from '@emotion/styled'
 
-const Favorites: React.FC<{}> = ({}) => {
+const StyledHeader = styled.h4`
+  text-transform: none;
+  margin-left: 2rem;
+  margin-top: 2.5rem;
+`
+
+const Favorites: React.FC<IPageProps> = ({ authUser }) => {
   return (
     <>
       <Layout title={'Favorites'}>
-        <PageTitle title={'Your favorites'} />
         <br></br>
+        <StyledHeader>Hello, {authUser?.displayName.split(' ')[0]}. Here are the companies you've saved.</StyledHeader>
         <Container fluid>
           <ManufacturerList isRestricted={false} onlyFavorites={true} />
         </Container>
@@ -18,4 +26,4 @@ const Favorites: React.FC<{}> = ({}) => {
   )
 }
 
-export default Favorites
+export default withAuthentication(Favorites)

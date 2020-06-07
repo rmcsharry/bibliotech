@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav'
 import LogOutButton from '../LogOutButton'
 import { withAuthentication, withFirebase } from '../../contexts/Firebase'
 import IPageProps from '../../types/page-props'
-import SearchBox from '../Search'
+import SearchBox from '../SearchBox'
 import styled from '@emotion/styled'
 
 const searchIndices = [{ name: `Manufacturers`, title: `Search Results`, hitComp: `ManufacturerHit` }]
@@ -85,7 +85,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
         </Nav>
       </Navbar.Collapse>
       {authUser ? (
-        <SearchBox indices={searchIndices} />
+        <SearchBox indices={searchIndices} user={authUser} />
       ) : (
         <>
           <StyledInput
@@ -95,7 +95,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
             aria-label="Login to search"
           />
           <StyledIcon aria-hidden="true">
-            <Search></Search>
+            <SearchBox></SearchBox>
           </StyledIcon>
         </>
       )}

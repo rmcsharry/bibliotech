@@ -14,7 +14,7 @@ const Stats = connectStateResults(
   ({ searchResults: res }) => res && res.nbHits > 0 && `${res.nbHits} result${res.nbHits > 1 ? `s` : ``}`,
 )
 
-export default function SearchBox({ indices }) {
+export default function SearchBox({ indices, user }) {
   const ref = createRef()
   const [query, setQuery] = useState(``)
   const [focus, setFocus] = useState(false)
@@ -27,7 +27,7 @@ export default function SearchBox({ indices }) {
       onSearchStateChange={({ query }) => setQuery(query)}
       root={{ Root, props: { ref } }}
     >
-      <Input />
+      <Input user={user} />
       <HitsWrapper show={query?.length > 0}>
         {indices.map(({ name, title, hitComp }) => (
           <Index key={name} indexName={name}>

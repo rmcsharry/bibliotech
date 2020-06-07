@@ -27,7 +27,7 @@ export default connectSearchBox(({ refine, ...rest }) => {
       <div>
         <StyledInput
           type="search"
-          placeholder="Search"
+          placeholder={`Hello ${rest.user.displayName.split(' ')[0]}, explore the library here`}
           aria-label="Search"
           onChange={e => refine(e.target.value)}
           {...rest}

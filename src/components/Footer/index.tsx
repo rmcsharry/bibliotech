@@ -5,15 +5,20 @@ const StyledFooter = styled.footer`
   background: black;
   min-height: 4rem;
   color: white;
-  text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: auto;
+  align-items: center;
+  padding: 0 1rem;
 `
 
 const Footer: React.FC = () => {
-  return <StyledFooter>© {new Date().getFullYear()} The MF Data Tool</StyledFooter>
+  return (
+    <StyledFooter>
+      <span>© {new Date().getFullYear()} JmF Technical Documentation Solutions</span>
+      <span>Terms of Service</span>
+    </StyledFooter>
+  )
 }
 
 export default Footer

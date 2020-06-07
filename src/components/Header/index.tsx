@@ -53,6 +53,9 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav activeKey="/home">
+          <Link to="/about">
+            <span className="nav-bg nav-link">About</span>
+          </Link>
           {authUser ? (
             <React.Fragment>
               <Link to="/manufacturers">

@@ -6,6 +6,7 @@ import SmallCard from '../SmallCard'
 import IEdge from '../../types/edge'
 import Container from 'react-bootstrap/Container'
 import { withFavorites } from '../../contexts/Favorites'
+import { navigate } from 'gatsby'
 
 interface IQuery {
   firms: {
@@ -52,6 +53,10 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
 
   const manufacturers: IEdge[] = (data?.firms.edges as IEdge[]) || []
 
+  if (onlyFavorites && manufacturers.length > 0) {
+    navigate('/no_favorites')
+  }
+
   const list = manufacturers
     .map(({ node }) => {
       let isFavorite = false
@@ -84,13 +89,13 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
     .filter(element => element !== null)
 
   return (
-    <Container fluid>
+    <>
       {list.length > 0 ? (
-        <Row className="justify-content-center mt-4">{list}</Row>
-      ) : (
-        <p>You have not saved any favorites. Click the star icon in the top right of any card to save a favorite.</p>
-      )}
-    </Container>
+        <Container fluid>
+          <Row className="justify-content-center mt-4">{list}</Row>
+        </Container>
+      ) : null}
+    </>
   )
 }
 

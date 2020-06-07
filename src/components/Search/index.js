@@ -1,5 +1,5 @@
 import React, { useState, createRef } from 'react'
-import { InstantSearch, Index, Hits, InfiniteHits, connectStateResults } from 'react-instantsearch-dom'
+import { InstantSearch, Index, InfiniteHits, connectStateResults } from 'react-instantsearch-dom'
 import algoliasearch from 'algoliasearch/lite'
 
 import { Root, HitsWrapper } from './styles'

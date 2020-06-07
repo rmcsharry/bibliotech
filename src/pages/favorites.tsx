@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import PageTitle from '../components/PageTitle'
-import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import ManufacturerList from '../components/ManufacturerList'
 

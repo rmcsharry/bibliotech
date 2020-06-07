@@ -88,7 +88,7 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
       {list.length > 0 ? (
         <Row className="justify-content-center mt-4">{list}</Row>
       ) : (
-        <p>You have not saved any favorites. Click the heart in the top right of any card to save a favorite.</p>
+        <p>You have not saved any favorites. Click the star icon in the top right of any card to save a favorite.</p>
       )}
     </Container>
   )

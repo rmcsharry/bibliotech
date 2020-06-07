@@ -2,25 +2,44 @@ const manufacturerQuery = `{
   manufacturers: allAirtableManufacturer {
     edges {
       node {
-        objectID: recordId
+        recordId
         data {
           Manufacturer
           KEYWORDS
+          MASTER_FORMAT_CLASSIFICATION {
+            data {
+              Section_Name
+            }
+          }
         }
       }
     }
   }
 }`
 
-const flatten = arr =>
-  arr.map(({ node: { data, ...rest } }) => ({
-    ...data,
-    ...rest,
-  }))
+const flatten = arr => {
+  // console.log('HERE', arr)
+  if (arr)
+    return arr.map(({ node }) => ({
+      objectID: node.recordId,
+      manufacturer: node.data.Manufacturer,
+      keywords: node.data.KEYWORDS,
+      classification: flattenMFC(node.data.MASTER_FORMAT_CLASSIFICATION),
+    }))
+}
+
+const flattenMFC = arr => {
+  if (arr)
+    return arr.map(({ data }) => ({
+      sectionName: data.Section_Name,
+    }))
+  else return null
+}
+
 const settings = {
-  attributesToSnippet: ['data.KEYWORDS:20'],
-  attributesToHighlight: ['data.Manufacturer'],
-  customRanking: ['asc(data.Manufacturer)'],
+  attributesToSnippet: ['keywords:20'],
+  attributesToHighlight: ['manufacturer', 'classification'],
+  customRanking: ['asc(manufacturer)'],
 }
 
 const queries = [

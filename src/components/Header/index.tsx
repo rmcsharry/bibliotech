@@ -3,11 +3,12 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Image, { FixedObject } from 'gatsby-image'
 
 import Navbar from 'react-bootstrap/Navbar'
+import { Search } from 'react-bootstrap-icons/'
 import Nav from 'react-bootstrap/Nav'
 import LogOutButton from '../LogOutButton'
 import { withAuthentication, withFirebase } from '../../contexts/Firebase'
 import IPageProps from '../../types/page-props'
-import Search from '../Search'
+import SearchBox from '../Search'
 import styled from '@emotion/styled'
 
 const searchIndices = [{ name: `Manufacturers`, title: `Search Results`, hitComp: `ManufacturerHit` }]
@@ -22,11 +23,15 @@ interface IQuery {
 const StyledInput = styled.input`
   background: white;
   color: black;
-  width: 300px;
+  min-width: 350px;
   height: 36px;
   margin-bottom: 10px;
 `
-
+const StyledIcon = styled.span`
+  right: 30px;
+  position: absolute;
+  top: 25px;
+`
 const Header: React.FC<IPageProps> = ({ authUser }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query LogoQuery {
@@ -77,9 +82,19 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
         </Nav>
       </Navbar.Collapse>
       {authUser ? (
-        <Search indices={searchIndices} />
+        <SearchBox indices={searchIndices} />
       ) : (
-        <StyledInput disabled type="search" placeholder="Please login to search" aria-label="Login to search" />
+        <>
+          <StyledInput
+            disabled
+            type="search"
+            placeholder="Please sign in or sign up to explore the library"
+            aria-label="Login to search"
+          />
+          <StyledIcon aria-hidden="true">
+            <Search></Search>
+          </StyledIcon>
+        </>
       )}
     </Navbar>
   )

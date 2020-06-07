@@ -35,8 +35,8 @@ label {
   border-top-color: hsla(0, 100%, 50%, 1);
 }
 .navbar {
-  min-height: 80px;
-  padding: 0.5rem 1rem;
+  min-height: 60px;
+  padding: 0 1rem;
 }
 .navbar .navbar-nav .nav-link {
   font-weight: bold;

@@ -6,10 +6,6 @@ export const Root = styled.div`
   grid-gap: 1em;
 `
 
-export const SearchIcon = styled.div`
-  width: 1em;
-  pointer-events: none;
-`
 // display: ${props => (props.show ? `grid` : `none`)};
 export const HitsWrapper = styled.div`
   display: ${props => (props.show ? `grid` : `none`)};

@@ -14,10 +14,10 @@ export const ManufacturerHit = clickHandler => ({ hit }) => {
     <div>
       <Link to={`/manufacturer/` + hit.objectID} onClick={clickHandler}>
         <StyledHeader>
-          <Highlight attribute="data.Manufacturer" hit={hit} tagName="mark" />
+          <Highlight attribute="manufacturer" hit={hit} tagName="mark" />
         </StyledHeader>
       </Link>
-      {/* <Snippet attribute="data.KEYWORDS" hit={hit} tagName="mark" /> */}
+      {/* <Snippet attribute="keywords" hit={hit} tagName="mark" /> */}
     </div>
   )
 }

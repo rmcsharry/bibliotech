@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Heart, HeartFill } from 'react-bootstrap-icons/'
+import { Star, StarFill } from 'react-bootstrap-icons/'
 import { withFirebase } from '../../contexts/Firebase'
 import { style } from 'typestyle'
 
@@ -58,7 +58,7 @@ const FavoriteButton: React.FC<IProps> = ({ firebase, manufacturerId, favorites,
     <div className="row no-gutters">
       <div className="col d-flex flex-row-reverse">
         <span className={HeartStyle} onClick={event => onFavoriteClick(event)}>
-          {isFavorite ? <HeartFill size="26" color="red" /> : <Heart size="26" />}
+          {isFavorite ? <StarFill size="26" color="gold" /> : <Star size="26" />}
         </span>
       </div>
     </div>

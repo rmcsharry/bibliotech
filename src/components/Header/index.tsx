@@ -46,7 +46,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
   `)
 
   return (
-    <Navbar className="navbar-dark bg-primary" expand="lg" fixed="top">
+    <Navbar className="navbar-dark" expand="lg" fixed="top">
       <Navbar.Brand href="/">
         <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
       </Navbar.Brand>
@@ -95,7 +95,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
             aria-label="Login to search"
           />
           <StyledIcon aria-hidden="true">
-            <SearchBox></SearchBox>
+            <Search></Search>
           </StyledIcon>
         </>
       )}

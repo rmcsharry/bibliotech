@@ -62,7 +62,7 @@ class ContactUsForm extends React.Component<IProps, IState> {
     const isInvalid = firstName === '' || lastName === '' || email === '' || message === ''
 
     return (
-      <Card className="p-3 p-sm-3 p-md-4 shadow mx-auto" style={{ maxWidth: '30rem' }}>
+      <Card className="p-3 p-sm-3 p-md-12 shadow mx-auto" style={{ minWidth: '360px' }}>
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>

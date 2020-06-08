@@ -37,7 +37,7 @@ class AboutPage extends React.Component<IPageQuery> {
         <Layout title={'About Us'}>
           <BgImage
             fluid={heroImage.fluid}
-            title={'Welcome to Bibliotech'}
+            title={'About Bibliotech'}
             height={'calc(100vh - 155px)'}
             mobileHeight={'calc(100vh + 155px)'}
             overlayColor={'hsla(0, 0%, 0%, 0.5)'}
@@ -86,7 +86,7 @@ export default AboutPage
 
 export const pageQuery = graphql`
   query AboutPageQuery {
-    hero: file(relativePath: { eq: "about_bg.jpg" }) {
+    hero: file(relativePath: { eq: "library_bg.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1180) {
           ...GatsbyImageSharpFluid_tracedSVG

@@ -41,13 +41,23 @@ export default connectSearchBox(({ refine, ...rest }) => {
   return (
     <StyledForm onSubmit={e => submitHandler(e)}>
       <div>
-        <StyledInput
-          type="search"
-          placeholder={`Hello ${rest.user?.displayName?.split(' ')[0]}, explore the library here`}
-          aria-label="Search"
-          onChange={e => onInputChange(e)}
-          {...rest}
-        />
+        {rest.user?.displayName ? (
+          <StyledInput
+            type="search"
+            placeholder={`Hello ${rest.user?.displayName?.split(' ')[0]}, explore the library here`}
+            aria-label="Search"
+            onChange={e => onInputChange(e)}
+            {...rest}
+          />
+        ) : (
+          <StyledInput
+            type="search"
+            placeholder={`Explore the library here`}
+            aria-label="Search"
+            onChange={e => onInputChange(e)}
+            {...rest}
+          />
+        )}
         {isInputEmpty ? (
           <StyledIcon aria-hidden="true">
             <Search></Search>

@@ -13,11 +13,16 @@ const StyledHeader = styled.h4`
 `
 
 const Favorites: React.FC<IPageProps> = ({ authUser }) => {
+  console.log(authUser)
   return (
     <>
       <Layout title={'Favorites'}>
         <br></br>
-        <StyledHeader>Hello, {authUser?.displayName?.split(' ')[0]}. Here are the companies you've saved.</StyledHeader>
+        {authUser?.displayName ? (
+          <StyledHeader>Hello, {authUser.displayName.split(' ')[0]}. Here are the companies you've saved.</StyledHeader>
+        ) : (
+          <StyledHeader>Here are the companies you've saved.</StyledHeader>
+        )}
         <Container fluid>
           <ManufacturerList isRestricted={false} onlyFavorites={true} />
         </Container>

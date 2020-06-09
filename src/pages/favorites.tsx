@@ -17,7 +17,7 @@ const Favorites: React.FC<IPageProps> = ({ authUser }) => {
     <>
       <Layout title={'Favorites'}>
         <br></br>
-        <StyledHeader>Hello, {authUser?.displayName.split(' ')[0]}. Here are the companies you've saved.</StyledHeader>
+        <StyledHeader>Hello, {authUser?.displayName?.split(' ')[0]}. Here are the companies you've saved.</StyledHeader>
         <Container fluid>
           <ManufacturerList isRestricted={false} onlyFavorites={true} />
         </Container>

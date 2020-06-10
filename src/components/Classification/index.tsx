@@ -9,7 +9,7 @@ interface IProps {
 const Classification: React.FC<IProps> = ({ classifications }) => {
   if (!classifications == null || classifications == undefined)
     return (
-      <BodySection title="Classifications">
+      <BodySection title="'MASTERFORMAT No.'">
         <em>
           <p>- Not available -</p>
         </em>
@@ -25,7 +25,7 @@ const Classification: React.FC<IProps> = ({ classifications }) => {
   })
 
   return (
-    <BodySection title={classifications.length > 1 ? 'Classifications' : 'Classification'}>
+    <BodySection title={'MASTERFORMAT No.'}>
       <ul style={{ listStyle: 'square' }}>{list}</ul>
     </BodySection>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import { navigate } from 'gatsby'
+import { navigate, Link } from 'gatsby'
 import { style } from 'typestyle'
 
 const RestrictedStyle = style({
@@ -19,14 +19,6 @@ const RestrictedStyle = style({
   animationTimingFunction: 'ease-in',
   animationDuration: '0.1s',
 })
-const RestrictedTitleStyle = style({
-  borderTop: '1px solid red',
-  borderBottom: '1px solid red',
-  padding: '0.5rem 0.25rem',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-})
 
 interface IProps {
   dismissCallback: () => void
@@ -38,11 +30,6 @@ const SmallCardRestricted: React.FC<IProps> = ({ dismissCallback }) => {
     dismissCallback()
   }
 
-  const handleSignUpClick = e => {
-    e.stopPropagation()
-    if (typeof window !== 'undefined') navigate('/sign_up')
-  }
-
   return (
     <>
       <Card
@@ -51,21 +38,23 @@ const SmallCardRestricted: React.FC<IProps> = ({ dismissCallback }) => {
       >
         <div style={{ height: '14rem' }} className="mx-auto d-flex align-items-center"></div>
         <Card.Body className="d-flex flex-column mt-2 justify-content-end">
-          <Card.Title className={`${RestrictedTitleStyle} font-weight-bold text-center text-danger`}>
-            RESTRICTED
-          </Card.Title>
           <div className="d-flex flex-grow-1 flex-column mb-4 mt-4 px-1 text-center">
             <h6 className="text-white">
-              Please sign up
+              Please{' '}
+              <Link to="/sign_up" className="text-success">
+                sign up
+              </Link>{' '}
+              or{' '}
+              <Link to="/sign_in" className="text-success">
+                sign in
+              </Link>
               <br />
-              <br /> to <br />
+              <br /> to view this
               <br />
-              view details
+              <br />
+              company's details
             </h6>
           </div>
-          <Button className="btn-success" onClick={(event: React.MouseEvent<HTMLElement>) => handleSignUpClick(event)}>
-            SIGN UP
-          </Button>
         </Card.Body>
       </Card>
     </>

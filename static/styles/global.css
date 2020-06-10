@@ -24,15 +24,16 @@ label {
   font-size: 1rem;
 }
 .tooltip-inner {
-  background: hsla(0, 100%, 50%, 1);
+  background: black;
   box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, 0.55);
+  color: rgb(180, 180, 180);
 }
 .btn {
   padding: 0.5rem 1.5rem;
 }
 .bs-tooltip-auto[x-placement^='top'] .arrow::before,
 .bs-tooltip-top .arrow::before {
-  border-top-color: hsla(0, 100%, 50%, 1);
+  border-top-color: black;
 }
 .navbar {
   min-height: 60px;

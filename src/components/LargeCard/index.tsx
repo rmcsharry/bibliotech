@@ -1,4 +1,7 @@
 import React from 'react'
+import { navigate, useStaticQuery, graphql } from 'gatsby'
+import Image, { FluidObject } from 'gatsby-image'
+
 import IEdge from '../../types/edge'
 import Card from 'react-bootstrap/Card'
 import Fade from 'react-bootstrap/Fade'
@@ -9,6 +12,11 @@ import BodySection from '../BodySection'
 import Website from '../BodySections/Website'
 import TechReps from '../BodySections/TechReps'
 import FavoriteButton from '../FavoriteButton'
+import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import { CaretLeftFill } from 'react-bootstrap-icons/'
+import BgImage from '../BgImage'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
@@ -18,8 +26,27 @@ const TitleStyle = style({
 interface IProps {
   favorites: Array<string>
 }
+interface IQuery {
+  hero: {
+    childImageSharp: {
+      fluid: FluidObject | FluidObject[]
+    }
+  }
+}
 
 const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
+  const heroImage = useStaticQuery<IQuery>(graphql`
+    query BgImageQuery {
+      hero: file(relativePath: { eq: "library_bg.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1180, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+
   const { data } = node
   const name = data.Manufacturer || labels.notAvailable
   const manufacturerId = node.recordId
@@ -31,32 +58,54 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
 
   const isFavorite = favorites?.findIndex(element => element === manufacturerId) >= 0
 
+  const go = destination => {
+    if (typeof window !== 'undefined') navigate(destination)
+  }
+
   return (
     <>
-      <Card className="p-3 p-sm-3 p-md-4 shadow" style={{ width: '36rem' }}>
-        <FavoriteButton
-          manufacturerId={manufacturerId}
-          favorites={favorites}
-          isAlreadyFavorite={isFavorite}
-          alt="favorite button"
-        />
-        <img src={thumbnail?.url} className="p-4 mb-5 w-50 mx-auto" />
-        <Card.Title className={`${TitleStyle} font-weight-bold`}>{name}</Card.Title>
-        <Fade in={true} appear={true} timeout={1000}>
-          <Card.Body style={{ minHeight: '6rem' }} className="mt-2">
-            <Classification classifications={classifications} />
-            {description ? (
-              <BodySection title={'Description'}>
-                <p className="pl-4">{description}</p>
-              </BodySection>
-            ) : null}
-            <Website address={website} />
-            <TechReps reps={techReps} />
-            <h6 className="small mb-0 text-right">Last updated</h6>
-            <p className="small mb-0 text-right"> {data.Last_update}</p>
-          </Card.Body>
-        </Fade>
-      </Card>
+      <BgImage
+        fluid={heroImage.hero.childImageSharp.fluid}
+        title={''}
+        height={'calc(100vh - 155px)'}
+        mobileHeight={'calc(100vh + 155px)'}
+        overlayColor={'hsla(0, 0%, 0%, 0.5)'}
+      >
+        <div className="d-flex mt-4 justify-content-center">
+          <Card className="p-3 p-sm-3 p-md-4 shadow" style={{ width: '36rem', opacity: 0.92 }}>
+            <FavoriteButton
+              manufacturerId={manufacturerId}
+              favorites={favorites}
+              isAlreadyFavorite={isFavorite}
+              alt="favorite button"
+            />
+            <img src={thumbnail?.url} className="p-4 mb-5 w-50 mx-auto" />
+            <Card.Title className={`${TitleStyle} font-weight-bold`}>{name}</Card.Title>
+            <Fade in={true} appear={true} timeout={1000}>
+              <Card.Body style={{ minHeight: '6rem' }} className="mt-2">
+                <Classification classifications={classifications} />
+                {description ? (
+                  <BodySection title={'Description'}>
+                    <p className="pl-4">{description}</p>
+                  </BodySection>
+                ) : null}
+                <Website address={website} />
+                <TechReps reps={techReps} />
+                <h6 className="small mb-0 text-right">Last updated</h6>
+                <p className="small mb-0 text-right"> {data.Last_update}</p>
+              </Card.Body>
+            </Fade>
+            <Row>
+              <Col className="text-center">
+                <Button className="ml-4" onClick={() => go('/manufacturers')}>
+                  <CaretLeftFill style={{ marginTop: '-2px', marginRight: '2px' }} />
+                  RETURN TO THE LIBRARY
+                </Button>
+              </Col>
+            </Row>
+          </Card>
+        </div>
+      </BgImage>
     </>
   )
 }

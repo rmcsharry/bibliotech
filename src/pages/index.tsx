@@ -67,7 +67,6 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
             <StyledTitle>Welcome to Bibliotech</StyledTitle>
             <StyledSubTitle>Your digital architectural library</StyledSubTitle>
           </BgImage>
-          <PageTitle title="Manufacturers" />
           <ManufacturerList isRestricted={authUser ? false : true} />
         </Layout>
       </div>

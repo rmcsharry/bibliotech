@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import IPageProps from '../types/page-props'
 import { withFirebase, withAuthentication } from '../contexts/Firebase'
 import ManufacturerList from '../components/ManufacturerList'
-import PageTitle from '../components/PageTitle'
 
 const Manufacturers: React.FC<IPageProps> = ({ authUser, firebase }) => {
   if (!authUser) {
@@ -14,7 +13,6 @@ const Manufacturers: React.FC<IPageProps> = ({ authUser, firebase }) => {
 
   return (
     <Layout title="Manufacturers">
-      <PageTitle title={'Manufacturers'} />
       <ManufacturerList isRestricted={false} />
     </Layout>
   )

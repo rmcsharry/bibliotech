@@ -75,7 +75,7 @@ export const pageQuery = graphql`
   query NoFavoritesPageQuery {
     hero: file(relativePath: { eq: "no_favorites_bg.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1180) {
+        fluid(maxWidth: 1180, quality: 100) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

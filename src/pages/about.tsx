@@ -88,7 +88,7 @@ export const pageQuery = graphql`
   query AboutPageQuery {
     hero: file(relativePath: { eq: "library_bg.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1180) {
+        fluid(maxWidth: 1180, quality: 100) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

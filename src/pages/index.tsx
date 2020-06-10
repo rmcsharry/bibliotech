@@ -86,7 +86,7 @@ export const pageQuery = graphql`
     }
     hero: file(relativePath: { eq: "landing_bg.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1180) {
+        fluid(maxWidth: 1180, quality: 100) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

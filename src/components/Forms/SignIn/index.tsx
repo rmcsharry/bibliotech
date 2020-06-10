@@ -38,7 +38,7 @@ class SignInForm extends React.Component<IProps, IState> {
       .signInWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE })
-        navigate('/manufacturers')
+        if (typeof window !== 'undefined') navigate('/manufacturers')
       })
       .catch(error => {
         this.props.parentCallback(false)

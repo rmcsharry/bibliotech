@@ -43,7 +43,7 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
   render(): JSX.Element {
     const { data, authUser } = this.props
     if (authUser) {
-      navigate('/manufacturers')
+      if (typeof window !== 'undefined') navigate('/manufacturers')
       return null
     }
     const siteTitle: string = data?.site?.siteMetadata?.title || labels.notAvailable

@@ -18,7 +18,7 @@ const Redirector: React.FC<IProps> = ({ firebase }) => {
         // ...
       }
       // The signed-in user info.
-      if (result.user) navigate('/manufacturers')
+      if (result.user && typeof window !== 'undefined') navigate('/manufacturers')
     })
     .catch(function (error) {
       // Handle Errors here.

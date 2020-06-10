@@ -41,7 +41,7 @@ class SignUpForm extends React.Component<IProps, IState> {
       .createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE })
-        navigate('/manufacturers')
+        if (typeof window !== 'undefined') navigate('/manufacturers')
       })
       .catch(error => {
         this.props.parentCallback(false)

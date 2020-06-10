@@ -46,7 +46,7 @@ class ContactUsForm extends React.Component<IProps, IState> {
   firebaseCallback = error => {
     if (error) this.setState({ error })
     // TODO firebase api does not specify what error object shape is
-    else navigate('/thank_you')
+    else if (typeof window !== 'undefined') navigate('/thank_you')
   }
 
   handleChange = <T extends keyof IState>(event: React.ChangeEvent<HTMLInputElement>) => {

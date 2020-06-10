@@ -59,7 +59,7 @@ const SmallCard: React.FC<IEdge & IProps> = ({ node, isRestricted, favorites, is
     e.stopPropagation()
     if (isRestricted) {
       setShowReverse(true)
-    } else navigate(detailPage)
+    } else if (typeof window !== 'undefined') navigate(detailPage)
   }
 
   const handleDismissClick = () => {

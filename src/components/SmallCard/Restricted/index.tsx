@@ -40,7 +40,7 @@ const SmallCardRestricted: React.FC<IProps> = ({ dismissCallback }) => {
 
   const handleSignUpClick = e => {
     e.stopPropagation()
-    navigate('/sign_up')
+    if (typeof window !== 'undefined') navigate('/sign_up')
   }
 
   return (

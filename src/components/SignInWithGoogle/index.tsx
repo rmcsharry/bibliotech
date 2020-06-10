@@ -27,7 +27,7 @@ const SignInWithGoogle: React.FC<IProps> = ({ firebase }) => {
     provider.addScope('email')
     provider.setCustomParameters({ prompt: 'select_account' })
     firebase.auth().signInWithRedirect(provider)
-    navigate('/redirector')
+    if (typeof window !== 'undefined') navigate('/redirector')
   }
 
   return (

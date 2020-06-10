@@ -85,7 +85,7 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
     .filter(element => element !== null)
 
   if (onlyFavorites && list.length === 0) {
-    navigate('/no_favorites')
+    if (typeof window !== 'undefined') navigate('/no_favorites')
   }
 
   return (

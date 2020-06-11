@@ -1,6 +1,6 @@
 import React from 'react'
 import { navigate, useStaticQuery, graphql } from 'gatsby'
-import Image, { FluidObject } from 'gatsby-image'
+import { FluidObject } from 'gatsby-image'
 
 import IEdge from '../../types/edge'
 import Card from 'react-bootstrap/Card'
@@ -16,13 +16,18 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { CaretLeftFill } from 'react-bootstrap-icons/'
-import BgImage from '../BgImage'
+import BackgroundImage from 'gatsby-background-image'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
   borderBottom: '1px solid black',
   padding: '0.5rem 0.5rem',
 })
+
+const BgImageStyle = style({
+  marginTop: '-60px',
+})
+
 interface IProps {
   favorites: Array<string>
 }
@@ -64,14 +69,13 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
 
   return (
     <>
-      <BgImage
+      <BackgroundImage
+        Tag="section"
+        className={`${BgImageStyle}`}
         fluid={heroImage.hero.childImageSharp.fluid}
-        title={''}
-        height={'calc(100vh - 155px)'}
-        mobileHeight={'calc(100vh + 155px)'}
-        overlayColor={'hsla(0, 0%, 0%, 0.5)'}
+        backgroundColor={`#040e18`}
       >
-        <div className="d-flex mt-4 justify-content-center">
+        <div className="d-flex mt-4 justify-content-center" style={{ padding: '60px 0' }}>
           <Card className="p-3 p-sm-3 p-md-4 shadow" style={{ width: '36rem', opacity: 0.92 }}>
             <FavoriteButton
               manufacturerId={manufacturerId}
@@ -105,7 +109,7 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
             </Row>
           </Card>
         </div>
-      </BgImage>
+      </BackgroundImage>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import Image from 'gatsby-image'
 import styled from '@emotion/styled'
 
 //REF: https://markoskon.com/gatsby-background-image-example/
@@ -9,7 +9,7 @@ const Parent = styled.div`
   background-color: ${props => props.bc};
 `
 
-const FakeBgImage = styled(Img)`
+const FakeBgImage = styled(Image)`
   position: absolute;
   top: 0;
   left: 0;

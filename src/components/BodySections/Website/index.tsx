@@ -10,7 +10,7 @@ const Website: React.FC<IProps> = ({ address }) => {
 
   return (
     <BodySection title={'Website'}>
-      <a className="pl-4" href={url}>
+      <a className="pl-4" href={url} target="_blank">
         {url ? url : 'TBD'}
       </a>
     </BodySection>

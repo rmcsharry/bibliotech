@@ -15,7 +15,9 @@ const StyledFooter = styled.footer`
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
-      <span>© {new Date().getFullYear()} JmF Technical Documentation Solutions</span>
+      <a href="http://www.jmfservices.net" className="text-white" style={{ textDecoration: 'underline' }}>
+        © {new Date().getFullYear()} JmF Technical Documentation Solutions
+      </a>
       <span>Terms of Service</span>
     </StyledFooter>
   )

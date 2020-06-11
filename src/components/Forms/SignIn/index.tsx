@@ -59,7 +59,7 @@ class SignInForm extends React.Component<IProps, IState> {
     const isInvalid = passwordOne === '' || email === ''
 
     return (
-      <Card className="p-3 p-sm-3 p-md-4 shadow mx-auto" style={{ maxWidth: '30rem' }}>
+      <Card className="p-3 p-sm-3 p-md-4 shadow mx-auto" style={{ width: '340px', maxWidth: '30rem' }}>
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -86,7 +86,7 @@ class SignInForm extends React.Component<IProps, IState> {
           </Form.Group>
 
           <Button variant="primary" type="submit" disabled={isInvalid} className="mt-2">
-            Submit
+            Sign In
           </Button>
           {error && <p className="mt-4 p-2 text-white bg-danger">{error.message}</p>}
         </Form>

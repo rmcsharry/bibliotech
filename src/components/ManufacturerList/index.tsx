@@ -89,7 +89,7 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
   }
 
   return (
-    <Container fluid style={{ marginTop: '140px' }}>
+    <Container fluid style={{ marginTop: '100px' }}>
       <Row className="justify-content-center mt-4">{list}</Row>
     </Container>
   )

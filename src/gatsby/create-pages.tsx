@@ -22,7 +22,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   const result = await graphql<IQueryResult>(
     `
       {
-        allAirtableManufacturer {
+        allAirtableManufacturer(sort: { fields: data___Manufacturer, order: ASC }) {
           edges {
             node {
               recordId

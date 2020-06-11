@@ -7,7 +7,6 @@ import labels from '../content/site/labels'
 import { LandingPageQuery } from './__generated__/LandingPageQuery'
 import { withAuthentication, withFirebase } from '../contexts/Firebase'
 import ManufacturerList from '../components/ManufacturerList'
-import PageTitle from '../components/PageTitle'
 import styled from '@emotion/styled'
 import BgImage from '../components/BgImage'
 

@@ -12133,16 +12133,6 @@
               "defaultValue": null
             },
             {
-              "name": "pathCheck",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "appId",
               "description": "",
               "type": {
@@ -12188,6 +12178,16 @@
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "pathCheck",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BooleanQueryOperatorInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -13474,18 +13474,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pathCheck",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "appId",
               "description": null,
               "args": [],
@@ -13549,6 +13537,18 @@
                   "name": "String",
                   "ofType": null
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pathCheck",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -15239,12 +15239,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginCreator___pluginOptions___pathCheck",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginCreator___pluginOptions___appId",
               "description": null,
               "isDeprecated": false,
@@ -15282,6 +15276,12 @@
             },
             {
               "name": "pluginCreator___pluginOptions___matchFields",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginCreator___pluginOptions___pathCheck",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -28210,12 +28210,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginOptions___pathCheck",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginOptions___appId",
               "description": null,
               "isDeprecated": false,
@@ -28271,6 +28265,12 @@
             },
             {
               "name": "pluginOptions___matchFields",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginOptions___pathCheck",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

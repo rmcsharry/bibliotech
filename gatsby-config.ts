@@ -100,5 +100,14 @@ export default {
         matchFields: ['recordId', 'Last_update'],
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `darkgray`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
   ],
 }

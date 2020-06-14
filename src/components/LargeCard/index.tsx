@@ -45,7 +45,7 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
 
   return (
     <>
-      <StyledBackgroundImage>
+      <StyledBackgroundImage imageName="library">
         <div className="d-flex mt-4 p-3 justify-content-center" style={{ padding: '60px 0' }}>
           <Card className="p-3 p-sm-3 p-md-4 shadow" style={{ width: '36rem', opacity: 0.92 }}>
             <FavoriteButton

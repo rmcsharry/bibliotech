@@ -17,7 +17,7 @@ class ContactUs extends React.Component<{}> {
       <>
         <Layout title={'Contact Us'}>
           <StyledBackgroundImage imageName="library">
-            <StyledBackgroundWrapper>
+            <StyledBackgroundWrapper minHeight="77vh">
               <StyledFormContainer>
                 <p>Please provide your comments below.</p>
                 <ContactUsForm />

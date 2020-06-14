@@ -7,6 +7,7 @@ import IEdge from '../../types/edge'
 import Container from 'react-bootstrap/Container'
 import { withFavorites } from '../../contexts/Favorites'
 import { navigate } from 'gatsby'
+import styled from '@emotion/styled'
 
 interface IQuery {
   firms: {
@@ -19,6 +20,10 @@ interface IProps {
   favorites: Array<string>
   onlyFavorites: boolean
 }
+
+const StyledContainer = styled(Container)`
+  margin-top: 70px;
+`
 
 const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavorites }) => {
   const data = useStaticQuery<IQuery>(graphql`
@@ -89,9 +94,17 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
   }
 
   return (
-    <Container fluid style={{ marginTop: '70px' }}>
-      <Row className="justify-content-center mt-4">{list}</Row>
-    </Container>
+    <>
+      {onlyFavorites ? (
+        <Container fluid>
+          <Row className="justify-content-center mt-4">{list}</Row>
+        </Container>
+      ) : (
+        <StyledContainer fluid>
+          <Row className="justify-content-center mt-4">{list}</Row>
+        </StyledContainer>
+      )}
+    </>
   )
 }
 

@@ -23,7 +23,7 @@ const StyledContainer = styled.div`
 `
 const BgImageStyle = style({
   paddingTop: '25px',
-  paddingBottom: '25px',
+  paddingBottom: '30px',
 })
 
 const ImageStyle = styled.div`

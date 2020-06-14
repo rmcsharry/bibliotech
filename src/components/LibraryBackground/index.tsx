@@ -9,6 +9,11 @@ import { style } from 'typestyle'
 import { mq } from '../helpers/mq'
 import { FluidObject } from 'gatsby-image'
 
+const StyledOverlay = styled.div`
+  position: relative;
+  background-color: hsla(0, 0%, 0%, 0.4);
+`
+
 interface IQuery {
   hero: {
     childImageSharp: {
@@ -33,9 +38,17 @@ const LibraryBackground = ({ className, children }) => {
   const heroImage = data.hero.childImageSharp.fluid
 
   return (
-    <BackgroundImage Tag="section" className={className} fluid={heroImage} backgroundColor={`#040e18`}>
-      {children}
-    </BackgroundImage>
+    <StyledOverlay>
+      <BackgroundImage
+        Tag="section"
+        className={className}
+        fluid={heroImage}
+        backgroundColor={`#040e18`}
+        preserveStackingContext={true}
+      >
+        {children}
+      </BackgroundImage>
+    </StyledOverlay>
   )
 }
 

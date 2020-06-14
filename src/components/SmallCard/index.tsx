@@ -35,7 +35,7 @@ const CardStyle = style({
 
 function renderTooltip(props) {
   return (
-    <Tooltip id={`tooltip-${props.name}`} {...props} style={{ zIndex: '1' }}>
+    <Tooltip id={`tooltip-${props.name}`} {...props} style={{ zIndex: '9999' }}>
       {props.name}
     </Tooltip>
   )

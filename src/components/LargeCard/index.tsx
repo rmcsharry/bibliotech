@@ -1,6 +1,5 @@
 import React from 'react'
 import { navigate } from 'gatsby'
-import { FluidObject } from 'gatsby-image'
 
 import IEdge from '../../types/edge'
 import Card from 'react-bootstrap/Card'
@@ -26,13 +25,6 @@ const TitleStyle = style({
 
 interface IProps {
   favorites: Array<string>
-}
-interface IQuery {
-  hero: {
-    childImageSharp: {
-      fluid: FluidObject | FluidObject[]
-    }
-  }
 }
 
 const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {

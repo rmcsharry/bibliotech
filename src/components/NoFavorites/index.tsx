@@ -28,7 +28,7 @@ const StyledReturnContainer = styled.div`
 export default function NoFavorites() {
   return (
     <StyledBackgroundImage imageName="coffee">
-      <StyledBackgroundWrapper>
+      <StyledBackgroundWrapper minHeight="66vh">
         <StyledContainer>
           <h1>Ooops! :(</h1>
           <h1>It doesn't look like you've saved any favorites. </h1>

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
   background: black;
@@ -18,7 +19,9 @@ const Footer: React.FC = () => {
       <a href="http://www.jmfservices.net" className="text-white" style={{ textDecoration: 'underline' }}>
         © {new Date().getFullYear()} JmF Technical Documentation Solutions
       </a>
-      <span>Terms of Service</span>
+      <Link to="/terms" className="text-white" style={{ textDecoration: 'underline' }}>
+        Terms of Service
+      </Link>
     </StyledFooter>
   )
 }

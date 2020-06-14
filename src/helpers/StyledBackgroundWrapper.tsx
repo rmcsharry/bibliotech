@@ -1,5 +1,8 @@
 import styled from '@emotion/styled'
 
-export const StyledBackgroundWrapper = styled.div`
-  min-height: 77vh;
+type WrapperProps = {
+  minHeight: string
+}
+export const StyledBackgroundWrapper = styled.div<WrapperProps>`
+  min-height: ${(props: WrapperProps) => (props.minHeight ? props.minHeight : '77vh')};
 `

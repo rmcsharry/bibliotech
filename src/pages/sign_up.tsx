@@ -26,7 +26,7 @@ const SignUp: React.FC<IProps> = ({ firebase }) => {
     <Layout title={'SignUp'}>
       <StyledBackgroundImage imageName="library">
         {isShowOverlay ? <WaitSpinner /> : null}
-        <StyledBackgroundWrapper>
+        <StyledBackgroundWrapper minHeight="77vh">
           <StyledFormContainer>
             <p>Please sign up.</p>
             <SignUpForm firebase={firebase} parentCallback={value => handleCallback(value)} />

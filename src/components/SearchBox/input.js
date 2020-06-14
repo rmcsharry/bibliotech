@@ -2,13 +2,18 @@ import React, { useState } from 'react'
 import { connectSearchBox } from 'react-instantsearch-dom'
 import styled from '@emotion/styled'
 import { Search } from 'react-bootstrap-icons/'
+import { mq } from '../../helpers/mq'
 
 const StyledInput = styled.input`
   background: white;
   color: black;
   width: 300px;
   height: 36px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+
+  ${mq('sm')} {
+    margin-bottom: 0;
+  }
 `
 
 const StyledForm = styled.form`

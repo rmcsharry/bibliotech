@@ -5,11 +5,16 @@ import ManufacturerList from '../components/ManufacturerList'
 import { withAuthentication } from '../contexts/Firebase'
 import IPageProps from '../types/page-props'
 import styled from '@emotion/styled'
+import { mq } from '../helpers/mq'
 
 const StyledHeader = styled.h4`
   text-transform: none;
   margin-left: 2rem;
   margin-top: 2.5rem;
+
+  ${mq('sm')} {
+    margin-top: 0;
+  }
 `
 
 const Favorites: React.FC<IPageProps> = ({ authUser }) => {

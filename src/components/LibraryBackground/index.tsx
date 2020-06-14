@@ -1,18 +1,18 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import Layout from '../components/Layout'
-import PageTitle from '../components/PageTitle'
-import { AboutPageQuery } from './__generated__/AboutPageQuery'
 import styled from '@emotion/styled'
 import BackgroundImage from 'gatsby-background-image'
-import { style } from 'typestyle'
-import { mq } from '../helpers/mq'
 import { FluidObject } from 'gatsby-image'
+import { style } from 'typestyle'
 
 const StyledOverlay = styled.div`
   position: relative;
   background-color: hsla(0, 0%, 0%, 0.4);
 `
+const BgImageStyle = style({
+  paddingTop: '25px',
+  paddingBottom: '30px',
+})
 
 interface IQuery {
   hero: {
@@ -22,7 +22,7 @@ interface IQuery {
   }
 }
 
-const LibraryBackground = ({ className, children }) => {
+const LibraryBackground = ({ children }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query LibraryImageQuery {
       hero: file(relativePath: { eq: "library_bg.jpg" }) {
@@ -41,7 +41,7 @@ const LibraryBackground = ({ className, children }) => {
     <StyledOverlay>
       <BackgroundImage
         Tag="section"
-        className={className}
+        className={BgImageStyle}
         fluid={heroImage}
         backgroundColor={`#040e18`}
         preserveStackingContext={true}

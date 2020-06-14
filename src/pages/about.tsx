@@ -4,9 +4,6 @@ import Layout from '../components/Layout'
 import PageTitle from '../components/PageTitle'
 import { AboutPageQuery } from './__generated__/AboutPageQuery'
 import styled from '@emotion/styled'
-import BackgroundImage from 'gatsby-background-image'
-import { style } from 'typestyle'
-import { mq } from '../helpers/mq'
 import StyledLibraryBackground from '../components/LibraryBackground'
 
 const StyledContainer = styled.div`
@@ -20,19 +17,6 @@ const StyledContainer = styled.div`
   padding: 2rem;
   margin: 50px auto;
   opacity: 0.88;
-`
-const BgImageStyle = style({
-  paddingTop: '25px',
-  paddingBottom: '30px',
-})
-
-const ImageStyle = styled.div`
-  height: 100vh,
-  margin-top: -20px,
-  ${mq('sm')} {
-    font-size: 2.5rem;
-    line-height: 3rem;
-  }
 `
 
 interface IPageQuery {
@@ -51,7 +35,7 @@ class AboutPage extends React.Component<IPageQuery> {
     return (
       <>
         <Layout title={'About Us'}>
-          <StyledLibraryBackground className={BgImageStyle}>
+          <StyledLibraryBackground>
             <StyledContainer>
               <PageTitle title={'About Bibliotech'} />
               <p>

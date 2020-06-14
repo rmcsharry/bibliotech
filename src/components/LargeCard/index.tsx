@@ -1,5 +1,5 @@
 import React from 'react'
-import { navigate, useStaticQuery, graphql } from 'gatsby'
+import { navigate } from 'gatsby'
 import { FluidObject } from 'gatsby-image'
 
 import IEdge from '../../types/edge'
@@ -16,16 +16,12 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { CaretLeftFill } from 'react-bootstrap-icons/'
-import BackgroundImage from 'gatsby-background-image'
+import StyledLibraryBackground from '../LibraryBackground'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
   borderBottom: '1px solid black',
   padding: '0.5rem 0.5rem',
-})
-
-const BgImageStyle = style({
-  marginTop: '-60px',
 })
 
 interface IProps {
@@ -40,18 +36,6 @@ interface IQuery {
 }
 
 const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
-  const heroImage = useStaticQuery<IQuery>(graphql`
-    query BgImageQuery {
-      hero: file(relativePath: { eq: "library_bg.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1180, quality: 100) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
-  `)
-
   const { data } = node
   const name = data.Manufacturer || labels.notAvailable
   const manufacturerId = node.recordId
@@ -69,13 +53,8 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
 
   return (
     <>
-      <BackgroundImage
-        Tag="section"
-        className={`${BgImageStyle}`}
-        fluid={heroImage.hero.childImageSharp.fluid}
-        backgroundColor={`#040e18`}
-      >
-        <div className="d-flex mt-4 justify-content-center" style={{ padding: '60px 0' }}>
+      <StyledLibraryBackground>
+        <div className="d-flex mt-4 p-3 justify-content-center" style={{ padding: '60px 0' }}>
           <Card className="p-3 p-sm-3 p-md-4 shadow" style={{ width: '36rem', opacity: 0.92 }}>
             <FavoriteButton
               manufacturerId={manufacturerId}
@@ -109,7 +88,7 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
             </Row>
           </Card>
         </div>
-      </BackgroundImage>
+      </StyledLibraryBackground>
     </>
   )
 }

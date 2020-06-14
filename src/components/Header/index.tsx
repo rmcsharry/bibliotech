@@ -37,7 +37,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
     query LogoQuery {
       logo: file(absolutePath: { regex: "/BibliotechLogo.png/" }) {
         childImageSharp {
-          fixed(width: 200, height: 60) {
+          fixed(width: 160, height: 60) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -58,9 +58,6 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
           </Link>
           {authUser ? (
             <React.Fragment>
-              <Link to="/manufacturers">
-                <span className="nav-bg nav-link">All</span>
-              </Link>
               <Link to="/favorites">
                 <span className="nav-bg nav-link">Favorites</span>
               </Link>

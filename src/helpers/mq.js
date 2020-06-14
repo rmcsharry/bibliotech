@@ -5,7 +5,7 @@
 
 export function mq(bp_name) {
   const breakpoints = {
-    sm: 550,
+    sm: 578,
     md: 768,
     lg: 1024,
     xl: 1700,

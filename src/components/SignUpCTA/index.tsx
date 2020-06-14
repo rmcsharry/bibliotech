@@ -21,15 +21,33 @@ const StyledSignUp = styled.div`
     text-decoration: underline;
   }
 `
+interface IProps {
+  signup: boolean
+  terms: boolean
+}
 
-const SignUpCTA: React.FC<{}> = () => {
+const SignUpCTA: React.FC<IProps> = ({ signup, terms }) => {
   return (
     <>
       <StyledSignUp>
-        <span>
-          Don't have an account yet?&nbsp;
-          <Link to="/sign_up">Sign up for free</Link>
-        </span>
+        {terms ? (
+          <>
+            <span className="mb-1">
+              By creating an account, you agree to the <Link to="/terms">Terms of Service.</Link>
+            </span>
+          </>
+        ) : null}
+        {signup ? (
+          <span>
+            Do you already have an account?&nbsp;
+            <Link to="/sign_in">Sign in</Link>
+          </span>
+        ) : (
+          <span>
+            Don't have an account yet?&nbsp;
+            <Link to="/sign_up">Sign up for free</Link>
+          </span>
+        )}
       </StyledSignUp>
     </>
   )

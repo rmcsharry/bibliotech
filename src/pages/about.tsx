@@ -2,21 +2,37 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PageTitle from '../components/PageTitle'
-import BgImage from '../components/BgImage'
 import { AboutPageQuery } from './__generated__/AboutPageQuery'
 import styled from '@emotion/styled'
+import BackgroundImage from 'gatsby-background-image'
+import { style } from 'typestyle'
+import { mq } from '../helpers/mq'
+import StyledLibraryBackground from '../components/LibraryBackground'
 
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: black;
   justify-content: center;
-  max-width: 1200px;
-  max-height: calc(100vh + 155px);
+  width: 80vw;
+  max-width: 900px;
   background: white;
   padding: 2rem;
   margin: 50px auto;
   opacity: 0.88;
+`
+const BgImageStyle = style({
+  paddingTop: '25px',
+  paddingBottom: '25px',
+})
+
+const ImageStyle = styled.div`
+  height: 100vh,
+  margin-top: -20px,
+  ${mq('sm')} {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 `
 
 interface IPageQuery {
@@ -30,18 +46,12 @@ class AboutPage extends React.Component<IPageQuery> {
 
   render(): JSX.Element {
     const { data } = this.props
-    const heroImage = data?.hero?.childImageSharp
+    const heroImage = data?.hero?.childImageSharp.fluid
 
     return (
       <>
         <Layout title={'About Us'}>
-          <BgImage
-            fluid={heroImage.fluid}
-            title={'About Bibliotech'}
-            height={'calc(100vh - 155px)'}
-            mobileHeight={'calc(100vh + 155px)'}
-            overlayColor={'hsla(0, 0%, 0%, 0.5)'}
-          >
+          <StyledLibraryBackground className={BgImageStyle}>
             <StyledContainer>
               <PageTitle title={'About Bibliotech'} />
               <p>
@@ -75,7 +85,7 @@ class AboutPage extends React.Component<IPageQuery> {
               <p>Keep well.</p>
               <p>Juste Fanou, CSC, BSS, WELL AP, CAPM.</p>
             </StyledContainer>
-          </BgImage>
+          </StyledLibraryBackground>
         </Layout>
       </>
     )

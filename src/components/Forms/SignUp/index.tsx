@@ -99,7 +99,7 @@ class SignUpForm extends React.Component<IProps, IState> {
             />
           </Form.Group>
           <Button variant="primary" type="submit" disabled={isInvalid} className="mt-2">
-            Submit
+            Sign Up
           </Button>
           {error && <p className="mt-4 p-2 text-white bg-danger">{error.message}</p>}
         </Form>

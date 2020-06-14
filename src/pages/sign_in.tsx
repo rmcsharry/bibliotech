@@ -6,17 +6,10 @@ import Layout from '../components/Layout'
 import SignInWithGoogle from '../components/SignInWithGoogle'
 import { withFirebase } from '../contexts/Firebase'
 import WaitSpinner from '../components/WaitSpinner'
-import { style } from 'typestyle'
 import { FluidObject } from 'gatsby-image'
 import SignUpCTA from '../components/SignUpCTA'
 import BgImage from '../components/BgImage'
 import styled from '@emotion/styled'
-
-const BgImageStyle = style({
-  height: '100vh',
-  marginTop: '-60px',
-  opacity: '0.5',
-})
 
 const StyledContainer = styled.div`
   display: flex;
@@ -81,10 +74,9 @@ const SignIn: React.FC<IProps> = ({ firebase }) => {
           <p>Please sign in.</p>
           <SignInForm firebase={firebase} parentCallback={value => handleCallback(value)} />
         </StyledContainer>
-
         <br></br>
         <SignInWithGoogle />
-        <SignUpCTA />
+        <SignUpCTA signup={false} terms={false} />
       </BgImage>
     </Layout>
   )

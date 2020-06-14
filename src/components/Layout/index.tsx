@@ -25,8 +25,10 @@ const Layout: React.FC<IProps> = ({ authUser, firebase, title, location, childre
     <StyledApp>
       <SEO title={title} />
       <Header firebase={firebase} />
-      <main style={{ marginTop: '80px' }}>{children}</main>
-      <Footer />
+      <main style={{ marginTop: '80px' }}>
+        {children}
+        <Footer />
+      </main>
     </StyledApp>
   )
 }

@@ -75,7 +75,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
                 <span className="nav-bg nav-link">Sign Up</span>
               </Link>
               <Link to="/sign_in">
-                <span className="nav-bg nav-link">Login</span>
+                <span className="nav-bg nav-link">Sign In</span>
               </Link>
             </React.Fragment>
           )}

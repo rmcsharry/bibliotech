@@ -1,4 +1,8 @@
 /* override bootstrap */
+html,
+body {
+  height: 100%;
+}
 html {
   font-size: 0.9rem;
 }

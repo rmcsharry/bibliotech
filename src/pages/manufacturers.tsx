@@ -6,14 +6,9 @@ import { withFirebase, withAuthentication } from '../contexts/Firebase'
 import ManufacturerList from '../components/ManufacturerList'
 
 const Manufacturers: React.FC<IPageProps> = ({ authUser, firebase }) => {
-  if (!authUser) {
-    if (typeof window !== 'undefined') navigate('/')
-    return null
-  }
-
   return (
     <Layout title="Manufacturers">
-      <ManufacturerList isRestricted={false} />
+      <ManufacturerList isRestricted={authUser ? false : true} />
     </Layout>
   )
 }

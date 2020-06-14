@@ -104,7 +104,7 @@ export default {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `darkgray`,
+        color: `red`,
         // Disable the loading spinner.
         showSpinner: true,
       },

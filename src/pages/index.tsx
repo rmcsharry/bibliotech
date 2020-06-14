@@ -1,30 +1,12 @@
 import React from 'react'
-import { graphql, navigate } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout/'
 import IPageProps from '../types/page-props'
 import labels from '../content/site/labels'
 import { LandingPageQuery } from './__generated__/LandingPageQuery'
-import { withAuthentication, withFirebase } from '../contexts/Firebase'
-import ManufacturerList from '../components/ManufacturerList'
-import styled from '@emotion/styled'
-import BgImage from '../components/BgImage'
-
-const StyledTitle = styled.h2`
-  position: absolute;
-  top: 45%;
-  left: 10%;
-  color: white;
-  text-transform: capitalize;
-`
-const StyledSubTitle = styled.h5`
-  position: absolute;
-  top: 54%;
-  left: 10%;
-  color: white;
-  text-transform: capitalize;
-  font-weight: 400;
-`
+import { withFirebase } from '../contexts/Firebase'
+import Home from '../components/Home'
 
 interface IProps extends IPageProps {
   listRef: any
@@ -40,53 +22,27 @@ class LandingPage extends React.Component<IPageQuery & IProps> {
   }
 
   render(): JSX.Element {
-    const { data, authUser } = this.props
-    if (authUser) {
-      if (typeof window !== 'undefined') navigate('/manufacturers')
-      return null
-    }
+    const { data } = this.props
+
     const siteTitle: string = data?.site?.siteMetadata?.title || labels.notAvailable
-    const heroImage = data?.hero?.childImageSharp
 
     return (
       <div>
-        <Layout
-          location={this.props.location}
-          title={siteTitle}
-          authUser={this.props.authUser}
-          firebase={this.props.firebase}
-        >
-          <BgImage
-            fluid={heroImage.fluid}
-            title={'Welcome to Bibliotech'}
-            height={'800px'}
-            mobileHeight={'400px'}
-            overlayColor={'hsla(0, 0%, 0%, 0.5)'}
-          >
-            <StyledTitle>Welcome to Bibliotech</StyledTitle>
-            <StyledSubTitle>Your digital architectural library</StyledSubTitle>
-          </BgImage>
-          <ManufacturerList isRestricted={authUser ? false : true} />
+        <Layout location={this.props.location} title={siteTitle} authUser={null} firebase={this.props.firebase}>
+          <Home></Home>
         </Layout>
       </div>
     )
   }
 }
 
-export default withFirebase(withAuthentication(LandingPage))
+export default withFirebase(LandingPage)
 
 export const pageQuery = graphql`
   query LandingPageQuery {
     site {
       siteMetadata {
         title
-      }
-    }
-    hero: file(relativePath: { eq: "landing_bg.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1180, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
       }
     }
   }

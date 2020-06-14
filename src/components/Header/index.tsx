@@ -47,9 +47,12 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
 
   return (
     <Navbar className="navbar-dark" expand="lg" fixed="top">
-      <Navbar.Brand href="/">
-        <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
+      <Navbar.Brand>
+        <Link to="/">
+          <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
+        </Link>
       </Navbar.Brand>
+
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
         <Nav activeKey="/home">

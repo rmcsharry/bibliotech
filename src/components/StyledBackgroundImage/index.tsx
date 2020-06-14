@@ -7,7 +7,7 @@ import { style } from 'typestyle'
 
 const StyledOverlay = styled.div`
   position: relative;
-  background-color: hsla(0, 0%, 0%, 0.4);
+  background-color: hsla(0, 0%, 0%, 0.5);
 `
 const BgImageStyle = style({
   paddingTop: '25px',
@@ -15,17 +15,29 @@ const BgImageStyle = style({
 })
 
 interface IQuery {
-  hero: {
+  library: {
+    childImageSharp: {
+      fluid: FluidObject | FluidObject[]
+    }
+  }
+  coffee: {
     childImageSharp: {
       fluid: FluidObject | FluidObject[]
     }
   }
 }
 
-const LibraryBackground = ({ children }) => {
+const Background = ({ children, imageName }) => {
   const data = useStaticQuery<IQuery>(graphql`
-    query LibraryImageQuery {
-      hero: file(relativePath: { eq: "library_bg.jpg" }) {
+    query {
+      library: file(relativePath: { eq: "library_bg.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1180, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      coffee: file(relativePath: { eq: "coffee_bg.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1180, quality: 100) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -34,8 +46,18 @@ const LibraryBackground = ({ children }) => {
       }
     }
   `)
-
-  const heroImage = data.hero.childImageSharp.fluid
+  console.log(data, imageName)
+  let heroImage = null
+  switch (imageName) {
+    case 'library':
+      heroImage = data.library.childImageSharp.fluid
+      break
+    case 'coffee':
+      heroImage = data.coffee.childImageSharp.fluid
+      break
+    default:
+      heroImage = data.library.childImageSharp.fluid
+  }
 
   return (
     <StyledOverlay>
@@ -52,10 +74,10 @@ const LibraryBackground = ({ children }) => {
   )
 }
 
-const StyledLibraryBackground = styled(LibraryBackground)`
+const StyledBackgroundImage = styled(Background)`
   width: 100%;
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
 `
-export default StyledLibraryBackground
+export default StyledBackgroundImage

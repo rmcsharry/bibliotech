@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import PageTitle from '../components/PageTitle'
 import { AboutPageQuery } from './__generated__/AboutPageQuery'
 import styled from '@emotion/styled'
-import StyledLibraryBackground from '../components/LibraryBackground'
+import StyledBackgroundImage from '../components/StyledBackgroundImage'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ class AboutPage extends React.Component<IPageQuery> {
     return (
       <>
         <Layout title={'About Us'}>
-          <StyledLibraryBackground>
+          <StyledBackgroundImage imageName="library">
             <StyledContainer>
               <PageTitle title={'About Bibliotech'} />
               <p>
@@ -69,7 +69,7 @@ class AboutPage extends React.Component<IPageQuery> {
               <p>Keep well.</p>
               <p>Juste Fanou, CSC, BSS, WELL AP, CAPM.</p>
             </StyledContainer>
-          </StyledLibraryBackground>
+          </StyledBackgroundImage>
         </Layout>
       </>
     )

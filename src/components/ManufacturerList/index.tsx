@@ -8,6 +8,8 @@ import Container from 'react-bootstrap/Container'
 import { withFavorites } from '../../contexts/Favorites'
 import { navigate } from 'gatsby'
 import styled from '@emotion/styled'
+import NoFavorites from '../NoFavorites'
+import FavoritesHeader from '../FavoritesHeader'
 
 interface IQuery {
   firms: {
@@ -90,13 +92,14 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
     .filter(element => element !== null)
 
   if (onlyFavorites && list.length === 0) {
-    if (typeof window !== 'undefined') navigate('/no_favorites')
+    if (typeof window !== 'undefined') return <NoFavorites></NoFavorites>
   }
 
   return (
     <>
       {onlyFavorites ? (
         <Container fluid>
+          <FavoritesHeader></FavoritesHeader>
           <Row className="justify-content-center mt-4">{list}</Row>
         </Container>
       ) : (

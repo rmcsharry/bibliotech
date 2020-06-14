@@ -23,9 +23,14 @@ const StyledForm = styled.form`
   margin: auto;
 `
 const StyledIcon = styled.span`
-  right: 30px;
+  right: 45px;
   position: absolute;
-  top: 25px;
+  top: 76px;
+
+  ${mq('md')} {
+    right: 30px;
+    top: 23px;
+  }
 `
 
 export default connectSearchBox(({ refine, ...rest }) => {

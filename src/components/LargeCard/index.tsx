@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { CaretLeftFill } from 'react-bootstrap-icons/'
-import StyledLibraryBackground from '../LibraryBackground'
+import StyledBackgroundImage from '../StyledBackgroundImage'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
@@ -45,7 +45,7 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
 
   return (
     <>
-      <StyledLibraryBackground>
+      <StyledBackgroundImage>
         <div className="d-flex mt-4 p-3 justify-content-center" style={{ padding: '60px 0' }}>
           <Card className="p-3 p-sm-3 p-md-4 shadow" style={{ width: '36rem', opacity: 0.92 }}>
             <FavoriteButton
@@ -80,7 +80,7 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
             </Row>
           </Card>
         </div>
-      </StyledLibraryBackground>
+      </StyledBackgroundImage>
     </>
   )
 }

@@ -2,38 +2,15 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Container from 'react-bootstrap/Container'
 import ManufacturerList from '../components/ManufacturerList'
-import { withAuthentication } from '../contexts/Firebase'
-import IPageProps from '../types/page-props'
-import styled from '@emotion/styled'
-import { mq } from '../helpers/mq'
 
-const StyledHeader = styled.h4`
-  text-transform: none;
-  margin-left: 2rem;
-  margin-top: 2.5rem;
-
-  ${mq('sm')} {
-    margin-top: 0;
-  }
-`
-
-const Favorites: React.FC<IPageProps> = ({ authUser }) => {
-  console.log(authUser)
+const Favorites: React.FC<{}> = ({}) => {
   return (
     <>
       <Layout title={'Favorites'}>
-        <br></br>
-        {authUser?.displayName ? (
-          <StyledHeader>Hello, {authUser.displayName.split(' ')[0]}. Here are the companies you've saved.</StyledHeader>
-        ) : (
-          <StyledHeader>Here are the companies you've saved.</StyledHeader>
-        )}
-        <Container fluid>
-          <ManufacturerList isRestricted={false} onlyFavorites={true} />
-        </Container>
+        <ManufacturerList isRestricted={false} onlyFavorites={true} />
       </Layout>
     </>
   )
 }
 
-export default withAuthentication(Favorites)
+export default Favorites

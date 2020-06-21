@@ -11,7 +11,7 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  margin: auto;
+  margin: 0 auto;
 `
 
 export const StyledInput = styled.input`

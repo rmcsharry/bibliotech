@@ -9,23 +9,31 @@ const Profile = ({ authUser }) => {
   return (
     <Layout>
       <PageTitle title={'Profile'} />
-      <Container className="justify-content-center">
+      <Container className="fluid justify-content-center">
         <Row>
-          <h5>Name: {authUser?.displayName}</h5>
+          <div className="col">
+            <h5>Name: {authUser?.displayName}</h5>
+          </div>
         </Row>
         <Row>
-          <h5>Email: {authUser?.email}</h5>
+          <div className="col">
+            <h5>Email: {authUser?.email}</h5>
+          </div>
         </Row>
         <br></br>
         <Row>
-          {authUser?.providerData[0].providerId === 'password' ? (
-            <p>You authorised using email/password</p>
-          ) : (
-            <p>You authorised via: {authUser?.providerData[0].providerId}</p>
-          )}
+          <div className="col">
+            {authUser?.providerData[0].providerId === 'password' ? (
+              <p>You authorised using email/password</p>
+            ) : (
+              <p>You authorised via: {authUser?.providerData[0].providerId}</p>
+            )}
+          </div>
         </Row>
         <Row>
-          <img src={authUser?.photoURL} />
+          <div className="col">
+            <img src={authUser?.photoURL} />
+          </div>
         </Row>
       </Container>
     </Layout>

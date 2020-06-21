@@ -18,7 +18,6 @@ const manufacturerQuery = `{
 }`
 
 const flatten = arr => {
-  // console.log('HERE', arr)
   if (arr)
     return arr.map(({ node }) => ({
       objectID: node.recordId,

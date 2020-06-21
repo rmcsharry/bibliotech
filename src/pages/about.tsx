@@ -6,6 +6,7 @@ import { AboutPageQuery } from './__generated__/AboutPageQuery'
 import styled from '@emotion/styled'
 import StyledBackgroundImage from '../components/StyledBackgroundImage'
 import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
+import { mq } from '../helpers/mq'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -18,6 +19,15 @@ const StyledContainer = styled.div`
   padding: 2rem;
   margin: 50px auto;
   opacity: 0.88;
+  p {
+    font-size: 13px;
+  }
+
+  ${mq('lg')} {
+    p {
+      font-size: 15px;
+    }
+  }
 `
 
 interface IPageQuery {

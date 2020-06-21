@@ -11,7 +11,7 @@ const StyledOverlay = styled.div`
 `
 const BgImageStyle = style({
   paddingTop: '35px',
-  paddingBottom: '30px',
+  paddingBottom: '45px',
 })
 
 interface IQuery {

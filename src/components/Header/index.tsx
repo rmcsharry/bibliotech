@@ -11,6 +11,24 @@ import IPageProps from '../../types/page-props'
 import SearchBox from '../SearchBox'
 import { StyledInput } from '../SearchBox/styles'
 import { StyledIcon } from '../SearchBox/styles'
+import styled from '@emotion/styled'
+import { mq } from '../../helpers/mq'
+
+const StyledMobileImage = styled(Image)`
+  margin-top: 5px;
+  margin-left: -10px;
+
+  ${mq('lg')} {
+    display: none !important;
+  }
+`
+const StyledDesktopImage = styled(Image)`
+  display: none !important;
+
+  ${mq('lg')} {
+    display: inline-block !important;
+  }
+`
 
 const searchIndices = [{ name: `Manufacturers`, title: `Search Results`, hitComp: `ManufacturerHit` }]
 
@@ -32,7 +50,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
     query LogoQuery {
       logo: file(absolutePath: { regex: "/BibliotechLogo.png/" }) {
         childImageSharp {
-          fixed(width: 160, height: 60) {
+          fixed(width: 120, height: 44) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -52,12 +70,8 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
       <Navbar className="navbar-dark" expand="lg" fixed="top">
         <Navbar.Brand>
           <Link to="/">
-            {/* <Image fixed={data.logo.childImageSharp.fixed} alt={'company logo'} /> */}
-            <Image
-              style={{ marginTop: '5px', marginLeft: '-10px' }}
-              fixed={data.logoMobile.childImageSharp.fixed}
-              alt={'company logo'}
-            />
+            <StyledMobileImage fixed={data.logoMobile.childImageSharp.fixed} alt={'company logo'} />
+            <StyledDesktopImage fixed={data.logo.childImageSharp.fixed} alt={'company logo'} />
           </Link>
         </Navbar.Brand>
 

@@ -97,7 +97,7 @@ export default {
         queries,
         chunkSize: 10000, // default: 1000
         enablePartialUpdates: true, // default: false
-        matchFields: ['objectID'],
+        matchFields: ['lastUpdated'],
       },
     },
     {

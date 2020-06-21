@@ -11,6 +11,7 @@ const manufacturerQuery = `{
               Section_Name
             }
           }
+          Last_update
         }
       }
     }
@@ -24,6 +25,7 @@ const flatten = arr => {
       manufacturer: node.data.Manufacturer,
       keywords: node.data.KEYWORDS,
       classification: flattenMFC(node.data.MASTER_FORMAT_CLASSIFICATION),
+      lastUpdated: node.data.Last_update,
     }))
 }
 

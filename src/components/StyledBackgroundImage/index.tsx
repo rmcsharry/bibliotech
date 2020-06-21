@@ -10,7 +10,7 @@ const StyledOverlay = styled.div`
   background-color: hsla(0, 0%, 0%, 0.4);
 `
 const BgImageStyle = style({
-  paddingTop: '30px',
+  paddingTop: '35px',
   paddingBottom: '30px',
 })
 
@@ -21,6 +21,11 @@ interface IQuery {
     }
   }
   coffee: {
+    childImageSharp: {
+      fluid: FluidObject | FluidObject[]
+    }
+  }
+  swatches: {
     childImageSharp: {
       fluid: FluidObject | FluidObject[]
     }
@@ -44,9 +49,16 @@ const Background = ({ children, imageName }) => {
           }
         }
       }
+      swatches: file(relativePath: { eq: "swatches_bg.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1180, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
     }
   `)
-  console.log(data, imageName)
+
   let heroImage = null
   switch (imageName) {
     case 'library':
@@ -54,6 +66,9 @@ const Background = ({ children, imageName }) => {
       break
     case 'coffee':
       heroImage = data.coffee.childImageSharp.fluid
+      break
+    case 'swatches':
+      heroImage = data.swatches.childImageSharp.fluid
       break
     default:
       heroImage = data.library.childImageSharp.fluid

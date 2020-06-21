@@ -1,9 +1,53 @@
 import styled from '@emotion/styled'
+import { mq } from '../../helpers/mq'
 
 export const Root = styled.div`
   position: relative;
   display: grid;
   grid-gap: 1em;
+`
+
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: auto;
+`
+
+export const StyledInput = styled.input`
+  background: white;
+  color: black;
+  width: 240px;
+  height: 30px;
+  position: absolute;
+  left: 50px;
+  font-size: 10px;
+  z-index: 9999;
+  margin-top: 10px;
+
+  ${mq('lg')} {
+    font-size: 12px;
+    width: 340px;
+    position: absolute;
+    right: 20px;
+    left: auto;
+  }
+`
+
+export const StyledIcon = styled.span`
+  font-size: 13px;
+  left: 270px;
+  position: absolute;
+  top: 15px;
+  z-index: 9999;
+
+  ${mq('lg')} {
+    font-size: 14px;
+    position: absolute;
+    right: 30px;
+    top: 14px;
+    left: auto;
+  }
 `
 
 // display: ${props => (props.show ? `grid` : `none`)};
@@ -15,7 +59,7 @@ export const HitsWrapper = styled.div`
   -webkit-overflow-scrolling: touch;
   position: absolute;
   right: 0;
-  top: 100%;
+  top: 58px;
   width: 80vw;
   max-width: 30em;
   box-shadow: 0 0 5px 0;

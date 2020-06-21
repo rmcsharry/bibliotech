@@ -1,37 +1,9 @@
 import React, { useState } from 'react'
 import { connectSearchBox } from 'react-instantsearch-dom'
-import styled from '@emotion/styled'
 import { Search } from 'react-bootstrap-icons/'
-import { mq } from '../../helpers/mq'
-
-const StyledInput = styled.input`
-  background: white;
-  color: black;
-  width: 300px;
-  height: 36px;
-  margin-bottom: 12px;
-
-  ${mq('sm')} {
-    margin-bottom: 0;
-  }
-`
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  margin: auto;
-`
-const StyledIcon = styled.span`
-  right: 45px;
-  position: absolute;
-  top: 76px;
-
-  ${mq('md')} {
-    right: 30px;
-    top: 23px;
-  }
-`
+import { StyledForm } from './styles'
+import { StyledInput } from './styles'
+import { StyledIcon } from './styles'
 
 export default connectSearchBox(({ refine, ...rest }) => {
   const [isInputEmpty, setIsInputEmpty] = useState(true)

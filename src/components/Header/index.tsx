@@ -9,8 +9,8 @@ import LogOutButton from '../LogOutButton'
 import { withAuthentication, withFirebase } from '../../contexts/Firebase'
 import IPageProps from '../../types/page-props'
 import SearchBox from '../SearchBox'
-import styled from '@emotion/styled'
-import { mq } from '../../helpers/mq'
+import { StyledInput } from '../SearchBox/styles'
+import { StyledIcon } from '../SearchBox/styles'
 
 const searchIndices = [{ name: `Manufacturers`, title: `Search Results`, hitComp: `ManufacturerHit` }]
 
@@ -26,40 +26,7 @@ interface IQuery {
     }
   }
 }
-const StyledInput = styled.input`
-  background: white;
-  color: black;
-  width: 240px;
-  height: 30px;
-  position: absolute;
-  left: 50px;
-  font-size: 10px;
-  z-index: 9999;
-  margin-top: 10px;
 
-  ${mq('lg')} {
-    font-size: 12px;
-    width: 340px;
-    position: absolute;
-    right: 20px;
-    left: auto;
-  }
-`
-const StyledIcon = styled.span`
-  font-size: 13px;
-  left: 270px;
-  position: absolute;
-  top: 15px;
-  z-index: 9999;
-
-  ${mq('lg')} {
-    font-size: 14px;
-    position: absolute;
-    right: 30px;
-    top: 14px;
-    left: auto;
-  }
-`
 const Header: React.FC<IPageProps> = ({ authUser }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query LogoQuery {

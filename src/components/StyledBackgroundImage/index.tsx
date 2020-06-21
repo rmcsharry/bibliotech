@@ -10,7 +10,7 @@ const StyledOverlay = styled.div`
   background-color: hsla(0, 0%, 0%, 0.6);
 `
 const BgImageStyle = style({
-  paddingTop: '25px',
+  paddingTop: '30px',
   paddingBottom: '30px',
 })
 

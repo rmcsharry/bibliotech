@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import styled from '@emotion/styled'
-import ManufacturerList from '../ManufacturerList'
 import { navigate } from 'gatsby'
 import StyledBackgroundImage from '../StyledBackgroundImage'
 import { withFirebase, withAuthentication } from '../../contexts/Firebase'

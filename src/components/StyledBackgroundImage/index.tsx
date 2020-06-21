@@ -7,7 +7,7 @@ import { style } from 'typestyle'
 
 const StyledOverlay = styled.div`
   position: relative;
-  background-color: hsla(0, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.4);
 `
 const BgImageStyle = style({
   paddingTop: '30px',

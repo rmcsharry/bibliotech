@@ -19,7 +19,7 @@ export const StyledInput = styled.input`
   color: black;
   width: 240px;
   height: 30px;
-  position: absolute;
+  position: fixed;
   left: 50px;
   font-size: 10px;
   z-index: 9999;
@@ -28,7 +28,7 @@ export const StyledInput = styled.input`
   ${mq('lg')} {
     font-size: 12px;
     width: 340px;
-    position: absolute;
+    position: fixed;
     right: 20px;
     left: auto;
   }
@@ -37,13 +37,13 @@ export const StyledInput = styled.input`
 export const StyledIcon = styled.span`
   font-size: 13px;
   left: 270px;
-  position: absolute;
+  position: fixed;
   top: 15px;
   z-index: 9999;
 
   ${mq('lg')} {
     font-size: 14px;
-    position: absolute;
+    position: fixed;
     right: 30px;
     top: 14px;
     left: auto;

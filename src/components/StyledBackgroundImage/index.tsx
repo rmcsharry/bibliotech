@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import BackgroundImage from 'gatsby-background-image'
-import { FluidObject } from 'gatsby-image'
 import { style } from 'typestyle'
+import { BackgroundImageQuery } from './__generated__/BackgroundImageQuery'
 
 const StyledOverlay = styled.div`
   position: relative;
@@ -14,27 +14,9 @@ const BgImageStyle = style({
   paddingBottom: '45px',
 })
 
-interface IQuery {
-  library: {
-    childImageSharp: {
-      fluid: FluidObject | FluidObject[]
-    }
-  }
-  coffee: {
-    childImageSharp: {
-      fluid: FluidObject | FluidObject[]
-    }
-  }
-  swatches: {
-    childImageSharp: {
-      fluid: FluidObject | FluidObject[]
-    }
-  }
-}
-
 const Background = ({ children, imageName }) => {
-  const data = useStaticQuery<IQuery>(graphql`
-    query {
+  const data = useStaticQuery<BackgroundImageQuery>(graphql`
+    query BackgroundImageQuery {
       library: file(relativePath: { eq: "library_bg.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1180, quality: 100) {

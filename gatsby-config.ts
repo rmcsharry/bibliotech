@@ -23,7 +23,7 @@ export default {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `G-6DV6T2MDLW`,
       },
     },
     {
@@ -39,6 +39,7 @@ export default {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
@@ -73,6 +74,12 @@ export default {
             baseId: `appP5vBdAitw6yyDH`,
             tableName: `MANUFACTURER MASTERFORMAT`,
             tableLinks: [`Manufacturers`],
+          },
+          {
+            baseId: `appP5vBdAitw6yyDH`,
+            tableName: 'Website_HTML',
+            queryName: `HtmlContent`,
+            separateNodeType: true,
           },
         ],
       },

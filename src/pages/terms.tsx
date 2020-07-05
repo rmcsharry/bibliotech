@@ -1,20 +1,57 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+// import PageTitle from '../components/PageTitle'
+import { TermsPageQuery } from './__generated__/TermsPageQuery'
 import StyledBackgroundImage from '../components/StyledBackgroundImage'
 import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
+import { StyledPageContainer } from '../helpers/StyledPageContainer'
 
-const Terms: React.FC<{}> = ({}) => {
-  return (
-    <>
-      <Layout title={'Terms'}>
-        <StyledBackgroundImage imageName="coffee">
-          <StyledBackgroundWrapper minHeight="82vh">
-            <h1 className="text-white">Coming soon</h1>
-          </StyledBackgroundWrapper>
-        </StyledBackgroundImage>
-      </Layout>
-    </>
-  )
+interface IPageQuery {
+  data: TermsPageQuery
 }
 
-export default Terms
+class AboutPage extends React.Component<IPageQuery> {
+  constructor(props) {
+    super(props)
+  }
+
+  render(): JSX.Element {
+    const { data } = this.props
+    const url = data.content.data.Attachments[0].url
+
+    return (
+      <>
+        <Layout title={'Terms & Conditions'}>
+          <StyledBackgroundImage imageName="library">
+            <StyledBackgroundWrapper minHeight="77vh">
+              <StyledPageContainer>
+                {/* <PageTitle title={'About Bibliotech'} /> */}
+                <object type="text/html" data={url}></object>
+                {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
+              </StyledPageContainer>
+            </StyledBackgroundWrapper>
+          </StyledBackgroundImage>
+        </Layout>
+      </>
+    )
+  }
+}
+
+export default AboutPage
+
+export const pageQuery = graphql`
+  query TermsPageQuery {
+    content: airtableHtmlContent(data: { Name: { eq: "Terms and Conditions" } }) {
+      data {
+        Attachments {
+          filename
+          type
+          url
+        }
+        Name
+        Content
+      }
+    }
+  }
+`

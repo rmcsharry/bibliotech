@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-
 import SignInForm from '../components/Forms/SignIn'
 import Layout from '../components/Layout'
 import SignInWithGoogle from '../components/SignInWithGoogle'
 import { withFirebase } from '../contexts/Firebase'
 import WaitSpinner from '../components/WaitSpinner'
-import { FluidObject } from 'gatsby-image'
 import SignUpCTA from '../components/SignUpCTA'
 import StyledBackgroundImage from '../components/StyledBackgroundImage'
 import { StyledFormContainer } from '../helpers/StyledFormContainer'
@@ -14,14 +11,6 @@ import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
 
 interface IProps {
   firebase: any
-}
-
-interface IQuery {
-  hero: {
-    childImageSharp: {
-      fluid: FluidObject | FluidObject[]
-    }
-  }
 }
 
 const SignIn: React.FC<IProps> = ({ firebase }) => {

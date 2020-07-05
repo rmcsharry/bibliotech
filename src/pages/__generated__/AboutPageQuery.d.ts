@@ -7,22 +7,22 @@
 // GraphQL query operation: AboutPageQuery
 // ====================================================
 
-export interface AboutPageQuery_hero_childImageSharp_fluid {
-  tracedSVG: string | null
-  aspectRatio: number
-  src: string
-  srcSet: string
-  sizes: string
+export interface AboutPageQuery_content_fields_markdownContent_childMarkdownRemark {
+  html: string | null
 }
 
-export interface AboutPageQuery_hero_childImageSharp {
-  fluid: AboutPageQuery_hero_childImageSharp_fluid | null
+export interface AboutPageQuery_content_fields_markdownContent {
+  childMarkdownRemark: AboutPageQuery_content_fields_markdownContent_childMarkdownRemark | null
 }
 
-export interface AboutPageQuery_hero {
-  childImageSharp: AboutPageQuery_hero_childImageSharp | null
+export interface AboutPageQuery_content_fields {
+  markdownContent: AboutPageQuery_content_fields_markdownContent | null
+}
+
+export interface AboutPageQuery_content {
+  fields: AboutPageQuery_content_fields | null
 }
 
 export interface AboutPageQuery {
-  hero: AboutPageQuery_hero | null
+  content: AboutPageQuery_content | null
 }

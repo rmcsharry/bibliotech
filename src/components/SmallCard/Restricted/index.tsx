@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import { navigate, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import { style } from 'typestyle'
 
 const RestrictedStyle = style({

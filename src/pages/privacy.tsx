@@ -1,34 +1,34 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import PageTitle from '../components/PageTitle'
-import { AboutPageQuery } from './__generated__/AboutPageQuery'
+// import PageTitle from '../components/PageTitle'
+import { PrivacyPageQuery } from './__generated__/PrivacyPageQuery'
 import StyledBackgroundImage from '../components/StyledBackgroundImage'
 import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
 import { StyledPageContainer } from '../helpers/StyledPageContainer'
 
 interface IPageQuery {
-  data: AboutPageQuery
+  data: PrivacyPageQuery
 }
 
-class AboutPage extends React.Component<IPageQuery> {
+class PrivacyPage extends React.Component<IPageQuery> {
   constructor(props) {
     super(props)
   }
 
   render(): JSX.Element {
     const { data } = this.props
-    const mdContent = data.content.fields.markdownContent.childMarkdownRemark.html
-    console.log('here', data)
+    const url = data.content.data.Attachments[0].url
+
     return (
       <>
-        <Layout title={'About Us'}>
+        <Layout title={'Privacy Policy'}>
           <StyledBackgroundImage imageName="library">
             <StyledBackgroundWrapper minHeight="77vh">
               <StyledPageContainer>
-                <PageTitle title={'About Bibliotech'} />
-                {/* <object type="text/html" data={url}></object> */}
-                {<div dangerouslySetInnerHTML={{ __html: mdContent }}></div>}
+                {/* <PageTitle title={'About Bibliotech'} /> */}
+                <object type="text/html" data={url}></object>
+                {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
               </StyledPageContainer>
             </StyledBackgroundWrapper>
           </StyledBackgroundImage>
@@ -38,17 +38,19 @@ class AboutPage extends React.Component<IPageQuery> {
   }
 }
 
-export default AboutPage
+export default PrivacyPage
 
 export const pageQuery = graphql`
-  query AboutPageQuery {
-    content: airtableHtmlContent(data: { Name: { eq: "About Us" } }) {
-      fields {
-        markdownContent {
-          childMarkdownRemark {
-            html
-          }
+  query PrivacyPageQuery {
+    content: airtableHtmlContent(data: { Name: { eq: "Privacy Policy" } }) {
+      data {
+        Attachments {
+          filename
+          type
+          url
         }
+        Name
+        Content
       }
     }
   }

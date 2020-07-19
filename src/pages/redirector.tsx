@@ -30,7 +30,7 @@ const Redirector: React.FC<IProps> = ({ firebase }) => {
       var credential = error.credential
       // ...
     })
-  return <WaitSpinner />
+  return <WaitSpinner text="Authorizing..." />
 }
 
 export default withFirebase(Redirector)

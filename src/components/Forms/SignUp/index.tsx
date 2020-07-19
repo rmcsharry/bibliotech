@@ -30,7 +30,6 @@ class SignUpForm extends React.Component<IProps, IState> {
   constructor(props) {
     super(props)
     this.state = INITIAL_STATE
-    console.log('FIREBASE', this.props.firebase)
   }
 
   onSubmit = event => {

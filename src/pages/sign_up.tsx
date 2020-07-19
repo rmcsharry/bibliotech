@@ -24,7 +24,7 @@ const SignUp: React.FC<IProps> = ({ firebase }) => {
   return (
     <Layout title={'SignUp'}>
       <StyledBackgroundImage imageName="library">
-        {isShowOverlay ? <WaitSpinner /> : null}
+        {isShowOverlay ? <WaitSpinner text="Authorizing..." /> : null}
         <StyledBackgroundWrapper minHeight="77vh">
           <StyledFormContainer>
             <p>Please sign up.</p>

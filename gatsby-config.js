@@ -7,10 +7,8 @@
 require('source-map-support').install()
 require('ts-node').register()
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV}`,
-  })
-}
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = require('./gatsby-config.ts')

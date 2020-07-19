@@ -15,16 +15,18 @@ const GlobalContextProvider = ({ children }) => {
 
   const getFavorites = user => {
     if (!user) return
-    const favouriteRef = Firebase.database().ref(`users/${user.uid}/favorites`)
-    favouriteRef.on(
-      'value',
-      function (snapshot) {
-        setFavorites(snapshot.val())
-      },
-      function (errorObject) {
-        console.log('The read failed: ' + errorObject.code)
-      },
-    )
+    if (typeof window !== 'undefined') {
+      const favouriteRef = Firebase.database().ref(`users/${user.uid}/favorites`)
+      favouriteRef.on(
+        'value',
+        function (snapshot) {
+          setFavorites(snapshot.val())
+        },
+        function (errorObject) {
+          console.log('The read failed: ' + errorObject.code)
+        },
+      )
+    }
   }
 
   useEffect(() => {

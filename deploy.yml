@@ -28,7 +28,7 @@ jobs:
     - name: Install Packages
       run: npm install
     - name: Build Gatsby Site
-      run: 'echo ::set-env name={AIRTABLE_API_KEY}::${{ secrets.AIRTABLE_API_KEY }}'
+      run: 'echo ::set-env name={AIRTABLE_API_KEY}::keyPdgRvcsGPVWXQc'
       env:
         AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
       uses: jzweifel/gatsby-cli-github-action@master

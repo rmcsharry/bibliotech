@@ -28,6 +28,9 @@ jobs:
     - name: Install Packages
       run: npm install
     - name: Build page
+      env:
+        AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+      run: npm run build
       run: npm run build
     - name: Deploy to Firebase
       uses: lowply/deploy-firebase@v0.0.4

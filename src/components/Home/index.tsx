@@ -23,6 +23,7 @@ const StyledSubTitle = styled.h5`
 `
 
 const Home = ({ authUser }) => {
+  console.log('user is ', authUser)
   return (
     <>
       <StyledBackgroundImage imageName="swatches">

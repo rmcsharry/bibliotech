@@ -3,6 +3,8 @@ import { FirebaseContext, AuthUserContext } from '../Firebase'
 import Firebase from 'gatsby-plugin-firebase'
 import { FavoritesContext } from '../Favorites'
 import WaitSpinner from '../../components/WaitSpinner'
+import EmailNotVerified from '../../components/EmailNotVerfied'
+import { navigate } from 'gatsby'
 
 const FirebaseProvider: React.FC<{}> = ({ children }) => {
   return <FirebaseContext.Provider value={Firebase}>{children}</FirebaseContext.Provider>
@@ -10,6 +12,7 @@ const FirebaseProvider: React.FC<{}> = ({ children }) => {
 
 const GlobalContextProvider = ({ children }) => {
   const [authUser, setAuthUser] = useState(null)
+  const [isVerified, setIsVerified] = useState(false)
   const [favorites, setFavorites] = useState([])
   const [isAuthStateChecked, setAuthStateChecked] = useState(false)
 
@@ -31,9 +34,17 @@ const GlobalContextProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = Firebase.auth().onAuthStateChanged(user => {
-      setAuthUser(user)
-      getFavorites(user)
-      setAuthStateChecked(true)
+      if (Date.parse(user?.metadata.creationTime) > Date.parse('2020-07-26') && !user?.emailVerified) {
+        setAuthUser(user)
+        setIsVerified(false)
+        setAuthStateChecked(true)
+        // user.sendEmailVerification()
+      } else {
+        setAuthUser(user)
+        setIsVerified(true)
+        getFavorites(user)
+        setAuthStateChecked(true)
+      }
     })
     return () => {
       unsubscribe()
@@ -45,11 +56,17 @@ const GlobalContextProvider = ({ children }) => {
   return (
     <>
       {isAuthStateChecked ? (
-        <FirebaseProvider>
-          <AuthUserContext.Provider value={authUser}>
-            <FavoritesContext.Provider value={favorites}>{children}</FavoritesContext.Provider>
-          </AuthUserContext.Provider>
-        </FirebaseProvider>
+        <>
+          {isVerified ? (
+            <FirebaseProvider>
+              <AuthUserContext.Provider value={authUser}>
+                <FavoritesContext.Provider value={favorites}>{children}</FavoritesContext.Provider>
+              </AuthUserContext.Provider>
+            </FirebaseProvider>
+          ) : (
+            <EmailNotVerified authUser={authUser}></EmailNotVerified>
+          )}
+        </>
       ) : (
         <WaitSpinner text="Loading Data..."></WaitSpinner>
       )}

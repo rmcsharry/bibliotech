@@ -5,7 +5,7 @@ import IPageProps from '../types/page-props'
 import { withFirebase, withAuthentication } from '../contexts/Firebase'
 import ManufacturerList from '../components/ManufacturerList'
 
-const Manufacturers: React.FC<IPageProps> = ({ authUser, firebase }) => {
+const Manufacturers: React.FC<IPageProps> = ({ authUser }) => {
   return (
     <Layout title="Manufacturers">
       <ManufacturerList isRestricted={authUser ? false : true} />

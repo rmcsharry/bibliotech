@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { navigate } from 'gatsby'
 import { StyledCardContainer } from '../../../helpers/StyledCardContainer'
+import { EmailService } from '../../../services/email.service'
+import { FirebaseContext } from '../../../contexts/Firebase'
 
 interface IProps {
   firebase: any
@@ -41,7 +43,12 @@ class SignUpForm extends React.Component<IProps, IState> {
       .createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE })
-        if (typeof window !== 'undefined') navigate('/manufacturers')
+        if (typeof window !== 'undefined') {
+          // if (!authUser.emailVerified)
+          //   EmailService.sendEmailVerification(authUser);
+          // else
+          navigate('/manufacturers')
+        }
       })
       .catch(error => {
         this.props.parentCallback(false)

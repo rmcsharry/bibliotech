@@ -1,5 +1,5 @@
 export const config = {
-  siteTitle: `Bibliotech - Digital architectural libray`,
+  siteTitle: `Bibliotech - Digital architectural library`,
   siteDescription: `Manufacturers contact list`,
   author: `Bibliotech`,
   authorDescription: `Specliasts in architecture and construction`,

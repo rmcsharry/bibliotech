@@ -15,7 +15,7 @@ interface IPageQuery {
 class ManufacturerTemplate extends React.Component<IPageQuery & IPageProps> {
   render(): JSX.Element {
     if (!this.props.authUser) {
-      if (typeof window !== 'undefined') navigate('/')
+      if (typeof window !== 'undefined') navigate('/sign_up')
       return null
     }
 

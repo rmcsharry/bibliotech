@@ -4,8 +4,6 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { navigate } from 'gatsby'
 import { StyledCardContainer } from '../../../helpers/StyledCardContainer'
-import { EmailService } from '../../../services/email.service'
-import { FirebaseContext } from '../../../contexts/firebase'
 
 interface IProps {
   firebase: any

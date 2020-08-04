@@ -12,9 +12,11 @@ export default {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: `G-6DV6T2MDLW`,
+        // enable ip anonymization
+        anonymize: true,
       },
     },
     {

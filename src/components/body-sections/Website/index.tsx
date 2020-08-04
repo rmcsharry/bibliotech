@@ -1,5 +1,6 @@
 import React from 'react'
 import BodySection from '../../body-section'
+import { OutboundLink } from 'gatsby-plugin-gtag'
 
 interface IProps {
   address: string
@@ -10,9 +11,9 @@ const Website: React.FC<IProps> = ({ address }) => {
 
   return (
     <BodySection title={'Website'}>
-      <a className="pl-4" href={url} target="_blank">
+      <OutboundLink href={url} className="pl-4" target="_blank">
         {url ? url : 'TBD'}
-      </a>
+      </OutboundLink>
     </BodySection>
   )
 }

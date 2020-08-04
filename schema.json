@@ -12508,6 +12508,16 @@
               "defaultValue": null
             },
             {
+              "name": "anonymize",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BooleanQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "path",
               "description": "",
               "type": {
@@ -13847,6 +13857,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "anonymize",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -15665,6 +15687,12 @@
             },
             {
               "name": "pluginCreator___pluginOptions___trackingId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginCreator___pluginOptions___anonymize",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -33582,6 +33610,12 @@
             },
             {
               "name": "pluginOptions___trackingId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginOptions___anonymize",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

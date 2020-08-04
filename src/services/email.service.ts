@@ -1,7 +1,8 @@
 import { ActionCodeSettings } from '@firebase/auth-types'
+import { User } from 'firebase/app'
 
 export class EmailService {
-  static sendEmailVerification = async (user: any) => {
+  static sendEmailVerification = async (user: User) => {
     console.log('emailing ' + user)
     await user.sendEmailVerification()
     // EmailService.buildVerificationSettings(user.email)

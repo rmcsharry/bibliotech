@@ -1,6 +1,6 @@
 import React from 'react'
 import { IClassification } from '../../types/edge'
-import BodySection from '../BodySection'
+import BodySection from '../body-section'
 
 interface IProps {
   classifications: [IClassification]

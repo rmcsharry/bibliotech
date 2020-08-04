@@ -1,7 +1,7 @@
 {
   "exclude": ["./node_modules", "./public", "./.cache", "./*.js"],
   "include": [
-      "./src/**/*.ts", "config.ts", "src/components/Classification/index.tsx"
+      "./src/**/*.ts", "config.ts", "src/components/classification/index.tsx"
   ],
   "compilerOptions": {
     /* Basic Options */

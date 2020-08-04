@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Layout from '../components/Layout'
-import ContactUsForm from '../components/Forms/ContactUs'
-import SignUpCTA from '../components/SignUpCTA'
-import StyledBackgroundImage from '../components/StyledBackgroundImage'
+import ContactUsForm from '../components/forms/contact-us'
+import SignUpCTA from '../components/sign-up-cta'
+import StyledBackgroundImage from '../components/styled-background-image'
 import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
 import { StyledFormContainer } from '../helpers/StyledFormContainer'
 

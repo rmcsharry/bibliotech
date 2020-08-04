@@ -4,7 +4,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import styled from '@emotion/styled'
 import SEO from '../SEO'
-import { withFirebase, withAuthentication } from '../../contexts/Firebase'
+import { withFirebase, withAuthentication } from '../../contexts/firebase'
 
 const StyledApp = styled.div`
   height: 100vh;

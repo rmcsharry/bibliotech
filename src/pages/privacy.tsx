@@ -1,9 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-// import PageTitle from '../components/PageTitle'
 import { PrivacyPageQuery } from './__generated__/PrivacyPageQuery'
-import StyledBackgroundImage from '../components/StyledBackgroundImage'
+import StyledBackgroundImage from '../components/styled-background-image'
 import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
 import { StyledPageContainer } from '../helpers/StyledPageContainer'
 

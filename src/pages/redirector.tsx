@@ -1,7 +1,7 @@
 import React from 'react'
-import { withFirebase } from '../contexts/Firebase'
+import { withFirebase } from '../contexts/firebase'
 import { navigate } from 'gatsby'
-import WaitSpinner from '../components/WaitSpinner'
+import WaitSpinner from '../components/wait-spinner'
 
 interface IProps {
   firebase: any

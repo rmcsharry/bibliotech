@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import PageTitle from '../components/PageTitle'
+import PageTitle from '../components/page-title'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 

@@ -4,13 +4,13 @@ import Image, { FixedObject } from 'gatsby-image'
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import LogOutButton from '../LogOutButton'
-import { withAuthentication, withFirebase } from '../../contexts/Firebase'
+import LogOutButton from '../log-out-button'
+import { withAuthentication, withFirebase } from '../../contexts/firebase'
 import IPageProps from '../../types/page-props'
-import SearchBox from '../SearchBox'
+import SearchBox from '../search-box'
 import styled from '@emotion/styled'
 import { mq } from '../../helpers/mq'
-import DesktopLogo from '../DesktopLogo'
+import DesktopLogo from '../desktop-logo'
 
 const StyledMobileImage = styled(Image)`
   margin-top: 5px;

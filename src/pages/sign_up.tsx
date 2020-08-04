@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-import SignUpForm from '../components/Forms/SignUp'
+import SignUpForm from '../components/Forms/sign-up'
 import Layout from '../components/Layout'
-import SignInWithGoogle from '../components/SignInWithGoogle'
-import { withFirebase } from '../contexts/Firebase'
-import WaitSpinner from '../components/WaitSpinner'
-import SignUpCTA from '../components/SignUpCTA'
-import StyledBackgroundImage from '../components/StyledBackgroundImage'
+import SignInWithGoogle from '../components/sign-in-with-google'
+import { withFirebase } from '../contexts/firebase'
+import WaitSpinner from '../components/wait-spinner'
+import SignUpCTA from '../components/sign-up-cta'
+import StyledBackgroundImage from '../components/styled-background-image'
 import { StyledFormContainer } from '../helpers/StyledFormContainer'
 import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
 

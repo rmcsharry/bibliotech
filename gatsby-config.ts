@@ -12,6 +12,12 @@ export default {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `G-6DV6T2MDLW`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/content/assets`,
@@ -20,12 +26,6 @@ export default {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `G-6DV6T2MDLW`,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

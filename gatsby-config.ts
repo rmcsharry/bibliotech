@@ -35,7 +35,7 @@ export default {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/content/assets/BibliotechLogoIcon.jpg`,
+        icon: `src/content/assets/bibliotech-logo-icon.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,

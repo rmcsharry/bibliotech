@@ -3,8 +3,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { TermsPageQuery } from './__generated__/TermsPageQuery'
 import StyledBackgroundImage from '../components/styled-background-image'
-import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
-import { StyledPageContainer } from '../helpers/StyledPageContainer'
+import { StyledBackgroundWrapper } from '../helpers/styled-background-wrapper'
+import { StyledPageContainer } from '../helpers/styled-page-container'
 
 interface IPageQuery {
   data: TermsPageQuery

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import StyledBackgroundImage from '../styled-background-image'
-import { StyledBackgroundWrapper } from '../../helpers/StyledBackgroundWrapper'
+import { StyledBackgroundWrapper } from '../../helpers/styled-background-wrapper'
 import styled from '@emotion/styled'
 import { CaretLeftFill } from 'react-bootstrap-icons/'
 

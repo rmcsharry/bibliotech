@@ -4,8 +4,8 @@ import Layout from '../components/Layout'
 import ContactUsForm from '../components/forms/contact-us'
 import SignUpCTA from '../components/sign-up-cta'
 import StyledBackgroundImage from '../components/styled-background-image'
-import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
-import { StyledFormContainer } from '../helpers/StyledFormContainer'
+import { StyledBackgroundWrapper } from '../helpers/styled-background-wrapper'
+import { StyledFormContainer } from '../helpers/styled-form-container'
 
 class ContactUs extends React.Component<{}> {
   constructor(props) {

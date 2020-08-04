@@ -3,7 +3,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import StyledBackgroundImage from '../styled-background-image'
 import { withFirebase, withAuthentication } from '../../contexts/firebase'
-import { StyledBackgroundWrapper } from '../../helpers/StyledBackgroundWrapper'
+import { StyledBackgroundWrapper } from '../../helpers/styled-background-wrapper'
 import ManufacturerList from '../manufacturer-list'
 
 const StyledTitle = styled.h2`

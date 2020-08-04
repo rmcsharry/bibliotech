@@ -24,7 +24,7 @@ interface IQuery {
 const DesktopLogo: React.FC<{}> = ({}) => {
   const data = useStaticQuery<IQuery>(graphql`
     query DesktopLogoQuery {
-      logo: file(absolutePath: { regex: "/BibliotechLogo.png/" }) {
+      logo: file(absolutePath: { regex: "/bibliotech-logo.png/" }) {
         childImageSharp {
           fixed(width: 120, height: 44) {
             ...GatsbyImageSharpFixed

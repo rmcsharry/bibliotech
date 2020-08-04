@@ -6,8 +6,8 @@ import { withFirebase } from '../contexts/firebase'
 import WaitSpinner from '../components/wait-spinner'
 import SignUpCTA from '../components/sign-up-cta'
 import StyledBackgroundImage from '../components/styled-background-image'
-import { StyledFormContainer } from '../helpers/StyledFormContainer'
-import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
+import { StyledFormContainer } from '../helpers/styled-form-container'
+import { StyledBackgroundWrapper } from '../helpers/styled-background-wrapper'
 
 interface IProps {
   firebase: any

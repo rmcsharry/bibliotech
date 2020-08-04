@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { navigate } from 'gatsby'
 import { withFirebase } from '../../../contexts/firebase'
-import { StyledCardContainer } from '../../../helpers/StyledCardContainer'
+import { StyledCardContainer } from '../../../helpers/styled-card-container'
 
 interface IProps {
   firebase: any

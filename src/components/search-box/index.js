@@ -3,7 +3,7 @@ import { InstantSearch, Index, InfiniteHits, connectStateResults } from 'react-i
 import algoliasearch from 'algoliasearch/lite'
 import { Root, HitsWrapper } from './styles'
 import Input from './Input'
-import * as hitComps from './ManufacturerHit'
+import * as hitComps from './manufacturer-hit'
 
 const Results = connectStateResults(({ searchState: state, searchResults: res, children }) =>
   res && res.nbHits > 0 ? children : `No results for '${state.query}'`,

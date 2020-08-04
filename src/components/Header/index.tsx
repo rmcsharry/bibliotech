@@ -34,7 +34,7 @@ interface IQuery {
 const Header: React.FC<IPageProps> = ({ authUser }) => {
   const data = useStaticQuery<IQuery>(graphql`
     query MobileLogoQuery {
-      logoMobile: file(absolutePath: { regex: "/BibliotechLogo_Mobile.png/" }) {
+      logoMobile: file(absolutePath: { regex: "/bibliotech-logo-mobile.png/" }) {
         childImageSharp {
           fixed(width: 40, height: 40) {
             ...GatsbyImageSharpFixed

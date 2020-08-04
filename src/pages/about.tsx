@@ -4,8 +4,8 @@ import Layout from '../components/Layout'
 import PageTitle from '../components/page-title'
 import { AboutPageQuery } from './__generated__/AboutPageQuery'
 import StyledBackgroundImage from '../components/styled-background-image'
-import { StyledBackgroundWrapper } from '../helpers/StyledBackgroundWrapper'
-import { StyledPageContainer } from '../helpers/StyledPageContainer'
+import { StyledBackgroundWrapper } from '../helpers/styled-background-wrapper'
+import { StyledPageContainer } from '../helpers/styled-page-container'
 
 interface IPageQuery {
   data: AboutPageQuery

@@ -17,9 +17,6 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-      - run:
-          name: Install Functions Dependencies
-          command: ./functions/npm install
       - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
           paths:
@@ -29,4 +26,4 @@ jobs:
           command: npm run build
       - run:
           name: Firebase Deploy
-          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+          command: ./node_modules/.bin/firebase deploy --only hosting --token "$FIREBASE_TOKEN"

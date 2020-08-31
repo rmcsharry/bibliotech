@@ -5,13 +5,12 @@ export class EmailService {
   static sendEmailVerification = async (user: User) => {
     console.log('emailing ' + user)
     await user.sendEmailVerification()
-    // EmailService.buildVerificationSettings(user.email)
-    // )
+    EmailService.buildVerificationSettings()
   }
 
-  private static buildVerificationSettings(emailAddress: string): ActionCodeSettings {
+  private static buildVerificationSettings(): ActionCodeSettings {
     const settings: ActionCodeSettings = {
-      url: `${process.env.BASE_URL}?email=${emailAddress}`,
+      url: `${process.env.BASE_URL}/verify`,
       handleCodeInApp: false,
     }
     return settings

@@ -19,21 +19,21 @@ const Background = ({ children, imageName }) => {
     query BackgroundImageQuery {
       library: file(relativePath: { eq: "library_bg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1180, quality: 100) {
+          fluid(maxWidth: 1180, quality: 100, srcSetBreakpoints: [300, 1180]) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
       coffee: file(relativePath: { eq: "coffee_bg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1180, quality: 100) {
+          fluid(maxWidth: 1180, quality: 100, srcSetBreakpoints: [300, 1180]) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
       swatches: file(relativePath: { eq: "swatches_bg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1180, quality: 100) {
+          fluid(maxWidth: 1180, quality: 100, srcSetBreakpoints: [300, 1180]) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }

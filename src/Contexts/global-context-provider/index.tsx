@@ -3,7 +3,7 @@ import { FirebaseContext, AuthUserContext } from '../firebase'
 import Firebase from 'gatsby-plugin-firebase'
 import { FavoritesContext } from '../favorites'
 import WaitSpinner from '../../components/wait-spinner'
-import EmailNotVerified from '../../components/email-not-verfied'
+import ProcessUrl from '../../components/process-url'
 
 const FirebaseProvider: React.FC<{}> = ({ children }) => {
   return <FirebaseContext.Provider value={Firebase}>{children}</FirebaseContext.Provider>
@@ -62,7 +62,7 @@ const GlobalContextProvider = ({ children }) => {
               </AuthUserContext.Provider>
             </FirebaseProvider>
           ) : (
-            <EmailNotVerified authUser={authUser}></EmailNotVerified>
+            <ProcessUrl authUser={authUser} firebase={Firebase}></ProcessUrl>
           )}
         </>
       ) : (

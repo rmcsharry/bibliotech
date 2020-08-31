@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { EmailService } from '../../services/email.service'
 import styled from '@emotion/styled'
 import Container from 'react-bootstrap/Container'
@@ -21,8 +21,9 @@ const StyledOverlay = styled.div`
 
 interface IProps {
   authUser: any
+  isVerifyFailed?: boolean
 }
-const EmailNotVerified: React.FC<IProps> = ({ authUser }) => {
+const EmailNotVerified: React.FC<IProps> = ({ authUser, isVerifyFailed }) => {
   const [isSentAgain, setIsSentAgain] = useState(false)
   const [buttonText, setButtonText] = useState('Click to resend')
 
@@ -44,8 +45,17 @@ const EmailNotVerified: React.FC<IProps> = ({ authUser }) => {
         </Row>
         <Row className="mx-auto my-auto">
           <Col className="align-self-center">
-            <h4 className="text-center mb-4 text-white">Thanks for signing up for Bibliotech!</h4>
-            <h6 className="text-center mb-4 text-white">We have sent you a link to verify your email address.</h6>
+            {isVerifyFailed ? (
+              <>
+                <h4 className="text-center mb-4 text-white">Sorry but it seems that link has expired</h4>
+                <h6 className="text-center mb-4 text-white">We have sent you a new link.</h6>
+              </>
+            ) : (
+              <>
+                <h4 className="text-center mb-4 text-white">Thanks for signing up for Bibliotech!</h4>
+                <h6 className="text-center mb-4 text-white">We have sent you a link to verify your email address.</h6>
+              </>
+            )}
             <h6 className="text-center mb-4 text-white">Don't forget to check your spam folder</h6>
           </Col>
         </Row>

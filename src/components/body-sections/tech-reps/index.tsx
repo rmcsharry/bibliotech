@@ -1,7 +1,7 @@
 import React from 'react'
 import BodySection from '../../body-section'
 import { ITechRep } from '../../../types/edge'
-import Rep from './rep'
+import Rep from './tech-rep'
 
 interface IProps {
   reps: [ITechRep]

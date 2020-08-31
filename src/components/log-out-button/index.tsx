@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav'
-import { withFirebase } from '../contexts/fbase'
+import { withFirebase } from '../../firebase'
 
 const LogOutButton = ({ firebase }) => {
   const handleLogout = (a, b) => {

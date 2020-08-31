@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FirebaseContext, AuthUserContext } from '../../contexts/fbase'
+import { FirebaseContext, AuthUserContext } from '../../../firebase'
 import Firebase from 'gatsby-plugin-firebase'
 import { FavoritesContext } from '../favorites'
 import WaitSpinner from '../../wait-spinner'

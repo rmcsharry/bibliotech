@@ -1,5 +1,5 @@
 import React from 'react'
-import { withAuthentication } from '../../contexts/firebase'
+import { withAuthentication } from '../../contexts/fbase'
 import styled from '@emotion/styled'
 import { mq } from '../../helpers/mq'
 import IPageProps from '../../types/page-props'

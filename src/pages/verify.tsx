@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import WaitSpinner from '../components/wait-spinner'
-import { withFirebase } from '../contexts/firebase'
-import { withAuthentication } from '../contexts/firebase'
+import { withFirebase } from '../contexts/fbase'
+import { withAuthentication } from '../contexts/fbase'
 import { navigate } from 'gatsby'
 import ProcessUrl from '../components/process-url'
 

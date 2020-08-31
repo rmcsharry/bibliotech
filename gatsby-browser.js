@@ -5,5 +5,5 @@ import 'firebase/firestore'
 import 'firebase/database'
 
 import React from 'react'
-import GlobalContextProvider from './src/contexts/global-context-provider'
+import GlobalContextProvider from './src/global-context-provider'
 export const wrapRootElement = ({ element }) => <GlobalContextProvider>{element}</GlobalContextProvider>

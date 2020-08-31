@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import withLocation from '../../contexts/location'
+import withLocation from '../../location'
 import EmailVerified from '../email-verified'
 import EmailNotVerified from '../email-not-verfied'
 import WaitSpinner from '../wait-spinner'

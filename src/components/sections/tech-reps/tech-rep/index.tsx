@@ -12,7 +12,7 @@ const BreakStyle = style({
   wordBreak: 'break-all',
 })
 
-const Rep: React.FC<IProps> = ({ rep }) => {
+const TechRep: React.FC<IProps> = ({ rep }) => {
   return (
     <>
       <li className="font-weight-bold">{rep.data.Technical_Rep_Name}</li>
@@ -32,4 +32,4 @@ const Rep: React.FC<IProps> = ({ rep }) => {
   )
 }
 
-export default Rep
+export default TechRep

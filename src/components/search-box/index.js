@@ -2,7 +2,7 @@ import React, { useState, createRef } from 'react'
 import { InstantSearch, Index, InfiniteHits, connectStateResults } from 'react-instantsearch-dom'
 import algoliasearch from 'algoliasearch/lite'
 import { Root, HitsWrapper } from './styles'
-import Input from './Input'
+import Input from './input'
 import * as hitComps from './manufacturer-hit'
 
 const Results = connectStateResults(({ searchState: state, searchResults: res, children }) =>

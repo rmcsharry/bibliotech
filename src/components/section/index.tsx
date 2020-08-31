@@ -10,7 +10,7 @@ interface IProps {
   children: Object
 }
 
-const BodySection: React.FC<IProps> = ({ title, children }) => {
+const Section: React.FC<IProps> = ({ title, children }) => {
   return (
     <SectionStyle>
       <h6>{title}</h6>
@@ -19,4 +19,4 @@ const BodySection: React.FC<IProps> = ({ title, children }) => {
   )
 }
 
-export default BodySection
+export default Section

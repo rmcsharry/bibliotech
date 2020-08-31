@@ -1,7 +1,7 @@
 import React from 'react'
-import BodySection from '../../body-section'
+import Section from '../../section'
 import { ITechRep } from '../../../types/edge'
-import Rep from './tech-rep'
+import TechRep from './tech-rep'
 
 interface IProps {
   reps: [ITechRep]
@@ -11,11 +11,11 @@ const TechReps: React.FC<IProps> = ({ reps }) => {
   const techReps = reps.map(rep => {
     return (
       <ul style={{ listStyle: 'square' }} key={rep.data.Email}>
-        <Rep rep={rep} />
+        <TechRep rep={rep} />
       </ul>
     )
   })
-  return <BodySection title={'Technical Representatives'}>{techReps}</BodySection>
+  return <Section title={'Technical Representatives'}>{techReps}</Section>
 }
 
 export default TechReps

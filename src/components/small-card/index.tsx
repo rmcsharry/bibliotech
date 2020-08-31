@@ -8,7 +8,7 @@ import IEdge from '../../types/edge'
 import { navigate } from 'gatsby'
 import Classification from '../Classification'
 import { style } from 'typestyle'
-import SmallCardRestricted from './restricted'
+import SmallCardRestricted from './fucked'
 import FavoriteButton from '../favorite-button'
 
 const TitleStyle = style({

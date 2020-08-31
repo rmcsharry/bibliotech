@@ -7,7 +7,7 @@ import Fade from 'react-bootstrap/Fade'
 import labels from '../../content/site/labels'
 import Classification from '../Classification'
 import { style } from 'typestyle'
-import BodySection from '../body-section'
+import Section from '../section'
 import Website from '../sections/website'
 import TechReps from '../sections/tech-reps'
 import FavoriteButton from '../favorite-button'
@@ -60,9 +60,9 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
               <Card.Body style={{ minHeight: '6rem' }} className="mt-2">
                 <Classification classifications={classifications} />
                 {description ? (
-                  <BodySection title={'Description'}>
+                  <Section title={'Description'}>
                     <p className="pl-4">{description}</p>
-                  </BodySection>
+                  </Section>
                 ) : null}
                 <Website address={website} />
                 <TechReps reps={techReps} />

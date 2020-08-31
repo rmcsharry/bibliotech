@@ -1,6 +1,6 @@
 import React from 'react'
 import { IClassification } from '../../types/edge'
-import BodySection from '../body-section'
+import Section from '../section'
 
 interface IProps {
   classifications: [IClassification]
@@ -9,11 +9,11 @@ interface IProps {
 const Classification: React.FC<IProps> = ({ classifications }) => {
   if (!classifications == null || classifications == undefined)
     return (
-      <BodySection title="'MASTERFORMAT No.'">
+      <Section title="'MASTERFORMAT No.'">
         <em>
           <p>- Not available -</p>
         </em>
-      </BodySection>
+      </Section>
     )
   const list = classifications.map((item, index) => {
     return (
@@ -25,9 +25,9 @@ const Classification: React.FC<IProps> = ({ classifications }) => {
   })
 
   return (
-    <BodySection title={'MASTERFORMAT No.'}>
+    <Section title={'MASTERFORMAT No.'}>
       <ul style={{ listStyle: 'square' }}>{list}</ul>
-    </BodySection>
+    </Section>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import Layout from '../components/Layout'
 import IPageProps from '../types/page-props'
-import { withFirebase, withAuthentication } from '../contexts/fbase'
+import { withFirebase, withAuthentication } from '../firebase'
 import ManufacturerList from '../components/manufacturer-list'
 
 const Manufacturers: React.FC<IPageProps> = ({ authUser }) => {

@@ -5,7 +5,7 @@ import Layout from '../components/Layout/'
 import IPageProps from '../types/page-props'
 import labels from '../content/site/labels'
 import { LandingPageQuery } from './__generated__/LandingPageQuery'
-import { withFirebase } from '../contexts/fbase'
+import { withFirebase } from '../firebase'
 import Home from '../components/Home'
 
 interface IProps extends IPageProps {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { FirebaseContext, AuthUserContext } from '../../../firebase'
+import { FirebaseContext, AuthUserContext } from '../firebase'
 import Firebase from 'gatsby-plugin-firebase'
-import { FavoritesContext } from '../../../favorites'
-import WaitSpinner from '../../wait-spinner'
-import ProcessUrl from '../../process-url'
+import { FavoritesContext } from '../favorites'
+import WaitSpinner from '../components/wait-spinner'
+import ProcessUrl from '../components/process-url'
 
 const FirebaseProvider: React.FC<{}> = ({ children }) => {
   return <FirebaseContext.Provider value={Firebase}>{children}</FirebaseContext.Provider>

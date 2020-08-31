@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import IPageProps from '../types/page-props'
 import IEdge from '../types/edge'
 import LargeCard from '../components/large-card'
-import { withFirebase, withAuthentication } from '../contexts/fbase'
+import { withFirebase, withAuthentication } from '../firebase'
 import { withFavorites } from '../contexts/favorites'
 
 interface IPageQuery {

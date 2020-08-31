@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Star, StarFill } from 'react-bootstrap-icons/'
-import { withFirebase } from '../../contexts/fbase'
+import { withFirebase } from '../../firebase'
 import { style } from 'typestyle'
 
 const HeartStyle = style({

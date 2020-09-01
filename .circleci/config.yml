@@ -28,6 +28,9 @@ jobs:
           command: ./node_modules/.bin/firebase deploy --only hosting --token "$FIREBASE_TOKEN"
 
 workflows:
+  commit:
+    jobs:
+      - build
   nightly:
       triggers:
         - schedule:

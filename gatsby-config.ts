@@ -92,7 +92,7 @@ export default {
         credentials: {
           apiKey: process.env.FIREBSAE_API_KEY,
           authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-          // databaseURL: '<YOUR_FIREBASE_DATABASE_URL>',
+          databaseURL: process.env.FIREBASE_DATABASE_URL,
           projectId: process.env.FIREBASE_PROJECT_ID,
           appId: process.env.FIREBASE_APP_ID,
         },

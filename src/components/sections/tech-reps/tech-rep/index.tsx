@@ -26,7 +26,7 @@ const TechRep: React.FC<IProps> = ({ rep }) => {
         <span className="text-info mr-2">
           <Envelope />
         </span>
-        {rep.data.Email}
+        <a href={`mailto:${rep.data.Email}`}>{rep.data.Email}</a>
       </p>
     </>
   )

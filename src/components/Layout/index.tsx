@@ -20,10 +20,10 @@ interface IProps {
   children: any
 }
 
-const Layout: React.FC<IProps> = ({ authUser, firebase, title, location, children }) => {
+const Layout: React.FC<IProps> = ({ authUser, firebase, location, children }) => {
   return (
     <StyledApp>
-      <SEO title={title} />
+      <SEO />
       <Header firebase={firebase} />
       <main style={{ marginTop: '52px' }}>{children}</main>
       <Footer />

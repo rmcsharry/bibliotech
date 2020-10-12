@@ -1,14 +1,12 @@
 const queries = require('./src/utils/algolia')
+import { config } from './config'
 
 export default {
   siteMetadata: {
-    title: `Bibliotech`,
-    author: {
-      name: `Bibliotech`,
-      summary: `A micro website to provide customers with data on manufacturing companies`,
-    },
-    description: `Digital architectural library on manufacturing company data`,
-    siteUrl: `https://github.com/rmcsharry/jmf-services-gatsby`,
+    title: config.siteTitle,
+    author: config.author,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     {

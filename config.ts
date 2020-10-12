@@ -1,10 +1,13 @@
 export const config = {
-  siteTitle: `Bibliotech - Digital architectural library`,
-  siteDescription: `Manufacturers contact list`,
-  author: `Bibliotech`,
+  siteTitle: `Bibliotech`,
+  siteDescription: `Your Digital Architectural Library`,
+  author: {
+    name: `Bibliotech`,
+    summary: `Architecture companies in Canada and USA`,
+  },
   authorDescription: `Specliasts in architecture and construction`,
   email: ``,
-  siteUrl: `https://www.jmfservices.net`, // no trailing slash
+  siteUrl: `https://www.bibliotech.ca`, // no trailing slash
   siteLanguage: 'en',
   siteColors: {
     background: '#fff',

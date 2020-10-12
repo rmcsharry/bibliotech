@@ -36,7 +36,7 @@ const EmailVerified: React.FC<IProps> = ({ authUser }) => {
   }
 
   return (
-    <Layout title={'About Us'}>
+    <Layout title={'Email'}>
       <StyledBackgroundImage imageName="library">
         <StyledBackgroundWrapper minHeight="77vh">
           <StyledPageContainer>

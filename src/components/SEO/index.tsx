@@ -2,12 +2,12 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 
 import { config } from '../../../config'
+import image from '../../../static/og_image.jpg'
 
 interface IProps {
   description?: string
   lang?: string
   meta?: any // eslint-disable-line
-  title: string
   pageUrl?: string
 }
 
@@ -17,7 +17,7 @@ const {
   siteLanguage,
   siteUrl,
   author,
-  siteIcons: { image },
+  siteIcons: { favicon },
   googleSearchConsoleTag,
 } = config
 
@@ -25,7 +25,6 @@ const SEO: React.FC<IProps> = ({
   description: metaDescription = siteDescription,
   lang = siteLanguage,
   meta = [],
-  title = siteTitle,
   pageUrl,
 }) => {
   return (
@@ -33,8 +32,7 @@ const SEO: React.FC<IProps> = ({
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={title !== siteTitle ? `%s | ${siteTitle}` : `%s`}
+      title={siteTitle}
       meta={[
         {
           name: `description`,
@@ -42,7 +40,7 @@ const SEO: React.FC<IProps> = ({
         },
         {
           property: `og:title`,
-          content: title,
+          content: siteTitle,
         },
         {
           property: `og:url`,
@@ -54,7 +52,7 @@ const SEO: React.FC<IProps> = ({
         },
         {
           property: `og:type`,
-          content: title !== siteTitle ? `article` : `website`,
+          content: 'website',
         },
         {
           property: `og:image`,
@@ -70,7 +68,7 @@ const SEO: React.FC<IProps> = ({
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: siteTitle,
         },
         {
           name: `twitter:url`,

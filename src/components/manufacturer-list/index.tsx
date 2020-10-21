@@ -50,6 +50,7 @@ const ManufacturerList: React.FC<IProps> = ({ isRestricted, favorites, onlyFavor
                   Section_No
                 }
               }
+              Premium
             }
           }
         }

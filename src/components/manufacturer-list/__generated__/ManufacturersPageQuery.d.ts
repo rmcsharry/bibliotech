@@ -36,6 +36,7 @@ export interface ManufacturersPageQuery_firms_edges_node_data {
   MASTER_FORMAT_CLASSIFICATION:
     | (ManufacturersPageQuery_firms_edges_node_data_MASTER_FORMAT_CLASSIFICATION | null)[]
     | null
+  Premium: boolean | null
 }
 
 export interface ManufacturersPageQuery_firms_edges_node {

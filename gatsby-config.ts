@@ -59,7 +59,7 @@ export default {
             tableName: `Manufacturers`,
             queryName: `Manufacturer`,
             tableView: `AppView_Details_DONOTCHANGE`,
-            tableLinks: [`Tech_Reps`, `MASTER_FORMAT_CLASSIFICATION`],
+            tableLinks: [`Tech_Reps`, `MASTER_FORMAT_CLASSIFICATION`, `Premium_Manufacturers`],
             separateNodeType: true,
             defaultValues: {
               Company_Description: '',
@@ -73,6 +73,11 @@ export default {
           {
             baseId: `appP5vBdAitw6yyDH`,
             tableName: `MANUFACTURER MASTERFORMAT`,
+            tableLinks: [`Manufacturers`],
+          },
+          {
+            baseId: `appP5vBdAitw6yyDH`,
+            tableName: 'Premium_Manufacturers',
             tableLinks: [`Manufacturers`],
           },
           {

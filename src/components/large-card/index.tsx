@@ -1,6 +1,4 @@
 import React from 'react'
-import { navigate } from 'gatsby'
-
 import IEdge from '../../types/edge'
 import Card from 'react-bootstrap/Card'
 import Fade from 'react-bootstrap/Fade'
@@ -11,11 +9,11 @@ import Section from '../section'
 import Website from '../sections/website'
 import TechReps from '../sections/tech-reps'
 import FavoriteButton from '../favorite-button'
-import Button from 'react-bootstrap/Button'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import { CaretLeftFill } from 'react-bootstrap-icons/'
+
 import StyledBackgroundImage from '../styled-background-image'
+import ReturnFooter from './return-footer'
+import PremiumSection from './premium-section'
+import FeatureImages from './feature-images'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
@@ -36,12 +34,9 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
   const description = data.Company_Description
   const website = data.Website
   const techReps = data.Tech_Reps
+  const isPremium = data.Premium
 
   const isFavorite = favorites?.findIndex(element => element === manufacturerId) >= 0
-
-  const go = destination => {
-    if (typeof window !== 'undefined') navigate(destination)
-  }
 
   return (
     <>
@@ -56,6 +51,7 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
             />
             <img src={thumbnail?.url} className="p-4 mb-5 w-50 mx-auto" />
             <Card.Title className={`${TitleStyle} font-weight-bold`}>{name}</Card.Title>
+            {isPremium ? <FeatureImages premium={data.Premium_Manufacturers[0]}></FeatureImages> : ''}
             <Fade in={true} appear={true} timeout={1000}>
               <Card.Body style={{ minHeight: '6rem' }} className="mt-2">
                 <Classification classifications={classifications} />
@@ -66,18 +62,12 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
                 ) : null}
                 <Website address={website} />
                 <TechReps reps={techReps} />
+                {isPremium ? <PremiumSection premium={data.Premium_Manufacturers[0]}></PremiumSection> : ''}
                 <h6 className="small mb-0 text-right">Last updated</h6>
                 <p className="small mb-0 text-right"> {data.Last_update}</p>
               </Card.Body>
             </Fade>
-            <Row>
-              <Col className="text-center">
-                <Button className="ml-4" onClick={() => go('/manufacturers')}>
-                  <CaretLeftFill style={{ marginTop: '-5px', marginRight: '2px' }} />
-                  RETURN TO THE LIBRARY
-                </Button>
-              </Col>
-            </Row>
+            <ReturnFooter></ReturnFooter>
           </Card>
         </div>
       </StyledBackgroundImage>

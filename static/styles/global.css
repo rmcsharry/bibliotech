@@ -10,6 +10,9 @@ body {
   letter-spacing: 0;
   overflow: unset !important;
 }
+strong {
+  font-weight: bold;
+}
 h1,
 h2,
 h3,

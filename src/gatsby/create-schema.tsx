@@ -4,8 +4,17 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
   actions,
 }: CreateSchemaCustomizationArgs) => {
   const { createTypes } = actions
+
   const typeDefs = `
-    type airtableManufacturer implements Node {
+    type AirtablePremium implements Node @infer {
+      data: AirtablePremiumData
+    }
+
+    type AirtablePremiumData {
+      FAQ_HTML: String
+    }
+
+    type AirtableManufacturer implements Node {
       Manufacturer: String!
       Last_update: Date
       Products: [String]!

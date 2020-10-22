@@ -61,6 +61,26 @@ export const pageQuery = graphql`
           }
           recordId
         }
+        Premium
+        Premium_Manufacturers {
+          recordId
+          data {
+            FAQ
+            FAQ_HTML
+            Downloads_File_Name
+            Last_update
+            Is_Supplier
+            Feature_Images {
+              thumbnails {
+                large {
+                  url
+                  width
+                  height
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

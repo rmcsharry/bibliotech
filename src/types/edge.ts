@@ -9,6 +9,8 @@ export default interface IEdge {
       Company_Description: string
       Website: string
       Tech_Reps: [ITechRep]
+      Premium: boolean
+      Premium_Manufacturers: [IPremium]
     }
   }
 }
@@ -37,5 +39,21 @@ export interface IThumbnail {
       url: string
       width: number
     }
+    large: {
+      height: number
+      url: string
+      width: number
+    }
+  }
+}
+
+export interface IPremium {
+  recordId: string
+  data: {
+    FAQ: string
+    FAQ_HTML: string
+    Downloads_File_Name: string
+    Is_Supplier: boolean
+    Feature_Images: [IThumbnail]
   }
 }

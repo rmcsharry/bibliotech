@@ -50,6 +50,7 @@ export interface IThumbnail {
 export interface IPremium {
   recordId: string
   data: {
+    About_Us: string
     FAQ: string
     FAQ_HTML: string
     Downloads_File_Name: string

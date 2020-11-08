@@ -56,6 +56,7 @@ export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Feature_
 }
 
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data {
+  FAQ: string | null
   FAQ_HTML: string | null
   Downloads_File_Name: string | null
   Last_update: any | null

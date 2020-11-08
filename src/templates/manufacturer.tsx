@@ -65,6 +65,7 @@ export const pageQuery = graphql`
         Premium_Manufacturers {
           recordId
           data {
+            About_Us
             FAQ
             FAQ_HTML
             Downloads_File_Name

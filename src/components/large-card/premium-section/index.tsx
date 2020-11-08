@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { IPremium } from '../../../types/edge'
 import { style } from 'typestyle'
@@ -30,9 +30,19 @@ const PremiumSection: React.FC<IProps> = ({ premium }) => {
   return (
     <>
       <StyledTitle>About Us</StyledTitle>
-      <StyledTitle>Frequently Asked Questions</StyledTitle>
-      <Markdown opions={{ forceBlock: true }}>{data.FAQ}</Markdown>
-      <StyledTitle>Downloads</StyledTitle>
+      {data.About_Us}
+      {data.FAQ ? (
+        <Fragment>
+          <StyledTitle>Frequently Asked Questions</StyledTitle>
+          <Markdown opions={{ forceBlock: true }}>{data.FAQ}</Markdown>
+        </Fragment>
+      ) : null}
+      {data.Downloads_File_Name ? (
+        <Fragment>
+          <StyledTitle>Downloads</StyledTitle>
+          {data.Downloads_File_Name}
+        </Fragment>
+      ) : null}
     </>
   )
 }

@@ -51,10 +51,31 @@ export interface IPremium {
   recordId: string
   data: {
     About_Us: string
+    Companies_Represented: [string]
     FAQ: string
     FAQ_HTML: string
-    Downloads_File_Name: string
     Is_Supplier: boolean
     Feature_Images: [IThumbnail]
+    File_Downloads: [IFileDownload]
+  }
+}
+
+export interface IFileDownload {
+  id: string
+  filename: string
+  url: string
+  thumbnails: IFileThumbnail
+}
+
+export interface IFileThumbnail {
+  large: {
+    height: number
+    url: string
+    width: number
+  }
+  small: {
+    height: number
+    url: string
+    width: number
   }
 }

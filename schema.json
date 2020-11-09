@@ -21366,7 +21366,7 @@
               "defaultValue": null
             },
             {
-              "name": "Manufacturer_Name",
+              "name": "ManufacturerName",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -21386,21 +21386,11 @@
               "defaultValue": null
             },
             {
-              "name": "Downloads_Bibliotech",
+              "name": "File_Downloads",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechFilterListInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "Downloads_File_Name",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
+                "name": "AirtablePremiumDataFile_DownloadsFilterListInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -21411,6 +21401,16 @@
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "AirtablePremiumDataFeature_ImagesFilterListInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "About_Us",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -21516,16 +21516,6 @@
               "defaultValue": null
             },
             {
-              "name": "About_Us",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "Is_Supplier",
               "description": "",
               "type": {
@@ -21562,7 +21552,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechFilterListInput",
+          "name": "AirtablePremiumDataFile_DownloadsFilterListInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -21571,7 +21561,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechFilterInput",
+                "name": "AirtablePremiumDataFile_DownloadsFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -21583,7 +21573,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechFilterInput",
+          "name": "AirtablePremiumDataFile_DownloadsFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -21642,7 +21632,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsFilterInput",
+                "name": "AirtablePremiumDataFile_DownloadsThumbnailsFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -21654,7 +21644,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsFilterInput",
+          "name": "AirtablePremiumDataFile_DownloadsThumbnailsFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -21663,7 +21653,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsSmallFilterInput",
+                "name": "AirtablePremiumDataFile_DownloadsThumbnailsSmallFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -21673,7 +21663,7 @@
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsLargeFilterInput",
+                "name": "AirtablePremiumDataFile_DownloadsThumbnailsLargeFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -21685,7 +21675,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsSmallFilterInput",
+          "name": "AirtablePremiumDataFile_DownloadsThumbnailsSmallFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -21726,7 +21716,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsLargeFilterInput",
+          "name": "AirtablePremiumDataFile_DownloadsThumbnailsLargeFilterInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -22440,7 +22430,7 @@
               "deprecationReason": null
             },
             {
-              "name": "Manufacturer_Name",
+              "name": "ManufacturerName",
               "description": null,
               "args": [],
               "type": {
@@ -22468,7 +22458,7 @@
               "deprecationReason": null
             },
             {
-              "name": "Downloads_Bibliotech",
+              "name": "File_Downloads",
               "description": null,
               "args": [],
               "type": {
@@ -22476,21 +22466,9 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "AirtablePremiumDataDownloads_Bibliotech",
+                  "name": "AirtablePremiumDataFile_Downloads",
                   "ofType": null
                 }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "Downloads_File_Name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -22507,6 +22485,18 @@
                   "name": "AirtablePremiumDataFeature_Images",
                   "ofType": null
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "About_Us",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -22750,18 +22740,6 @@
               "deprecationReason": null
             },
             {
-              "name": "About_Us",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "Is_Supplier",
               "description": null,
               "args": [],
@@ -22813,7 +22791,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtablePremiumDataDownloads_Bibliotech",
+          "name": "AirtablePremiumDataFile_Downloads",
           "description": null,
           "fields": [
             {
@@ -22882,7 +22860,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechThumbnails",
+                "name": "AirtablePremiumDataFile_DownloadsThumbnails",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -22896,7 +22874,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechThumbnails",
+          "name": "AirtablePremiumDataFile_DownloadsThumbnails",
           "description": null,
           "fields": [
             {
@@ -22905,7 +22883,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsSmall",
+                "name": "AirtablePremiumDataFile_DownloadsThumbnailsSmall",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -22917,7 +22895,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsLarge",
+                "name": "AirtablePremiumDataFile_DownloadsThumbnailsLarge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -22931,7 +22909,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsSmall",
+          "name": "AirtablePremiumDataFile_DownloadsThumbnailsSmall",
           "description": null,
           "fields": [
             {
@@ -22978,7 +22956,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "AirtablePremiumDataDownloads_BibliotechThumbnailsLarge",
+          "name": "AirtablePremiumDataFile_DownloadsThumbnailsLarge",
           "description": null,
           "fields": [
             {
@@ -23716,7 +23694,7 @@
               "deprecationReason": null
             },
             {
-              "name": "data___Manufacturer_Name",
+              "name": "data___ManufacturerName",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -23728,43 +23706,37 @@
               "deprecationReason": null
             },
             {
-              "name": "data___Downloads_Bibliotech",
+              "name": "data___File_Downloads",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "data___Downloads_Bibliotech___id",
+              "name": "data___File_Downloads___id",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "data___Downloads_Bibliotech___url",
+              "name": "data___File_Downloads___url",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "data___Downloads_Bibliotech___filename",
+              "name": "data___File_Downloads___filename",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "data___Downloads_Bibliotech___size",
+              "name": "data___File_Downloads___size",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "data___Downloads_Bibliotech___type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Downloads_File_Name",
+              "name": "data___File_Downloads___type",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -23801,6 +23773,12 @@
             },
             {
               "name": "data___Feature_Images___type",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___About_Us",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -23891,12 +23869,6 @@
             },
             {
               "name": "data___Logo__from_Manufacturers____type",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___About_Us",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -29139,7 +29111,7 @@
               "deprecationReason": null
             },
             {
-              "name": "data___Premium_Manufacturers___data___Manufacturer_Name",
+              "name": "data___Premium_Manufacturers___data___ManufacturerName",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -29151,19 +29123,19 @@
               "deprecationReason": null
             },
             {
-              "name": "data___Premium_Manufacturers___data___Downloads_Bibliotech",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Premium_Manufacturers___data___Downloads_File_Name",
+              "name": "data___Premium_Manufacturers___data___File_Downloads",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "data___Premium_Manufacturers___data___Feature_Images",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "data___Premium_Manufacturers___data___About_Us",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -29224,12 +29196,6 @@
             },
             {
               "name": "data___Premium_Manufacturers___data___Logo__from_Manufacturers_",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "data___Premium_Manufacturers___data___About_Us",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

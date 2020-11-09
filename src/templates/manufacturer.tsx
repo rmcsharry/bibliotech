@@ -66,9 +66,26 @@ export const pageQuery = graphql`
           recordId
           data {
             About_Us
+            Companies_Represented
             FAQ
             FAQ_HTML
-            Downloads_File_Name
+            File_Downloads {
+              id
+              filename
+              url
+              thumbnails {
+                large {
+                  url
+                  width
+                  height
+                }
+                small {
+                  url
+                  width
+                  height
+                }
+              }
+            }
             Last_update
             Is_Supplier
             Feature_Images {

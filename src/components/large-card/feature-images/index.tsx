@@ -7,7 +7,6 @@ interface IProps {
 }
 
 const FeatureImage: React.FC<IProps> = ({ premium }) => {
-  console.log('here', premium)
   if (!premium.data) return null
 
   const thumbnails = premium.data.Feature_Images?.map((item, index) => {

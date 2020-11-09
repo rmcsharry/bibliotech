@@ -11,9 +11,12 @@ const TitleStyle = style({
 })
 
 import styled from '@emotion/styled'
+import Downloadables from './downloadables'
+import Represented from './represented'
 // import { mq } from '../../helpers/mq'
 
 const StyledTitle = styled.h6`
+  margin-top: 40px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 0.5rem 0.5rem;
@@ -28,22 +31,32 @@ const PremiumSection: React.FC<IProps> = ({ premium }) => {
   const { data } = premium
 
   return (
-    <>
-      <StyledTitle>About Us</StyledTitle>
-      {data.About_Us}
+    <Fragment>
+      {data.About_Us ? (
+        <Fragment>
+          <StyledTitle>About Us</StyledTitle>
+          <p>{data.About_Us}</p>
+        </Fragment>
+      ) : null}
+      {data.Is_Supplier ? (
+        <Fragment>
+          <StyledTitle>Companies We Represent</StyledTitle>
+          <Represented companies={data.Companies_Represented}></Represented>
+        </Fragment>
+      ) : null}
       {data.FAQ ? (
         <Fragment>
           <StyledTitle>Frequently Asked Questions</StyledTitle>
           <Markdown opions={{ forceBlock: true }}>{data.FAQ}</Markdown>
         </Fragment>
       ) : null}
-      {data.Downloads_File_Name ? (
+      {data.File_Downloads ? (
         <Fragment>
-          <StyledTitle>Downloads</StyledTitle>
-          {data.Downloads_File_Name}
+          <StyledTitle>Available Files</StyledTitle>
+          <Downloadables downloads={data.File_Downloads}></Downloadables>
         </Fragment>
       ) : null}
-    </>
+    </Fragment>
   )
 }
 

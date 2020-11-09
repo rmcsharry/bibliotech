@@ -41,6 +41,27 @@ export interface manufacturerQuery_node_data_Tech_Reps {
   recordId: string | null
 }
 
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails_large {
+  url: string | null
+  width: number | null
+  height: number | null
+}
+
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails_small {
+  url: string | null
+  width: number | null
+  height: number | null
+}
+
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails {
+  large: manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails_large | null
+  small: manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails_small | null
+}
+
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads {
+  thumbnails: manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails | null
+}
+
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Feature_Images_thumbnails_large {
   url: string | null
   width: number | null
@@ -56,9 +77,10 @@ export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Feature_
 }
 
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data {
+  About_Us: string | null
   FAQ: string | null
   FAQ_HTML: string | null
-  Downloads_File_Name: string | null
+  File_Downloads: (manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads | null)[] | null
   Last_update: any | null
   Is_Supplier: boolean | null
   Feature_Images: (manufacturerQuery_node_data_Premium_Manufacturers_data_Feature_Images | null)[] | null

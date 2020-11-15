@@ -41,7 +41,6 @@ export const pageQuery = graphql`
             Section_No
           }
         }
-        Company_Description
         Website
         Last_update
         Logo {
@@ -67,6 +66,15 @@ export const pageQuery = graphql`
           data {
             About_Us
             Companies_Represented
+            Represented_Logos {
+              thumbnails {
+                small {
+                  url
+                  height
+                  width
+                }
+              }
+            }
             FAQ
             FAQ_HTML
             File_Downloads {

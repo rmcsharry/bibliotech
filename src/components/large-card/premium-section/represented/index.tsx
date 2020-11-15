@@ -5,8 +5,6 @@ interface IProps {
 }
 
 const Represented: React.FC<IProps> = ({ companies }) => {
-  console.log('companies', companies)
-
   const represented = companies?.map((item, index) => {
     return (
       <Fragment key={`represented-${index}`}>

@@ -41,6 +41,20 @@ export interface manufacturerQuery_node_data_Tech_Reps {
   recordId: string | null
 }
 
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails_small {
+  url: string | null
+  height: number | null
+  width: number | null
+}
+
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails {
+  small: manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails_small | null
+}
+
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos {
+  thumbnails: manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails | null
+}
+
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails_large {
   url: string | null
   width: number | null
@@ -59,6 +73,9 @@ export interface manufacturerQuery_node_data_Premium_Manufacturers_data_File_Dow
 }
 
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads {
+  id: string | null
+  filename: string | null
+  url: string | null
   thumbnails: manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads_thumbnails | null
 }
 
@@ -78,6 +95,8 @@ export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Feature_
 
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data {
   About_Us: string | null
+  Companies_Represented: (string | null)[] | null
+  Represented_Logos: (manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos | null)[] | null
   FAQ: string | null
   FAQ_HTML: string | null
   File_Downloads: (manufacturerQuery_node_data_Premium_Manufacturers_data_File_Downloads | null)[] | null
@@ -94,7 +113,6 @@ export interface manufacturerQuery_node_data_Premium_Manufacturers {
 export interface manufacturerQuery_node_data {
   Manufacturer: string | null
   MASTER_FORMAT_CLASSIFICATION: (manufacturerQuery_node_data_MASTER_FORMAT_CLASSIFICATION | null)[] | null
-  Company_Description: string | null
   Website: string | null
   Last_update: any | null
   Logo: (manufacturerQuery_node_data_Logo | null)[] | null

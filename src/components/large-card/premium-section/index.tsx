@@ -27,7 +27,6 @@ interface IProps {
 }
 
 const PremiumSection: React.FC<IProps> = ({ premium }) => {
-  console.log('PREMIUM', premium)
   const { data } = premium
 
   return (

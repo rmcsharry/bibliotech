@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react'
 
-import { IFileDownload } from '../../../../types/edge'
+import { IFile } from '../../../../types/edge'
 import { style } from 'typestyle'
-import Markdown from 'markdown-to-jsx'
 
 const TitleStyle = style({
   borderTop: '1px solid black',
@@ -11,12 +10,10 @@ const TitleStyle = style({
 })
 
 interface IProps {
-  downloads: [IFileDownload]
+  downloads: [IFile]
 }
 
 const Downloadables: React.FC<IProps> = ({ downloads }) => {
-  console.log('downloads', downloads)
-
   const files = downloads?.map((item, index) => {
     return (
       <Fragment key={`file-${item.id}`}>

@@ -68,6 +68,11 @@ export const pageQuery = graphql`
             Companies_Represented
             Represented_Logos {
               thumbnails {
+                large {
+                  url
+                  height
+                  width
+                }
                 small {
                   url
                   height

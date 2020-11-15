@@ -13,7 +13,6 @@ const TitleStyle = style({
 import styled from '@emotion/styled'
 import Downloadables from './downloadables'
 import Represented from './represented'
-// import { mq } from '../../helpers/mq'
 
 const StyledTitle = styled.h6`
   margin-top: 40px;
@@ -40,7 +39,7 @@ const PremiumSection: React.FC<IProps> = ({ premium }) => {
       {data.Is_Supplier ? (
         <Fragment>
           <StyledTitle>Companies We Represent</StyledTitle>
-          <Represented companies={data.Companies_Represented}></Represented>
+          <Represented companies={data.Companies_Represented} logos={data.Represented_Logos}></Represented>
         </Fragment>
       ) : null}
       {data.FAQ ? (

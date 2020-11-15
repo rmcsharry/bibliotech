@@ -5,7 +5,7 @@ export default interface IEdge {
       Manufacturer: string
       MASTER_FORMAT_CLASSIFICATION: [IClassification]
       Last_update: Date
-      Logo: [IThumbnail]
+      Logo: [IFile]
       Company_Description: string
       Website: string
       Tech_Reps: [ITechRep]
@@ -33,41 +33,11 @@ export interface IClassification {
 }
 
 export interface IThumbnail {
-  thumbnails: {
-    full: {
-      height: number
-      url: string
-      width: number
-    }
-    large: {
-      height: number
-      url: string
-      width: number
-    }
+  full?: {
+    height: number
+    url: string
+    width: number
   }
-}
-
-export interface IPremium {
-  recordId: string
-  data: {
-    About_Us: string
-    Companies_Represented: [string]
-    FAQ: string
-    FAQ_HTML: string
-    Is_Supplier: boolean
-    Feature_Images: [IThumbnail]
-    File_Downloads: [IFileDownload]
-  }
-}
-
-export interface IFileDownload {
-  id: string
-  filename: string
-  url: string
-  thumbnails: IFileThumbnail
-}
-
-export interface IFileThumbnail {
   large: {
     height: number
     url: string
@@ -78,4 +48,25 @@ export interface IFileThumbnail {
     url: string
     width: number
   }
+}
+
+export interface IPremium {
+  recordId: string
+  data: {
+    About_Us: string
+    Companies_Represented: [string]
+    Represented_Logos: [IFile]
+    FAQ: string
+    FAQ_HTML: string
+    Is_Supplier: boolean
+    Feature_Images: [IFile]
+    File_Downloads: [IFile]
+  }
+}
+
+export interface IFile {
+  id: string
+  filename: string
+  url: string
+  thumbnails: IThumbnail
 }

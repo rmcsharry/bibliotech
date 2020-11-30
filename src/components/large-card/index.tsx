@@ -30,7 +30,6 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
   const manufacturerId = node.recordId
   const thumbnail = data.Logo ? data.Logo[0].thumbnails?.full : null
   const classifications = data.MASTER_FORMAT_CLASSIFICATION
-  const description = data.Company_Description
   const website = data.Website
   const techReps = data.Tech_Reps
   const isPremium = data.Premium

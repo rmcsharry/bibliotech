@@ -6,7 +6,6 @@ export default interface IEdge {
       MASTER_FORMAT_CLASSIFICATION: [IClassification]
       Last_update: Date
       Logo: [IFile]
-      Company_Description: string
       Website: string
       Tech_Reps: [ITechRep]
       Premium: boolean

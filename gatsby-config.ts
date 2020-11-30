@@ -75,9 +75,6 @@ export default {
             tableView: `AppView_Details_DONOTCHANGE`,
             tableLinks: [`Tech_Reps`, `MASTER_FORMAT_CLASSIFICATION`, `Premium_Manufacturers`],
             separateNodeType: true,
-            defaultValues: {
-              Company_Description: '',
-            },
           },
           {
             baseId: `appP5vBdAitw6yyDH`,

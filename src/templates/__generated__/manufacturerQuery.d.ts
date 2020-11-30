@@ -41,6 +41,12 @@ export interface manufacturerQuery_node_data_Tech_Reps {
   recordId: string | null
 }
 
+export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails_large {
+  url: string | null
+  height: number | null
+  width: number | null
+}
+
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails_small {
   url: string | null
   height: number | null
@@ -48,6 +54,7 @@ export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Represen
 }
 
 export interface manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails {
+  large: manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails_large | null
   small: manufacturerQuery_node_data_Premium_Manufacturers_data_Represented_Logos_thumbnails_small | null
 }
 

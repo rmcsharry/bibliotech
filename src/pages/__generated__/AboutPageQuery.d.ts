@@ -8,21 +8,21 @@
 // ====================================================
 
 export interface AboutPageQuery_content_fields_markdownContent_childMarkdownRemark {
-  html: string | null
+  html: string | null;
 }
 
 export interface AboutPageQuery_content_fields_markdownContent {
-  childMarkdownRemark: AboutPageQuery_content_fields_markdownContent_childMarkdownRemark | null
+  childMarkdownRemark: AboutPageQuery_content_fields_markdownContent_childMarkdownRemark | null;
 }
 
 export interface AboutPageQuery_content_fields {
-  markdownContent: AboutPageQuery_content_fields_markdownContent | null
+  markdownContent: AboutPageQuery_content_fields_markdownContent | null;
 }
 
 export interface AboutPageQuery_content {
-  fields: AboutPageQuery_content_fields | null
+  fields: AboutPageQuery_content_fields | null;
 }
 
 export interface AboutPageQuery {
-  content: AboutPageQuery_content | null
+  content: AboutPageQuery_content | null;
 }

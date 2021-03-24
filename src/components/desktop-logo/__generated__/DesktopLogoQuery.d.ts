@@ -8,21 +8,21 @@
 // ====================================================
 
 export interface DesktopLogoQuery_logo_childImageSharp_fixed {
-  base64: string | null
-  width: number
-  height: number
-  src: string
-  srcSet: string
+  base64: string | null;
+  width: number;
+  height: number;
+  src: string;
+  srcSet: string;
 }
 
 export interface DesktopLogoQuery_logo_childImageSharp {
-  fixed: DesktopLogoQuery_logo_childImageSharp_fixed | null
+  fixed: DesktopLogoQuery_logo_childImageSharp_fixed | null;
 }
 
 export interface DesktopLogoQuery_logo {
-  childImageSharp: DesktopLogoQuery_logo_childImageSharp | null
+  childImageSharp: DesktopLogoQuery_logo_childImageSharp | null;
 }
 
 export interface DesktopLogoQuery {
-  logo: DesktopLogoQuery_logo | null
+  logo: DesktopLogoQuery_logo | null;
 }

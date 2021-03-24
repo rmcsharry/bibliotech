@@ -8,21 +8,21 @@
 // ====================================================
 
 export interface PrivacyPageQuery_content_data_Attachments {
-  filename: string | null
-  type: string | null
-  url: string | null
+  filename: string | null;
+  type: string | null;
+  url: string | null;
 }
 
 export interface PrivacyPageQuery_content_data {
-  Attachments: (PrivacyPageQuery_content_data_Attachments | null)[] | null
-  Name: string | null
-  Content: string | null
+  Attachments: (PrivacyPageQuery_content_data_Attachments | null)[] | null;
+  Name: string | null;
+  Content: string | null;
 }
 
 export interface PrivacyPageQuery_content {
-  data: PrivacyPageQuery_content_data | null
+  data: PrivacyPageQuery_content_data | null;
 }
 
 export interface PrivacyPageQuery {
-  content: PrivacyPageQuery_content | null
+  content: PrivacyPageQuery_content | null;
 }

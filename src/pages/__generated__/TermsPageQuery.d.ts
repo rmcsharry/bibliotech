@@ -8,21 +8,21 @@
 // ====================================================
 
 export interface TermsPageQuery_content_data_Attachments {
-  filename: string | null
-  type: string | null
-  url: string | null
+  filename: string | null;
+  type: string | null;
+  url: string | null;
 }
 
 export interface TermsPageQuery_content_data {
-  Attachments: (TermsPageQuery_content_data_Attachments | null)[] | null
-  Name: string | null
-  Content: string | null
+  Attachments: (TermsPageQuery_content_data_Attachments | null)[] | null;
+  Name: string | null;
+  Content: string | null;
 }
 
 export interface TermsPageQuery_content {
-  data: TermsPageQuery_content_data | null
+  data: TermsPageQuery_content_data | null;
 }
 
 export interface TermsPageQuery {
-  content: TermsPageQuery_content | null
+  content: TermsPageQuery_content | null;
 }

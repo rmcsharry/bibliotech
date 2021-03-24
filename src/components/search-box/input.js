@@ -42,7 +42,7 @@ export default connectSearchBox(({ refine, ...rest }) => {
         )}
         {isInputEmpty ? (
           <StyledIcon aria-hidden="true">
-            <Search></Search>
+            <Search />
           </StyledIcon>
         ) : null}
       </div>

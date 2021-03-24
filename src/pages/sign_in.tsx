@@ -29,7 +29,7 @@ const SignIn: React.FC<IProps> = ({ firebase }) => {
             <p>Please sign in.</p>
             <SignInForm firebase={firebase} parentCallback={value => handleCallback(value)} />
           </StyledFormContainer>
-          <br></br>
+          <br />
           <SignInWithGoogle />
           <SignUpCTA signup={false} terms={false} />
         </StyledBackgroundWrapper>

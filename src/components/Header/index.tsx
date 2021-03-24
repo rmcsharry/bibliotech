@@ -50,7 +50,7 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
         <Navbar.Brand>
           <Link to="/">
             <StyledMobileImage fixed={data.logoMobile.childImageSharp.fixed} alt={'company logo'} />
-            <DesktopLogo></DesktopLogo>
+            <DesktopLogo />
           </Link>
         </Navbar.Brand>
 
@@ -80,6 +80,9 @@ const Header: React.FC<IPageProps> = ({ authUser }) => {
                 </Link>
               </React.Fragment>
             )}
+            <a href="https://academy.bibliotech.ca/" target="_blank">
+              <span className="nav-bg nav-link">Academy</span>
+            </a>
             <Link to="/contact_us">
               <span className="nav-bg nav-link">Contact Us</span>
             </Link>

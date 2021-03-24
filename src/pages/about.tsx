@@ -18,8 +18,7 @@ class AboutPage extends React.Component<IPageQuery> {
 
   render(): JSX.Element {
     const { data } = this.props
-    const mdContent = data.content.fields.markdownContent.childMarkdownRemark.html
-    console.log('here', data)
+    const mdContent = data?.content?.fields?.markdownContent?.childMarkdownRemark?.html ?? ''
     return (
       <>
         <Layout title={'About Us'}>
@@ -28,7 +27,7 @@ class AboutPage extends React.Component<IPageQuery> {
               <StyledPageContainer>
                 <PageTitle title={'About Bibliotech'} />
                 {/* <object type="text/html" data={url}></object> */}
-                {<div dangerouslySetInnerHTML={{ __html: mdContent }}></div>}
+                {<div dangerouslySetInnerHTML={{ __html: mdContent }}/>}
               </StyledPageContainer>
             </StyledBackgroundWrapper>
           </StyledBackgroundImage>

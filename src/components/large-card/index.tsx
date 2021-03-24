@@ -47,20 +47,20 @@ const LargeCard: React.FC<IEdge & IProps> = ({ node, favorites }) => {
               isAlreadyFavorite={isFavorite}
               alt="favorite button"
             />
-            <img src={thumbnail?.url} className="p-4 mb-5 w-50 mx-auto" />
+            <img alt={name} src={thumbnail?.url} className="p-4 mb-5 w-50 mx-auto" />
             <Card.Title className={`${TitleStyle} font-weight-bold`}>{name}</Card.Title>
-            {isPremium ? <FeatureImages premium={data.Premium_Manufacturers[0]}></FeatureImages> : ''}
+            {isPremium && <FeatureImages premium={data.Premium_Manufacturers[0]} />}
             <Fade in={true} appear={true} timeout={1000}>
               <Card.Body style={{ minHeight: '6rem' }} className="mt-2">
                 <Classification classifications={classifications} />
                 <Website address={website} />
                 <TechReps reps={techReps} />
-                {isPremium ? <PremiumSection premium={data.Premium_Manufacturers[0]}></PremiumSection> : ''}
+                {isPremium && <PremiumSection premium={data.Premium_Manufacturers[0]} />}
                 <h6 className="small mb-0 text-right">Last updated</h6>
                 <p className="small mb-0 text-right"> {data.Last_update}</p>
               </Card.Body>
             </Fade>
-            <ReturnFooter></ReturnFooter>
+            <ReturnFooter />
           </Card>
         </div>
       </StyledBackgroundImage>

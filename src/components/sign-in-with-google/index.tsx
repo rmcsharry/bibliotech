@@ -27,13 +27,15 @@ const SignInWithGoogle: React.FC<IProps> = ({ firebase }) => {
     provider.addScope('email')
     provider.setCustomParameters({ prompt: 'select_account' })
     firebase.auth().signInWithRedirect(provider)
-    if (typeof window !== 'undefined') navigate('/redirector')
+    if (typeof window !== 'undefined') {
+      navigate('/redirector').then(_ => console.log('redirected'))
+    }
   }
 
   return (
     <Card onClick={() => handleClick()} className={`${CardStyle} p-3 p-sm-3 p-md-3 shadow mx-auto`}>
       <span className="text-uppercase">
-        <img src={GoogleLogo} height="40" className="mr-4" />
+        <img alt="Google" src={GoogleLogo} height="40" className="mr-4" />
         Sign In with Google
       </span>
     </Card>

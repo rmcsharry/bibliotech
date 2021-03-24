@@ -17,7 +17,7 @@ interface IProps {
 const SignUp: React.FC<IProps> = ({ firebase }) => {
   const [isShowOverlay, setShowOverlay] = useState(false)
 
-  const handleCallback = value => {
+  const handleCallback = (value: React.SetStateAction<boolean>) => {
     setShowOverlay(value)
   }
 
@@ -30,7 +30,7 @@ const SignUp: React.FC<IProps> = ({ firebase }) => {
             <p>Please sign up.</p>
             <SignUpForm firebase={firebase} parentCallback={value => handleCallback(value)} />
           </StyledFormContainer>
-          <br></br>
+          <br />
           <SignInWithGoogle />
           <SignUpCTA signup={true} terms={true} />
         </StyledBackgroundWrapper>

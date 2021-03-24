@@ -9,10 +9,7 @@ const StyledSignUp = styled.div`
   align-items: center;
   margin: auto;
   color: white;
-  display: flex;
   padding-top: 10px;
-  flex-direction: column;
-  justify-content: center;
   span,
   a {
     color: white;
